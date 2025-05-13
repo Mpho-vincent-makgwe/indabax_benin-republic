@@ -4,9 +4,15 @@ import React from 'react';
 import Carousel from '../components/Carousel';
 
 const cultureImages = [
-  'https://via.placeholder.com/1200x600?text=Culture+1',
-  'https://via.placeholder.com/1200x600?text=Culture+2',
-  'https://via.placeholder.com/1200x600?text=Culture+3',
+  '/assets/culture1.jpg',
+  '/assets/culture2.jpg',
+  '/assets/culture3.jpg',
+  '/assets/culture4.jpg',
+  '/assets/culture5.jpg',
+  '/assets/culture6.jpg',
+  '/assets/culture7.jpg',
+  '/assets/culture8.jpg',
+ 
 ];
 
 const communityImages = [
