@@ -1,39 +1,42 @@
-// app/routes/home.tsx
+// src/routes/Home.tsx
 
-import type { Route } from "../+types/home";
-import style from "./home.module.css";
+import React from 'react';
+import Carousel from '../components/Carousel';
 
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "IndabaX Benin Republic" },
-    {
-      name: "description",
-      content: "Bridging Benin’s culture with African AI excellence.",
-    },
-  ];
-}
+const cultureImages = [
+  'https://via.placeholder.com/1200x600?text=Culture+1',
+  'https://via.placeholder.com/1200x600?text=Culture+2',
+  'https://via.placeholder.com/1200x600?text=Culture+3',
+];
 
-export default function Home() {
+const communityImages = [
+  'https://via.placeholder.com/1200x600?text=Community+1',
+  'https://via.placeholder.com/1200x600?text=Community+2',
+  'https://via.placeholder.com/1200x600?text=Community+3',
+];
+
+const eventsImages = [
+  'https://via.placeholder.com/1200x600?text=Events+1',
+  'https://via.placeholder.com/1200x600?text=Events+2',
+  'https://via.placeholder.com/1200x600?text=Events+3',
+];
+
+const Home: React.FC = () => {
   return (
     <main className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-[Open_Sans]">
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center min-h-screen flex items-center justify-center px-4 py-20 text-white"
-        style={{ backgroundImage: "url('/assets/leopard.jpg)" }}
+        style={{ backgroundImage: "url('/assets/leopard.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60 z-0"></div>
-        <div className="relative z-10 p-8 rounded-xl text-center max-w-3xl" style={{ backgroundImage: "url('/assets/leopard.jpg)" }}>
+        <div className="relative z-10 p-8 rounded-xl text-center max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 font-[Montserrat] mb-4">
             Welcome to IndabaX Benin Republic
           </h1>
           <p className="text-lg md:text-xl text-gray-100 mb-6">
             Bridging Benin’s rich cultural heritage with the future of African AI and community development.
           </p>
-          <div className="flex justify-center gap-6 mb-4 text-green-400 font-bold">
-            <span>🌍 Culture</span>
-            <span>🤝 Community</span>
-            <span>📅 Events</span>
-          </div>
           <div className="flex justify-center gap-4">
             <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
               Join
@@ -45,45 +48,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Introduction Section with Hex Pattern Background */}
-      <section
-        className="px-4 py-16 text-white"
-        style={{
-          '--s': '100px',
-          '--c1': '#008751',
-          '--c2': '#FFD700',
-          '--c3': '#D72638',
-          background: `
-            repeating-conic-gradient(
-              from 30deg,
-              #0000 0 120deg,
-              var(--c3) 0 180deg
-            ) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
-            repeating-conic-gradient(
-              from 30deg,
-              var(--c1) 0 60deg,
-              var(--c2) 0 120deg,
-              var(--c3) 0 180deg
-            )`,
-          backgroundSize: 'var(--s) calc(var(--s) * 0.577)',
-        } as React.CSSProperties}
-      >
-        <div className="bg-black/70 p-8 rounded-lg max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-yellow-400 font-[Montserrat] mb-4">1. Introduction</h2>
-          <p className="text-lg">
-            The Benin Republic stands at the cusp of a digital and educational transformation. With a youthful population,
-            rising internet access, and growing interest in innovation, Benin is well-positioned to leverage technology
-            to empower its communities. This initiative explores how the philosophy, mission, and model of Deep Learning
-            Indaba can be adapted to support Benin Republic’s educational, economic, and social development, particularly
-            through a purpose-built website.
-          </p>
-        </div>
+      {/* Culture Carousel */}
+      <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
+        <h2 className="text-3xl font-bold mb-4 text-center text-green-600 font-[Montserrat]">🌍 Culture</h2>
+        <Carousel images={cultureImages} direction="left" />
+        <p className="text-center mt-4 text-lg max-w-2xl mx-auto">
+          The heartbeat of our community is deeply rooted in our cultural values and heritage. Join us in celebrating the
+          unique identity of the Benin Republic as we blend tradition with innovation in AI.
+        </p>
       </section>
 
-      {/* Understanding Deep Learning Indaba */}
+      {/* Community Carousel */}
+      <section className="py-16 px-4">
+        <h2 className="text-3xl font-bold mb-4 text-center text-blue-600 font-[Montserrat]">🤝 Community</h2>
+        <Carousel images={communityImages} direction="right" />
+        <p className="text-center mt-4 text-lg max-w-2xl mx-auto">
+          Our community is a vibrant space of thinkers, builders, and change-makers. Together, we grow through
+          collaboration, mentorship, and a shared vision of excellence.
+        </p>
+      </section>
+
+      {/* Events Carousel */}
+      <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
+        <h2 className="text-3xl font-bold mb-4 text-center text-red-600 font-[Montserrat]">📅 Events</h2>
+        <Carousel images={eventsImages} direction="left" />
+        <p className="text-center mt-4 text-lg max-w-2xl mx-auto">
+          From workshops to hackathons, IndabaX Benin Republic hosts events that inspire, educate, and empower. Check out
+          our calendar and be a part of our next big initiative.
+        </p>
+      </section>
+       {/* Understanding Deep Learning Indaba */}
       <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-yellow-500 font-[Montserrat]">2. Understanding Deep Learning Indaba</h2>
+          <h2 className="text-3xl font-bold mb-4 text-yellow-500 font-[Montserrat]">Understanding Deep Learning Indaba</h2>
           <h3 className="text-2xl font-semibold mb-2">Vision:</h3>
           <p className="mb-4">
             "Strengthening African machine learning" — the Indaba envisions a world where African nations are not just
@@ -111,7 +108,7 @@ export default function Home() {
       {/* Adapting Indaba’s Mission to Benin Republic */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-yellow-500 font-[Montserrat]">3. Adapting Indaba’s Mission to Benin Republic</h2>
+          <h2 className="text-3xl font-bold mb-4 text-yellow-500 font-[Montserrat]">Adapting Indaba’s Mission to Benin Republic</h2>
           
           <h3 className="text-2xl font-semibold mb-2">Create Learning Pathways:</h3>
           <ul className="list-disc list-inside mb-4 ml-6">
@@ -141,20 +138,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Visual Highlights */}
-      <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Visual Highlights</h2>
-          <p className="mb-6">
-            [Placeholder for images showcasing IndabaX events, workshops, and community engagements in Benin.]
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-gray-300 h-48 rounded-lg"></div>
-            <div className="bg-gray-300 h-48 rounded-lg"></div>
-            <div className="bg-gray-300 h-48 rounded-lg"></div>
-          </div>
-        </div>
+      {/* Call to Action */}
+      <section className="py-16 px-4 text-center bg-gradient-to-r from-yellow-400 to-green-500 text-white">
+        <h2 className="text-4xl font-bold mb-6 font-[Montserrat]">Ready to Make an Impact?</h2>
+        <p className="text-lg mb-8">
+          Join IndabaX Benin Republic and be part of a movement that’s shaping the future of AI in Africa.
+        </p>
+        <button className="bg-black hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-full transition duration-300">
+          Join the Movement
+        </button>
       </section>
     </main>
   );
-}
+};
+
+export default Home;
