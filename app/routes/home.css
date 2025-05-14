@@ -1,0 +1,16 @@
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes pulseBg {
+    0%, 100% {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    50% {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .animate-bg-pulse {
+    animation: pulseBg 4s ease-in-out infinite;
+  }
+}
