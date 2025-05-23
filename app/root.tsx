@@ -12,6 +12,7 @@ import "./app.css";
 
 import Footer2 from "./components/Footer2"
 import Navbar from "./components/Navbar"
+import { ThemeProvider } from "./context/ThemeContext"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -35,16 +36,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <Navbar/>
       <body>
-        {children}
+        <ThemeProvider>
+          <Navbar />
+          
+          {/* Wrap content with padding to avoid being hidden behind navbar */}
+          <main className="pt-16">
+            {children}
+          </main>
+
+          <Footer2 />
+        </ThemeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
-      <Footer2/>
     </html>
   );
 }
+
 
 export default function App() {
   return <Outlet />;

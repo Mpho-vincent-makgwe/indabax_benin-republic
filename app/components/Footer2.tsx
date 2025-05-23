@@ -2,10 +2,10 @@ import React from 'react';
 
 const Footer2 = () => {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 mt-16 border-t border-gray-300 dark:border-gray-700">
+    <footer className="bg-gray-100  mt-16 border-t border-gray-300 ">
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md text-center">
-          <strong className="block text-xl font-bold text-gray-900 sm:text-3xl dark:text-white">
+          <strong className="block text-xl font-bold text-gray-900 sm:text-3xl ">
             Stay in the loop with IndabaX BJ updates
           </strong>
 
@@ -13,7 +13,7 @@ const Footer2 = () => {
             <div className="relative max-w-lg mx-auto">
               <label className="sr-only" htmlFor="email">Email</label>
               <input
-                className="w-full rounded-full border-gray-300 bg-gray-200 p-4 pe-32 text-sm font-medium dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                className="w-full rounded-full border-gray-300 bg-gray-200 p-4 pe-32 text-sm font-medium "
                 id="email"
                 type="email"
                 placeholder="indaba@deepmind.com"
@@ -29,7 +29,7 @@ const Footer2 = () => {
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div>
-            <p className="mt-4 text-center text-gray-600 lg:text-left lg:text-lg dark:text-gray-300">
+            <p className="mt-4 text-center text-gray-600 lg:text-left lg:text-lg ">
               IndabaX BJ is committed to empowering local talent through AI education, community building, and innovation. Join us and be part of the next AI revolution in Botswana!
             </p>
 
@@ -45,7 +45,7 @@ const Footer2 = () => {
 
           <div className="grid grid-cols-2 gap-8 text-sm text-gray-600 dark:text-gray-400 sm:grid-cols-3">
             <div>
-              <p className="font-medium text-gray-900 dark:text-white">About</p>
+              <p className="font-medium text-gray-900 ">About</p>
               <ul className="mt-4 space-y-2">
                 <li><a href="#" className="hover:opacity-75">Who We Are</a></li>
                 <li><a href="#" className="hover:opacity-75">Our Mission</a></li>
@@ -73,8 +73,8 @@ const Footer2 = () => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-200 pt-8 dark:border-gray-600">
-          <p className="text-center text-xs text-gray-500 dark:text-gray-400">
+        <div className="mt-12 border-t border-gray-200 pt-8 ">
+          <p className="text-center text-xs text-gray-500 ">
             &copy; {new Date().getFullYear()} IndabaX Botswana Junior. Empowering the next generation of AI leaders.
           </p>
         </div>
