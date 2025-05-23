@@ -132,15 +132,14 @@ const Home = () => {
               .sort((a, b) => new Date(a.date) - new Date(b.date))
               .slice(0, 3)
               .map((event) => (
-                <Link 
+                <div 
                   key={event.id} 
-                  to={`/events/${event.id}`}
                   className={`block overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-105 ${
                     theme === 'dark' ? 'bg-gray-700' : 'bg-white'
                   }`}
                 >
                   <EventCard event={event} timers={timers} />
-                </Link>
+                </div>
               ))}
           </div>
         </div>
@@ -189,15 +188,14 @@ const Home = () => {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leaders.slice(0, 4).map((leader) => (
-              <Link 
+              <div 
                 key={leader.id} 
-                to={`/leaders/${leader.id}`}
                 className={`overflow-hidden rounded-xl shadow-md transition-transform hover:scale-105 ${
                   theme === 'dark' ? 'bg-gray-700' : 'bg-white'
                 }`}
               >
                 <LeaderCard leader={leader} />
-              </Link>
+              </div>
             ))}
           </div>
         </div>

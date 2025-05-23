@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 const LeaderCard = ({ leader }) => {
   return (
-    <Link href={`/leaders/${leader.id}`} passHref>
+    <Link to={`/leaders/${leader.id}`} passHref>
       <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
         <div className="relative pb-[120%] bg-gray-100">
           <img 

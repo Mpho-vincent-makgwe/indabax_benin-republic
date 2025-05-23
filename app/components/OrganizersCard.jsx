@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 const OrganizerCard = ({ organizer }) => {
   return (
-    <Link href={`/organizers/${organizer.id}`} passHref>
+    <Link to={`/organizers/${organizer.id}`} passHref>
       <div className="group overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
         <div className="relative pb-[100%] bg-gray-100">
           <img 

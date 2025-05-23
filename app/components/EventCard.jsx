@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext'
 
 const EventCard = ({event, timers}) => {
@@ -57,9 +58,9 @@ const EventCard = ({event, timers}) => {
         </div>
 
         {/* Action button */}
-        <button className={`mt-3 w-full py-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold rounded-md transition-colors duration-200 ${theme === 'dark' ? 'hover:bg-green-700' : ''}`}>
+        <Link to={`/events/${event.id}`} className={`mt-3 w-full py-1.5 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold rounded-md transition-colors duration-200 ${theme === 'dark' ? 'hover:bg-green-700' : ''}`}>
           Register Now
-        </button>
+        </Link>
       </div>
     </div>
   )
