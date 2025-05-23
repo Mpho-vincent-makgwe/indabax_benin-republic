@@ -204,7 +204,6 @@ const Home = () => {
       {/* Testimonials */}
       <Testimonials testimonials={testimonials} theme={theme} />
 
-      // Add this section after the Leadership Team section in the Home component
 {/* Organizers Section */}
 <section className={`py-16 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
