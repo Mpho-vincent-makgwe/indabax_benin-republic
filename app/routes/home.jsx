@@ -72,7 +72,7 @@ const Home = () => {
           theme === 'dark' ? 'bg-gray-800' : 'bg-gradient-to-b from-white to-gray-100'
         }`}
         style={{
-          backgroundImage: "url('/assets/hero2.jpg')",
+          backgroundImage: "url('/assets/hero/hero-1.jpg')",
         }}
       >
         <div className="max-w-2xl mx-auto px-4">
