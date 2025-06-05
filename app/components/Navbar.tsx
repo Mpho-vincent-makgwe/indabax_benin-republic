@@ -6,13 +6,12 @@ import { useTheme } from '../context/ThemeContext';
 import { events } from '../BackEnd/data';
 import { useTranslation } from 'react-i18next';
 
-
-type TranslationKey = 'navbar.about' | 'navbar.faq' | 'navbar.events' | 'navbar.culture' | 'navbar.contact' | 'navbar.register' | 'navbar.toggleTheme';
+type TranslationKey = 'navbar.about' | 'navbar.faq' | 'navbar.events' | 'navbar.culture' | 'navbar.contact' | 'navbar.register' | 'navbar.toggleTheme' | 'navbar.language';
 
 interface NavLink {
   path: string;
   label: string;
-  translationKey: TranslationKey
+  translationKey: TranslationKey;
 }
 
 const Navbar: React.FC = () => {
@@ -38,7 +37,7 @@ const Navbar: React.FC = () => {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setShowLanguageDropdown(false);
-    if (isOpen) setIsOpen(false); // Close mobile menu if open
+    if (isOpen) setIsOpen(false);
   };
 
   const availableLanguages = [
@@ -85,15 +84,22 @@ const Navbar: React.FC = () => {
                 className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition ${
                   theme === 'dark' ? 'text-white' : 'text-black'
                 }`}
+                aria-label={t('navbar.language')}
+                aria-expanded={showLanguageDropdown}
+                aria-haspopup="true"
               >
-                <Languages className="w-5 h-5" />
-                <span className="text-sm uppercase">{i18n.language}</span>
+                <Languages className="w-5 h-5" aria-hidden="true" />
+                <span className="text-sm uppercase sr-only">{t('navbar.language')}</span>
+                <span className="text-sm uppercase" aria-hidden="true">{i18n.language}</span>
               </button>
               
               {showLanguageDropdown && (
-                <div className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 z-50 ${
-                  theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-                }`}>
+                <div 
+                  className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 z-50 ${
+                    theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+                  }`}
+                  role="menu"
+                >
                   {availableLanguages.map((lang) => (
                     <button
                       key={lang.code}
@@ -107,6 +113,7 @@ const Navbar: React.FC = () => {
                             ? 'text-white hover:bg-gray-700' 
                             : 'text-black hover:bg-gray-100'
                       }`}
+                      role="menuitem"
                     >
                       {lang.name}
                     </button>
@@ -115,7 +122,7 @@ const Navbar: React.FC = () => {
               )}
             </div>
 
-            {/* Register Button - Links to latest event */}
+            {/* Register Button */}
             <Link
               to={latestEvent ? `/events/${latestEvent.id}` : '/events'}
               className="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700 transition"
@@ -123,17 +130,18 @@ const Navbar: React.FC = () => {
               {t('navbar.register')}
             </Link>
 
-            {/* Theme Toggle Icon */}
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="ml-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-              title={t('navbar.toggleTheme')}
+              aria-label={t('navbar.toggleTheme')}
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
+                <Sun className="w-5 h-5 text-yellow-400" aria-hidden="true" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-800" />
+                <Moon className="w-5 h-5 text-gray-800" aria-hidden="true" />
               )}
+              <span className="sr-only">{t('navbar.toggleTheme')}</span>
             </button>
           </div>
 
@@ -143,28 +151,45 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
               className={`p-2 rounded-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+              aria-label={t('navbar.language')}
+              aria-expanded={showLanguageDropdown}
             >
-              <Languages className="w-5 h-5" />
+              <Languages className="w-5 h-5" aria-hidden="true" />
+              <span className="sr-only">{t('navbar.language')}</span>
             </button>
             
             {/* Mobile Theme Toggle */}
             <button
               onClick={toggleTheme}
               className={`p-2 rounded-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+              aria-label={t('navbar.toggleTheme')}
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
+                <Sun className="w-5 h-5 text-yellow-400" aria-hidden="true" />
               ) : (
-                <Moon className="w-5 h-5 text-gray-800" />
+                <Moon className="w-5 h-5 text-gray-800" aria-hidden="true" />
               )}
+              <span className="sr-only">{t('navbar.toggleTheme')}</span>
             </button>
             
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`focus:outline-none ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+              aria-label={isOpen ? t('navbar.closeMenu') : t('navbar.openMenu')}
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? (
+                <>
+                  <X size={24} aria-hidden="true" />
+                  <span className="sr-only">{t('navbar.closeMenu')}</span>
+                </>
+              ) : (
+                <>
+                  <Menu size={24} aria-hidden="true" />
+                  <span className="sr-only">{t('navbar.openMenu')}</span>
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -176,10 +201,11 @@ const Navbar: React.FC = () => {
           className={`md:hidden px-6 pt-4 pb-6 space-y-3 font-semibold shadow-md transition-all duration-300 ${
             theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white/90 text-black'
           }`}
+          role="menu"
         >
           {/* Language Dropdown for Mobile */}
           {showLanguageDropdown && (
-            <div className="mb-4 space-y-2">
+            <div className="mb-4 space-y-2" role="menu">
               {availableLanguages.map((lang) => (
                 <button
                   key={lang.code}
@@ -193,6 +219,7 @@ const Navbar: React.FC = () => {
                         ? 'text-white hover:bg-gray-700' 
                         : 'text-black hover:bg-gray-100'
                   }`}
+                  role="menuitem"
                 >
                   {lang.name}
                 </button>
@@ -206,6 +233,7 @@ const Navbar: React.FC = () => {
               to={link.path}
               onClick={() => setIsOpen(false)}
               className="block py-2 border-b border-gray-300 hover:text-green-600 transition"
+              role="menuitem"
             >
               {t(link.translationKey)}
             </Link>
@@ -214,6 +242,7 @@ const Navbar: React.FC = () => {
             to={latestEvent ? `/events/${latestEvent.id}` : '/events'}
             onClick={() => setIsOpen(false)}
             className="block mt-2 bg-green-600 text-white px-4 py-2 rounded text-center hover:bg-green-700 transition"
+            role="menuitem"
           >
             {t('navbar.register')}
           </Link>
