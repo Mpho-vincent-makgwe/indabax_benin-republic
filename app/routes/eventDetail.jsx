@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { events, pastEvents, speakers, organisers } from '../BackEnd/data';
+import { useTranslation } from 'react-i18next';
 
 const EventDetail = () => {
   const { eventId } = useParams();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -30,11 +32,8 @@ const EventDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log('Form submitted:', formData);
-    // Close the modal after submission
     setShowRegistrationModal(false);
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -49,13 +48,13 @@ const EventDetail = () => {
     return (
       <div className={`min-h-screen flex items-center justify-center ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Event Not Found</h1>
-          <p className="text-xl">The event you're looking for doesn't exist.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('eventDetail.notFound.title')}</h1>
+          <p className="text-xl">{t('eventDetail.notFound.message')}</p>
           <Link 
             to="/events" 
             className={`mt-6 inline-block px-6 py-3 rounded-full ${theme === 'dark' ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition-colors`}
           >
-            Browse All Events
+            {t('eventDetail.notFound.browseEvents')}
           </Link>
         </div>
       </div>
@@ -95,14 +94,14 @@ const EventDetail = () => {
             </button>
             
             <h2 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              Apply for {event.title}
+              {t('eventDetail.modal.title', { eventTitle: event.title })}
             </h2>
             
             <form onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 <div>
                   <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Full Name *
+                    {t('eventDetail.modal.fullName')} *
                   </label>
                   <input
                     type="text"
@@ -115,7 +114,7 @@ const EventDetail = () => {
                 </div>
                 <div>
                   <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Email *
+                    {t('eventDetail.modal.email')} *
                   </label>
                   <input
                     type="email"
@@ -128,7 +127,7 @@ const EventDetail = () => {
                 </div>
                 <div>
                   <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Phone Number *
+                    {t('eventDetail.modal.phone')} *
                   </label>
                   <input
                     type="tel"
@@ -141,7 +140,7 @@ const EventDetail = () => {
                 </div>
                 <div>
                   <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Organization
+                    {t('eventDetail.modal.organization')}
                   </label>
                   <input
                     type="text"
@@ -155,7 +154,7 @@ const EventDetail = () => {
               
               <div className="mb-6">
                 <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Dietary Requirements
+                  {t('eventDetail.modal.dietaryRequirements')}
                 </label>
                 <textarea
                   name="dietaryRequirements"
@@ -163,13 +162,13 @@ const EventDetail = () => {
                   onChange={handleInputChange}
                   rows={2}
                   className={`w-full px-4 py-2 rounded-lg border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
-                  placeholder="Any allergies or dietary restrictions?"
+                  placeholder={t('eventDetail.modal.dietaryPlaceholder')}
                 />
               </div>
               
               <div className="mb-6">
                 <label className={`block mb-2 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Special Needs
+                  {t('eventDetail.modal.specialNeeds')}
                 </label>
                 <textarea
                   name="specialNeeds"
@@ -177,7 +176,7 @@ const EventDetail = () => {
                   onChange={handleInputChange}
                   rows={2}
                   className={`w-full px-4 py-2 rounded-lg border ${theme === 'dark' ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
-                  placeholder="Any accessibility requirements?"
+                  placeholder={t('eventDetail.modal.specialNeedsPlaceholder')}
                 />
               </div>
               
@@ -185,7 +184,7 @@ const EventDetail = () => {
                 type="submit"
                 className={`w-full py-3 rounded-full font-bold ${theme === 'dark' ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition-colors`}
               >
-                Submit Application
+                {t('eventDetail.modal.submit')}
               </button>
             </form>
           </div>
@@ -208,7 +207,7 @@ const EventDetail = () => {
                 (theme === 'dark' ? 'bg-purple-900 text-purple-300' : 'bg-purple-100 text-purple-800') : 
                 (theme === 'dark' ? 'bg-green-900 text-green-300' : 'bg-green-100 text-green-800')}`}
               >
-                {isPastEvent || eventDate < currentDate ? 'Past Event' : 'Upcoming Event'}
+                {isPastEvent || eventDate < currentDate ? t('eventDetail.pastEvent') : t('eventDetail.upcomingEvent')}
               </div>
               <h1 className={`text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {event.title}
@@ -232,7 +231,7 @@ const EventDetail = () => {
                   onClick={() => setShowRegistrationModal(true)}
                   className={`inline-block px-8 py-3 rounded-full font-bold ${theme === 'dark' ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition-colors`}
                 >
-                  Register Now
+                  {t('eventDetail.registerNow')}
                 </button>
               )}
             </div>
@@ -245,25 +244,25 @@ const EventDetail = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <h2 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              About This Event
+              {t('eventDetail.aboutEvent')}
             </h2>
             <p className={`text-lg mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
               {event.description}
             </p>
             <div className={`p-6 rounded-xl mb-8 ${theme === 'dark' ? 'bg-gray-800' : 'bg-green-50'}`}>
               <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
-                Event Highlight
+                {t('eventDetail.eventHighlight')}
               </h3>
               <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>
                 {event.highlight}
               </p>
             </div>
 
-            {/* Speakers Section - Only for past events */}
+            {/* Speakers Section */}
             {isPastEvent && eventSpeakers.length > 0 && (
               <div className="mb-12">
                 <h2 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                  Featured Speakers
+                  {t('eventDetail.featuredSpeakers')}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {eventSpeakers.map(speaker => (
@@ -297,7 +296,7 @@ const EventDetail = () => {
             {eventOrganisers.length > 0 && (
               <div>
                 <h2 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                  Event Organisers
+                  {t('eventDetail.eventOrganisers')}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {eventOrganisers.map(organiser => (
@@ -332,37 +331,45 @@ const EventDetail = () => {
           <div>
             <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
               <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                Event Details
+                {t('eventDetail.eventDetails')}
               </h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Date</h4>
+                  <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('eventDetail.date')}
+                  </h4>
                   <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{formattedDate}</p>
                 </div>
                 <div>
-                  <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Location</h4>
+                  <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('eventDetail.location')}
+                  </h4>
                   <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{event.location}</p>
                 </div>
                 {!isPastEvent && eventDate >= currentDate && (
                   <div>
-                    <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Status</h4>
-                    <p className="text-green-600 font-medium">Registration Open</p>
+                    <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                      {t('eventDetail.status')}
+                    </h4>
+                    <p className="text-green-600 font-medium">{t('eventDetail.registrationOpen')}</p>
                     <button
                       onClick={() => setShowRegistrationModal(true)}
                       className={`mt-2 inline-block w-full text-center px-4 py-2 rounded-full ${theme === 'dark' ? 'bg-green-600 hover:bg-green-700' : 'bg-green-500 hover:bg-green-600'} text-white transition-colors`}
                     >
-                      Register Now
+                      {t('eventDetail.registerNow')}
                     </button>
                   </div>
                 )}
                 {isPastEvent && (
                   <div>
-                    <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>Status</h4>
-                    <p className={theme === 'dark' ? 'text-purple-300' : 'text-purple-600'}>Event Completed</p>
+                    <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                      {t('eventDetail.status')}
+                    </h4>
+                    <p className={theme === 'dark' ? 'text-purple-300' : 'text-purple-600'}>{t('eventDetail.eventCompleted')}</p>
                     <button 
                       className={`mt-2 inline-block w-full text-center px-4 py-2 rounded-full ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'} transition-colors`}
                     >
-                      View Event Photos
+                      {t('eventDetail.viewPhotos')}
                     </button>
                   </div>
                 )}

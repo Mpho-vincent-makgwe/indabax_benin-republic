@@ -1,9 +1,19 @@
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import { useTheme } from '../context/ThemeContext'; // Adjust path as needed
+import { useTheme } from '../context/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 const ConferenceSection: React.FC = () => {
-  const { theme } = useTheme(); // access current theme
+  const { theme } = useTheme();
+  const { t } = useTranslation();
+
+  const conferenceFeatures = [
+    'conference.features.technicalWorkshops',
+    'conference.features.inspiringKeynotes',
+    'conference.features.networkingSessions',
+    'conference.features.communityPanels',
+    'conference.features.researchShowcases',
+  ];
 
   return (
     <section
@@ -17,18 +27,18 @@ const ConferenceSection: React.FC = () => {
         <div className="relative flex-shrink-0 w-80 h-[420px]">
           <img
             src="/assets/speaker.jpg"
-            alt="Speaker"
+            alt={t('conference.speakerAlt')}
             className="rounded-xl w-full h-full object-cover shadow-lg"
           />
           <img
             src="/assets/audience.jpg"
-            alt="Audience"
+            alt={t('conference.audienceAlt')}
             className="absolute top-1/2 -right-16 transform -translate-y-1/2 rounded-xl w-40 h-56 object-cover shadow-md"
           />
           <div className={`absolute bottom-4 left-4 flex items-center gap-2 px-3 py-2 rounded-full shadow-md ${
             theme === 'dark' ? 'bg-gray-800' : 'bg-white'
           }`}>
-            <img src="/assets/community6.jpg" alt="Attendees" className="w-8 h-8 rounded-full" />
+            <img src="/assets/community6.jpg" alt={t('conference.attendeesAlt')} className="w-8 h-8 rounded-full" />
             <span className="text-orange-500 font-bold">2k</span>
           </div>
         </div>
@@ -36,20 +46,17 @@ const ConferenceSection: React.FC = () => {
         {/* Right: Text Content */}
         <div className="flex-1 max-w-xl">
           <p className="text-sm text-orange-500 uppercase font-semibold mb-2">
-            About Indaba X
+            {t('conference.aboutTitle')}
           </p>
           <h2
             className={`text-3xl md:text-4xl font-bold mb-4 ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
-            Empowering Africa Through AI & Collaboration
+            {t('conference.heading')}
           </h2>
           <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-6`}>
-            Indaba X is a local, grassroots gathering that brings the spirit of the Deep Learning Indaba
-            to communities across Africa. Our goal is to strengthen machine learning and AI in Africa by
-            creating inclusive spaces for learning, sharing, and connecting. From keynotes to hands-on sessions,
-            Indaba X offers a platform for collaboration, inspiration, and growth.
+            {t('conference.description')}
           </p>
 
           <ul
@@ -57,23 +64,17 @@ const ConferenceSection: React.FC = () => {
               theme === 'dark' ? 'text-gray-200' : 'text-gray-800'
             } mb-6`}
           >
-            {[
-              'Technical Workshops',
-              'Inspiring Keynotes',
-              'Networking Sessions',
-              'Community Panels',
-              'Research Showcases',
-            ].map((item, index) => (
+            {conferenceFeatures.map((featureKey:any,index)=> (
               <li key={index} className="flex items-center gap-2">
                 <FaCheckCircle className="text-green-500" />
-                {item}
+                {t(featureKey)}
               </li>
             ))}
           </ul>
 
           <div className="flex gap-4">
             <button className="bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-purple-700 transition duration-300">
-              Register Now
+              {t('conference.registerButton')}
             </button>
             <button
               className={`border text-orange-500 px-5 py-2 rounded-full text-sm font-semibold transition duration-300 ${
@@ -82,7 +83,7 @@ const ConferenceSection: React.FC = () => {
                   : 'border-orange-500 hover:bg-orange-100'
               }`}
             >
-              Venue Info
+              {t('conference.venueButton')}
             </button>
           </div>
         </div>

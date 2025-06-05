@@ -1,0 +1,626 @@
+{
+  "navbar": {
+    "about": "À propos",
+    "faq": "FAQ",
+    "events": "Événements",
+    "culture": "Culture",
+    "contact": "Contact",
+    "register": "S'inscrire",
+    "toggleTheme": "Changer le thème"
+  },
+  "home": {
+    "title": "IndabaX Bénin 2024",
+    "subtitle": "Rejoignez la principale conférence sur l'IA en Afrique et faites partie de la révolution technologique",
+    "register": "S'inscrire maintenant",
+    "upcomingEvents": "Événements à venir",
+    "viewAllEvents": "Voir tous les événements",
+    "mission": {
+      "title": "Notre Mission",
+      "content": "Améliorer les connaissances et renforcer les capacités en matière d'apprentissage automatique et d'intelligence artificielle au Bénin grâce à des initiatives communautaires et à une éducation accessible."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "content": "Renforcer l'apprentissage automatique et l'intelligence artificielle en Afrique en construisant une communauté dynamique et inclusive au Bénin qui favorise l'innovation et la collaboration."
+    },
+    "leaders": {
+      "title": "Rencontrez nos leaders",
+      "viewTeam": "Voir toute l'équipe"
+    },
+    "sponsors": {
+      "title": "Nos partenaires et sponsors",
+      "platinum": "Sponsors Platine",
+      "gold": "Sponsors Or",
+      "community": "Partenaires communautaires",
+      "becomeSponsor": "Vous souhaitez devenir sponsor?",
+      "sponsorText": "Rejoignez notre mission pour faire progresser l'IA en Afrique et obtenez de la visibilité auprès de notre communauté de chercheurs, développeurs et innovateurs.",
+      "contact": "Contactez notre équipe partenariats",
+         "names": {
+        "Google AI": "Google IA",
+        "DeepMind": "DeepMind",
+        "University of Abomey-Calavi": "Université d'Abomey-Calavi",
+        "African Union": "Union Africaine",
+        "AI for Development": "IA pour le développement",
+        "Techstars": "Techstars",
+        "Zindi Africa": "Zindi Afrique",
+        "Knowledge for All": "Savoir pour tous"
+      }
+    },
+    "countdownLeft": "Restant",
+    "happeningNow": "En cours maintenant!"
+  },
+  "communityEvents": {
+    "title": "Communauté et Événements",
+    "subtitle": "Rejoignez notre communauté dynamique d'innovateurs et d'agents du changement",
+    "upcomingEvents": "📅 Événements à venir",
+    "pastEvents": "📚 Événements passés",
+    "locationDate": "{{location}} - {{date}}",
+    "highlight": "Point fort",
+    "organisers": "Organisateurs",
+    "speakers": "Intervenants"
+  },
+  "conference": {
+    "aboutTitle": "À propos d'Indaba X",
+    "heading": "Renforcer l'Afrique grâce à l'IA et la collaboration",
+    "description": "Indaba X est un rassemblement local qui apporte l'esprit du Deep Learning Indaba aux communautés à travers l'Afrique. Notre objectif est de renforcer l'apprentissage automatique et l'IA en Afrique en créant des espaces inclusifs pour l'apprentissage, le partage et la connexion. Des conférences aux sessions pratiques, Indaba X offre une plateforme de collaboration, d'inspiration et de croissance.",
+    "features": {
+      "technicalWorkshops": "Ateliers techniques",
+      "inspiringKeynotes": "Conférences inspirantes",
+      "networkingSessions": "Sessions de réseautage",
+      "communityPanels": "Tables rondes communautaires",
+      "researchShowcases": "Présentations de recherche"
+    },
+    "registerButton": "S'inscrire maintenant",
+    "venueButton": "Infos sur le lieu",
+    "speakerAlt": "Conférencier à l'événement",
+    "audienceAlt": "Public de la conférence",
+    "attendeesAlt": "Participants à la conférence"
+  },
+   "about": {
+    "hero": {
+      "title": "À propos d'IndabaX Bénin",
+      "subtitle": "Renforcer l'Afrique grâce à l'innovation en IA, l'éducation et la communauté",
+      "missionButton": "Notre mission",
+      "eventsButton": "Voir les événements"
+    },
+    "nav": {
+      "purpose": "Objectif",
+      "whoWeAre": "Qui sommes-nous",
+      "network": "Notre réseau",
+      "mission": "Mission",
+      "activities": "Activités",
+      "team": "Notre équipe",
+      "impact": "Impact"
+    },
+    "purpose": {
+      "title": "Objectif du site",
+      "description": "Cette plateforme numérique connecte la communauté IA du Bénin avec des ressources, événements et opportunités. Nous comblons les lacunes de connaissances grâce à du contenu accessible, la coordination d'événements et la promotion de collaborations qui font progresser l'innovation en IA à travers l'Afrique."
+    },
+    "whoWeAre": {
+      "title": "Qui sommes-nous",
+      "description": "IndabaX Bénin est la section locale de Deep Learning Indaba, participant à un mouvement panafricain renforçant l'apprentissage automatique et l'IA à travers le continent. Nous unissons chercheurs, développeurs, étudiants et organisations passionnés par le potentiel transformateur de l'IA.",
+      "quote": "Notre vision est une Afrique où l'innovation en IA est conduite par des Africains, pour des Africains.",
+      "imageAlt": "Communauté technologique africaine"
+    },
+    "network": {
+      "title": "Notre réseau continental",
+      "description": "Le Bénin fait fièrement partie du réseau Deep Learning Indaba, rejoignant plus de 30 pays africains pour construire un écosystème IA autonome.",
+      "annualSummit": "Sommet annuel",
+      "annualSummitDesc": "Connexion avec les meilleurs esprits en IA d'Afrique",
+      "knowledgeSharing": "Partage de connaissances",
+      "knowledgeSharingDesc": "Accès à la recherche et aux ressources continentales",
+      "collaborations": "Collaborations",
+      "collaborationsDesc": "Projets conjoints avec d'autres chapitres africains"
+    },
+    "mission": {
+      "title": "Notre mission",
+      "subtitle": "Construire l'écosystème IA du Bénin grâce à l'éducation, la recherche et l'innovation éthique",
+      "education": "Éducation",
+      "educationDesc": "Démocratiser les connaissances en IA",
+      "research": "Recherche",
+      "researchDesc": "Développer des solutions IA locales",
+      "community": "Communauté",
+      "communityDesc": "Connecter les talents en IA du Bénin",
+      "growth": "Croissance",
+      "growthDesc": "Encourager la prochaine génération"
+    },
+    "activities": {
+      "title": "Nos activités",
+      "description": "Nous organisons des événements annuels qui rassemblent la communauté IA du Bénin :",
+      "item1": "Ateliers pratiques d'apprentissage automatique pour tous niveaux",
+      "item2": "Discussions et présentations d'articles de recherche",
+      "item3": "Tables rondes sur les carrières avec des leaders du secteur",
+      "item4": "Sessions de réseautage avec des experts internationaux en IA",
+      "item5": "Projets communautaires résolvant des défis locaux",
+      "imageAlt": "Session d'atelier"
+    },
+    "team": {
+      "title": "Rencontrez notre équipe",
+      "subtitle": "Des passionnés qui font avancer l'innovation en IA au Bénin",
+      "aurelle": {
+        "name": "Aurelle Ahouansou",
+        "role": "Co-organisatrice & Militante IA",
+        "bio": "Coordonne les événements IndabaX à travers le Bénin, favorisant un accès inclusif à l'éducation en apprentissage automatique."
+      },
+      "fabrice": {
+        "name": "Fabrice Gbaguidi",
+        "role": "Chercheur & Développeur",
+        "bio": "Connecte la recherche académique avec des applications concrètes dans l'agriculture et l'éducation utilisant l'IA."
+      }
+    },
+    "impact": {
+      "title": "Pourquoi c'est important",
+      "description": "L'avenir technologique de l'Afrique dépend de solutions IA locales adaptées aux défis locaux",
+      "healthcare": "Santé",
+      "healthcareDesc": "Diagnostics IA pour les zones rurales",
+      "agriculture": "Agriculture",
+      "agricultureDesc": "Solutions d'agriculture intelligente",
+      "finance": "Finance",
+      "financeDesc": "Innovations fintech inclusives"
+    },
+    "cta": {
+      "title": "Participez à la révolution IA du Bénin",
+      "subtitle": "Étudiants, chercheurs et passionnés de technologie - ensemble nous pouvons façonner l'avenir de l'IA en Afrique.",
+      "button": "Rejoignez notre communauté"
+    }
+  },
+  "common": {
+    "left": "restant",
+    "registerNow": "S'inscrire maintenant",
+    "speaker": "Conférencier",
+    "days": "jours",
+    "hours": "heures",
+    "minutes": "minutes",
+    "viewMore": "Voir plus",
+    "organizedBy": "Organisé par",
+    "responsibilities": "Responsabilités",
+    "expertise": "Expertise",
+    "topics": "Sujets",
+    "contact": "Contact",
+    "country": "Pays",
+    "organization": "Organisation",
+    "bio": "Biographie",
+    "feedback": "Témoignage",
+    "profession": "Profession",
+    "eventAttended": "Événement fréquenté",
+    "datePosted": "Date de publication",
+    "location": "Lieu",
+    "highlight": "Point fort",
+    "description": "Description",
+    "sponsorType": {
+      "platinum": "Sponsor Platine",
+      "gold": "Sponsor Or",
+      "academic": "Partenaire Académique",
+      "government": "Partenaire Gouvernemental",
+      "nonprofit": "Partenaire à but non lucratif",
+      "corporate": "Partenaire Corporatif",
+      "community": "Partenaire Communautaire"
+    },
+    "backToHome": "Retour à l'accueil",
+    "contactPrefix": "Contacter"
+  },
+  "events": {
+    "indaba2025": {
+      "title": "IA pour l'Afrique - IndabaX Bénin 2025",
+      "location": "Cotonou, Bénin",
+      "description": "Un rassemblement de premier plan axé sur l'avancement de la recherche et de la collaboration en IA à travers l'Afrique.",
+      "highlight": "Laboratoires pratiques d'IA, collaboration communautaire et présentations de recherche."
+    },
+    "aiYouthBenin": {
+      "title": "Camp jeunesse IA - Bénin",
+      "location": "Porto-Novo, Bénin",
+      "description": "Donner aux jeunes les moyens d'utiliser des outils d'IA et des sessions de mentorat.",
+      "highlight": "Défis de codage, projets d'équipe et journée de pitch startup."
+    },
+    "futureTechAfrica": {
+      "title": "FutureTech Afrique 2025",
+      "location": "Abomey, Bénin",
+      "description": "Explorer l'avenir de la technologie à travers le continent africain.",
+      "highlight": "Présentations technologiques, tables rondes et démonstrations futuristes."
+    }
+  },
+  "pastEvents": {
+    "indaba2024": {
+      "title": "IndabaX Bénin 2024",
+      "location": "Cotonou, Bénin",
+      "description": "Un événement historique axé sur l'éducation pratique en IA et ML au Bénin.",
+      "highlight": "Plus de 300 participants, 12 conférenciers et une journée complète de sessions pratiques de ML."
+    },
+    "makerfair2024": {
+      "title": "Foire des Inventeurs Locaux",
+      "location": "Parakou, Bénin",
+      "description": "Une exposition pour l'innovation communautaire et les technologies open-source.",
+      "highlight": "Célébration des inventeurs locaux, des textiles intelligents aux prototypes de drones."
+    }
+  },
+  "organizers": {
+    "emmanuel": {
+      "name": "Emmanuel D. Houngbo",
+      "role": "Responsable d'événement",
+      "bio": "Bâtisseur d'écosystème technologique menant des événements d'IA communautaires en Afrique de l'Ouest.",
+      "organization": "AI Bénin",
+      "country": "Bénin",
+      "expertise": ["Leadership communautaire", "Gestion des conférenciers"],
+      "responsibilities": ["Planification", "Coordination d'équipe", "Gestion des conférenciers"]
+    },
+    "aminatou": {
+      "name": "Aminatou Bello",
+      "role": "Responsable des partenariats",
+      "bio": "Penseuse stratégique connectant des partenaires locaux et mondiaux pour soutenir les jeunes dans la technologie.",
+      "organization": "Connect Africa",
+      "country": "Bénin",
+      "expertise": ["Sponsoring", "Engagement des donateurs"],
+      "responsibilities": ["Sponsoring", "Partenariats ONG", "Engagement des donateurs"]
+    },
+    "jules": {
+      "name": "Jules K. Agossa",
+      "role": "Coordinateur logistique",
+      "bio": "Responsable des opérations expérimenté assurant le bon déroulement des événements du début à la fin.",
+      "organization": "EventOps Afrique de l'Ouest",
+      "country": "Bénin",
+      "expertise": ["Gestion de lieu", "Restauration"],
+      "responsibilities": ["Gestion de lieu", "Restauration", "Support sur place"]
+    },
+    "sandrine": {
+      "name": "Sandrine Hounsa",
+      "role": "Responsable marketing et médias",
+      "bio": "Narratrice numérique amplifiant les histoires d'innovation africaine à travers les médias.",
+      "organization": "InnoMedia Afrique",
+      "country": "Bénin",
+      "expertise": ["Stratégie de médias sociaux", "Couverture en direct"],
+      "responsibilities": ["Médias sociaux", "Communiqués de presse", "Couverture en direct"]
+    },
+    "title": "Organisateurs d'événements",
+      "viewTeam": "Voir toute l'équipe",
+      "viewProfile": "Voir le profil →",
+      "roles": {
+        "Event Lead": "Responsable d'événement",
+        "Partnerships Lead": "Responsable des partenariats",
+        "Logistics Coordinator": "Coordinateur logistique",
+        "Marketing & Media Lead": "Responsable marketing et médias"
+      },
+      "expertise": {
+        "Community Leadership": "Leadership communautaire",
+        "Speaker Management": "Gestion des intervenants",
+        "Sponsorships": "Partenariats",
+        "Donor Engagement": "Engagement des donateurs",
+        "Venue Management": "Gestion des lieux",
+        "Catering": "Restauration",
+        "Social Media Strategy": "Stratégie de médias sociaux",
+        "Live Coverage": "Couverture en direct"
+      }
+  },
+  "speakers": {
+    "moustapha": {
+      "name": "Moustapha Cissé",
+      "role": "Co-fondateur",
+      "bio": "Ancien responsable de Google AI à Accra, défendant le développement éthique de l'IA en Afrique.",
+      "organization": "Institut Africain des Sciences Mathématiques",
+      "country": "Sénégal",
+      "topics": ["IA responsable", "Apprentissage automatique", "Collaboration de recherche"]
+    },
+    "shakir": {
+      "name": "Shakir Mohamed",
+      "role": "Directeur",
+      "bio": "Directeur de recherche chez DeepMind avec un vif intérêt pour l'équité et l'inclusion dans l'IA.",
+      "organization": "DeepMind",
+      "country": "Afrique du Sud",
+      "topics": ["Éthique de l'IA", "Apprentissage profond", "IA pour le bien social"]
+    },
+    "sara": {
+      "name": "Sara Hooker",
+      "role": "Chercheuse et militante en IA",
+      "bio": "Dirige des initiatives d'éducation en IA accessible et de recherche équitable à travers l'Afrique.",
+      "organization": "Cohere For AI",
+      "country": "États-Unis",
+      "topics": ["Accessibilité ML", "Équité en IA", "Éducation en IA"]
+    },
+    "aline": {
+      "name": "Dr. Aline Dossou",
+      "role": "Chercheuse en IA",
+      "bio": "Scientifique en IA béninoise travaillant à démocratiser la recherche en IA en Afrique francophone.",
+      "organization": "Université d'Abomey-Calavi",
+      "country": "Bénin",
+      "topics": ["Traitement du langage naturel", "IA en santé"]
+    },
+    "kossi": {
+      "name": "Kossi Mensah",
+      "role": "Ingénieur ML",
+      "bio": "Ingénieur logiciel construisant des solutions ML évolutives pour la logistique en temps réel.",
+      "organization": "LogiTech Afrique",
+      "country": "Togo",
+      "topics": ["ML Ops", "Vision par ordinateur", "Infrastructure de données"]
+    },
+    "fatima": {
+      "name": "Fatima Sow",
+      "role": "Scientifique des données",
+      "bio": "Scientifique des données donnant aux agriculteurs locaux des outils de prédiction des cultures alimentés par l'IA.",
+      "organization": "AgriTech Sénégal",
+      "country": "Sénégal",
+      "topics": ["IA en agriculture", "Analyse prédictive", "Données pour le développement"]
+    },
+    "jean": {
+      "name": "Jean Claude",
+      "role": "Militant de l'éthique de l'IA",
+      "bio": "Chercheur en éthique travaillant à l'élaboration de cadres pour une IA inclusive en Afrique.",
+      "organization": "Réseau d'éthique de l'IA",
+      "country": "Bénin",
+      "topics": ["Politique d'IA", "Cadres éthiques", "Gouvernance"]
+    }
+  },
+  "leaders": {
+    "emmanuel": {
+      "name": "Emmanuel D. Houngbo",
+      "role": "Responsable d'événement",
+      "bio": "Bâtisseur d'écosystème technologique menant des événements d'IA communautaires en Afrique de l'Ouest.",
+      "country": "Bénin",
+      "responsibilities": ["Planification", "Coordination d'équipe", "Gestion des conférenciers"]
+    },
+    "aminatou": {
+      "name": "Aminatou Bello",
+      "role": "Responsable des partenariats",
+      "bio": "Penseuse stratégique connectant des partenaires locaux et mondiaux pour soutenir les jeunes dans la technologie.",
+      "country": "Bénin",
+      "responsibilities": ["Sponsoring", "Partenariats ONG", "Engagement des donateurs"]
+    },
+    "jules": {
+      "name": "Jules K. Agossa",
+      "role": "Coordinateur logistique",
+      "bio": "Responsable des opérations expérimenté assurant le bon déroulement des événements du début à la fin.",
+      "country": "Bénin",
+      "responsibilities": ["Gestion de lieu", "Restauration", "Support sur place"]
+    },
+    "sandrine": {
+      "name": "Sandrine Hounsa",
+      "role": "Responsable marketing et médias",
+      "bio": "Narratrice numérique amplifiant les histoires d'innovation africaine à travers les médias.",
+      "country": "Bénin",
+      "responsibilities": ["Médias sociaux", "Communiqués de presse", "Couverture en direct"]
+    }
+  },
+  "testimonials": {
+    "title": "Témoignages de nos participants",
+    "subtitle": "Des voix authentiques de notre communauté.",
+    "readMore": "Lire plus de témoignages",
+
+    "claudine": {
+      "name": "Claudine A.",
+      "feedback": "L'événement IndabaX a changé ma vie. Je travaille maintenant sur mon premier projet ML !",
+      "profession": "Étudiante en informatique",
+      "location": "Cotonou, Bénin"
+    },
+    "issifou": {
+      "name": "Issifou T.",
+      "feedback": "C'était inspirant de rencontrer d'autres personnes passionnées par la technologie et la culture béninoise.",
+      "profession": "Passionné de technologie",
+      "location": "Porto-Novo, Bénin"
+    },
+    "awa": {
+      "name": "Awa D.",
+      "feedback": "Le camp jeunesse IA m'a aidé à découvrir mon intérêt pour la science des données !",
+      "profession": "Lycéenne",
+      "location": "Porto-Novo, Bénin"
+    },
+    "koffi": {
+      "name": "Koffi M.",
+      "feedback": "FutureTech Afrique m'a donné d'excellentes idées pour ma startup !",
+      "profession": "Entrepreneur",
+      "location": "Abomey, Bénin"
+    }
+  },
+  "footer": {
+    "title": "Restez informé des mises à jour d'IndabaX BJ",
+    "placeholder": "indaba@deepmind.com",
+    "subscribe": "S'abonner",
+    "description": "IndabaX BJ s'engage à autonomiser les talents locaux grâce à l'éducation en IA, la construction communautaire et l'innovation. Rejoignez-nous et faites partie de la prochaine révolution IA au Botswana !",
+    "about": "À propos",
+    "whoWeAre": "Qui sommes-nous",
+    "mission": "Notre mission",
+    "team": "Équipe",
+    "events": "Événements",
+    "upcoming": "À venir",
+    "past": "Moments forts passés",
+    "partner": "Devenez partenaire",
+    "contact": "Contact",
+    "getInTouch": "Contactez-nous",
+    "faq": "FAQs",
+    "support": "Support",
+    "copyright": "Autonomiser la prochaine génération de leaders en IA."
+  },
+  "culture": {
+    "title": "Culture & Communauté",
+    "subtitle": "Célébrer l'essence d'IndabaX Bénin : apprentissage, unité et patrimoine africain.",
+    "indabaX": {
+      "title": "L'Esprit IndabaX",
+      "description": "Au cœur d'IndabaX se trouve une culture de collaboration, d'apprentissage continu et de partage des connaissances entre générations.",
+      "points": [
+        "Apprentissage par la communauté",
+        "Mentorat et soutien",
+        "Problèmes locaux, solutions globales",
+        "Célébrer l'excellence africaine"
+      ]
+    },
+    "benin": {
+      "title": "Un Aperçu de la Culture Béninoise",
+      "description1": "La République du Bénin est riche en traditions, arts et valeurs. Des rythmes des tambours aux tissus vibrants des artisans locaux...",
+      "description2": "Nous embrassons notre identité tout en construisant l'avenir technologique de l'Afrique."
+    },
+    "traditions": {
+      "title": "🎨 Traditions & Mode de Vie",
+      "items": [
+        { "label": "Coutumes", "value": "Rituels vaudou, festivals royaux" },
+        { "label": "Musique", "value": "Rythmes percussifs" },
+        { "label": "Vêtements", "value": "Pagnes wax, robes Agbada" },
+        { "label": "Nourriture", "value": "Akassa, soupe d'egusi" }
+      ]
+    },
+    "multimedia": {
+      "title": "📽️ Culture en Mouvement",
+      "videoLabel": "Vidéo Culturelle Exemple",
+      "audioLabel": "Extrait de Percussion Traditionnelle"
+    },
+    "timeline": {
+      "title": "📜 Chronologie Culturelle",
+      "events": [
+        { "era": "1600s – Royaume du Dahomey", "description": "Connu pour ses guerrières et son gouvernement fort." },
+        { "era": "1800s – Résistance Culturelle", "description": "La colonisation n'a pas effacé l'héritage Vodun." },
+        { "era": "1960 – Indépendance", "description": "Une nouvelle ère d'expression culturelle commence." },
+        { "era": "Aujourd'hui – Technologie rencontre Tradition", "description": "Les innovateurs fusionnent l'IA avec le savoir culturel." }
+      ]
+    },
+    "gallery": {
+      "title": "📸 Moments Culturels"
+    },
+    "cta": {
+      "title": "Rejoignez Notre Culture du Changement",
+      "description": "Faites partie d'une communauté qui allie innovation et identité.",
+      "button": "Devenir Membre"
+    }
+  },
+  "faq": {
+    "title": "Foire Aux Questions",
+    "subtitle": "Trouvez des réponses aux questions courantes sur IndabaX Bénin",
+    "stillHaveQuestionsTitle": "Vous avez encore des questions ?",
+    "stillHaveQuestionsDesc": "Notre équipe se fera un plaisir de répondre à toutes vos autres questions concernant IndabaX Bénin.",
+    "contactUs": "Nous contacter",
+    "questions": [
+      {
+        "q": "Qu'est-ce qu'IndabaX Bénin et en quoi est-il différent de la Deep Learning Indaba principale ?",
+        "a": "IndabaX Bénin est notre chapitre local du mouvement continental Deep Learning Indaba. Alors que l'Indaba principale est une grande conférence panafricaine, notre IndabaX se concentre spécifiquement sur l'écosystème de l'IA au Bénin avec du contenu localement pertinent, des sessions bilingues en français/anglais et des activités de renforcement communautaire adaptées aux besoins de notre région."
+      },
+      {
+        "q": "Qui peut assister aux événements d'IndabaX Bénin ?",
+        "a": "Nos événements sont ouverts à toutes les personnes passionnées par l'IA ! Nous accueillons les étudiants, chercheurs, professionnels et même les débutants curieux. Certains ateliers peuvent avoir des prérequis qui seront clairement indiqués dans les détails de l’événement. Pour notre conférence annuelle, nous priorisons les résidents béninois mais accueillons également des participants internationaux."
+      },
+      {
+        "q": "Dois-je payer pour assister à vos événements ?",
+        "a": "La plupart de nos événements réguliers sont entièrement gratuits grâce à nos sponsors. Pour les conférences plus importantes, nous pouvons facturer un petit montant (généralement entre 5 000 et 10 000 XOF pour les étudiants) pour couvrir les frais de location, mais nous offrons toujours des bourses et réductions pour ceux qui en ont besoin. Personne n'est exclu pour des raisons financières."
+      },
+      {
+        "q": "Je débute en IA. Par où commencer ?",
+        "a": "Bienvenue dans la communauté ! Nous vous recommandons de commencer avec nos ateliers mensuels « Bases de l'IA » et de rejoindre nos groupes d'étude pour débutants. Notre site web propose également une section de ressources avec des supports d’apprentissage en français et en anglais. De nombreux membres ont commencé sans aucune base et développent aujourd’hui des projets en apprentissage automatique !"
+      },
+      {
+        "q": "Comment puis-je devenir intervenant ou animateur d'atelier ?",
+        "a": "Nous recherchons toujours des intervenants passionnés ! Il n’est pas nécessaire d’être un expert – il suffit d’avoir des connaissances sur un sujet et l’envie de partager. Soumettez une proposition via notre page « S’impliquer ». Pour les premières fois, nous offrons un accompagnement pour préparer votre session."
+      },
+      {
+        "q": "Quelles sont vos mesures de sécurité COVID-19 ?",
+        "a": "Nous suivons toutes les directives sanitaires du gouvernement béninois. Les événements en présentiel nécessitent une preuve de vaccination ou un test négatif, et nous mettons à disposition des stations de désinfection. De nombreuses sessions sont également diffusées en ligne, et nous avons renforcé nos capacités d’événements hybrides pour ceux qui préfèrent participer à distance."
+      },
+      {
+        "q": "Mon organisation peut-elle collaborer avec IndabaX Bénin ?",
+        "a": "Absolument ! Nous collaborons avec des universités, des entreprises tech, des ONG et des agences gouvernementales. Les opportunités de partenariat vont du sponsoring d’événements à l’accueil d’ateliers ou à la mise à disposition de lieux. Contactez notre équipe partenariats à partners@indabax-benin.org pour en discuter."
+      },
+      {
+        "q": "Comment rester informé des prochains événements ?",
+        "a": "Rejoignez notre communauté WhatsApp (lien sur la page d'accueil), suivez-nous sur Twitter @IndabaXBenin, et abonnez-vous à notre newsletter mensuelle. Nous annonçons les événements 4 à 6 semaines à l'avance, avec des périodes d'inscription anticipée pour les ateliers populaires."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez IndabaX Benin 🇧🇯",
+    "venue": {
+      "title": "Lieu",
+      "address": "Université d'Abomey-Calavi, République du Bénin"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "phone": {
+      "title": "Téléphone"
+    },
+    "website": {
+      "title": "Site Web"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "message": "Votre message",
+      "submit": "Envoyer le message"
+    },
+    "map": {
+      "title": "📍 Université d'Abomey-Calavi sur la carte"
+    }
+  },
+  "eventDetail": {
+    "notFound": {
+      "title": "Événement introuvable",
+      "message": "L'événement que vous recherchez n'existe pas.",
+      "browseEvents": "Voir tous les événements"
+    },
+    "pastEvent": "Événement passé",
+    "upcomingEvent": "Événement à venir",
+    "registerNow": "S'inscrire maintenant",
+    "aboutEvent": "À propos de cet événement",
+    "eventHighlight": "Point fort de l'événement",
+    "featuredSpeakers": "Conférenciers vedettes",
+    "eventOrganisers": "Organisateurs de l'événement",
+    "eventDetails": "Détails de l'événement",
+    "date": "Date",
+    "location": "Lieu",
+    "status": "Statut",
+    "registrationOpen": "Inscription ouverte",
+    "eventCompleted": "Événement terminé",
+    "viewPhotos": "Voir les photos de l'événement",
+    "modal": {
+      "title": "Postuler pour {eventTitle}",
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Numéro de téléphone",
+      "organization": "Organisation",
+      "dietaryRequirements": "Exigences alimentaires",
+      "dietaryPlaceholder": "Des allergies ou des restrictions alimentaires?",
+      "specialNeeds": "Besoins spéciaux",
+      "specialNeedsPlaceholder": "Des besoins d'accessibilité?",
+      "submit": "Soumettre la demande"
+    }
+  },
+   "testimonialsPage": {
+    "addTestimonial": "Ajouter un témoignage",
+    "submitSuccess": "Merci pour votre témoignage !",
+    "form": {
+      "title": "Partagez votre expérience",
+      "name": "Votre nom",
+      "feedback": "Votre témoignage",
+      "profession": "Votre profession",
+      "location": "Votre localisation",
+      "eventAttended": "Événement participé",
+      "selectEvent": "Sélectionnez un événement",
+      "submit": "Soumettre le témoignage"
+    }
+  },
+   "team": {
+    "title": "Notre Équipe",
+    "leadership": "Direction",
+    "organizers": "Organisateurs",
+    "featuredSpeakers": "Conférenciers vedettes"
+  },
+  "speakerDetail": {
+    "notFound": {
+      "title": "Conférencier non trouvé",
+      "message": "Conférencier avec l'ID \"{speakerId}\" non trouvé.",
+      "availableIds": "IDs disponibles"
+    }
+  },
+  "organizerDetail": {
+    "notFound": {
+      "title": "Organisateur non trouvé",
+      "message": "Organisateur avec l'ID \"{organiserId}\" non trouvé.",
+      "availableIds": "IDs disponibles"
+    }
+  },
+  "leaderDetail": {
+    "notFound": {
+      "title": "Leader non trouvé",
+      "message": "Leader avec l'ID \"{leaderId}\" non trouvé.",
+      "availableIds": "IDs disponibles"
+    },
+    "biography": "Biographie",
+    "responsibilities": "Responsabilités de l'événement",
+    "info": "Informations sur le leader",
+    "role": "Rôle",
+    "organization": "Organisation",
+    "country": "Pays"
+  }
+}

@@ -6,13 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
 import type { Route } from "./+types/root";
 import "./app.css";
-
-import Footer2 from "./components/Footer2"
-import Navbar from "./components/Navbar"
-import { ThemeProvider } from "./context/ThemeContext"
+import Footer2 from "./components/Footer2";
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./context/ThemeContext";
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -37,23 +37,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ThemeProvider>
-          <Navbar />
-          
-          {/* Wrap content with padding to avoid being hidden behind navbar */}
-          <main className="pt-16">
-            {children}
-          </main>
-
-          <Footer2 />
-        </ThemeProvider>
+        <I18nextProvider i18n={i18n}>
+          <ThemeProvider>
+            <Navbar />
+            <main className="pt-16">
+              {children}
+            </main>
+            <Footer2 />
+          </ThemeProvider>
+        </I18nextProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 }
-
 
 export default function App() {
   return <Outlet />;

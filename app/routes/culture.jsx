@@ -1,11 +1,23 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { SparklesIcon, FilmIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
 
-const culture = () => {
+const Culture = () => {
   const { theme } = useTheme();
+  const { t, ready } = useTranslation();
 
   const isDark = theme === 'dark';
+
+if(!ready){
+  return(
+    <h1>translating</h1>
+  )
+}
+  // Get array data safely
+  const indabaXPoints = t('culture.indabaX.points', { returnObjects: true });
+  const traditionItems = t('culture.traditions.items', { returnObjects: true }) ;
+  const timelineEvents = t('culture.timeline.events', { returnObjects: true }) ;
 
   return (
     <div className={`${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'} min-h-screen transition`}>
@@ -17,9 +29,11 @@ const culture = () => {
           className="absolute inset-0 w-full h-full object-cover blur-sm opacity-70"
         />
         <div className="relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">Culture & Community</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
+            {t('culture.title')}
+          </h1>
           <p className="text-lg max-w-3xl mx-auto text-white">
-            Celebrating the heart of IndabaX Benin: learning, unity, and African heritage.
+            {t('culture.subtitle')}
           </p>
         </div>
       </section>
@@ -27,19 +41,17 @@ const culture = () => {
       {/* IndabaX Culture */}
       <section className="py-12 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-yellow-500 mb-6 flex items-center gap-2">
-          <SparklesIcon className="h-6 w-6" /> The IndabaX Spirit
+          <SparklesIcon className="h-6 w-6" /> {t('culture.indabaX.title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <p className="leading-relaxed">
-              At the core of IndabaX is a culture of collaboration, continuous learning, and
-              sharing knowledge across generations.
+              {t('culture.indabaX.description')}
             </p>
             <ul className="list-disc mt-4 ml-5 space-y-1">
-              <li>Learning through community</li>
-              <li>Mentorship and support</li>
-              <li>Local problems, global solutions</li>
-              <li>Celebrating African excellence</li>
+              {indabaXPoints.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
             </ul>
           </div>
           <img
@@ -53,7 +65,7 @@ const culture = () => {
       {/* Benin Culture */}
       <section className={`${isDark ? 'bg-gray-800' : 'bg-gray-100'} py-12 px-6 max-w-6xl mx-auto rounded-lg mt-8`}>
         <h2 className="text-3xl font-semibold text-red-500 mb-6 flex items-center gap-2">
-          <GlobeAltIcon className="h-6 w-6" /> A Glimpse of Benin's Culture
+          <GlobeAltIcon className="h-6 w-6" /> {t('culture.benin.title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <img
@@ -63,11 +75,10 @@ const culture = () => {
           />
           <div>
             <p className="leading-relaxed">
-              Benin Republic is rich in traditions, arts, and values. From the rhythmic
-              beats of drums to the vibrant fabrics of local artisans...
+              {t('culture.benin.description1')}
             </p>
             <p className="mt-4">
-              We embrace our identity while building Africa’s tech future.
+              {t('culture.benin.description2')}
             </p>
           </div>
         </div>
@@ -76,16 +87,16 @@ const culture = () => {
       {/* Traditions */}
       <section className="py-12 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-semibold text-green-600 mb-6 flex items-center gap-2">
-          {/* <PhotographIcon className="h-6 w-6" /> */}
-           🎨 Traditions & Lifestyle
+          {t('culture.traditions.title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <ul className="list-disc ml-5 space-y-2">
-              <li><strong>Customs:</strong> Voodoo rituals, royal festivals</li>
-              <li><strong>Music:</strong> Percussion-driven rhythms</li>
-              <li><strong>Dress:</strong> Wax prints, Agbada robes</li>
-              <li><strong>Food:</strong> Akassa, egusi soup</li>
+              {traditionItems.map((item, index) => (
+                <li key={index}>
+                  <strong>{item.label}:</strong> {item.value}
+                </li>
+              ))}
             </ul>
           </div>
           <img
@@ -99,7 +110,7 @@ const culture = () => {
       {/* Multimedia */}
       <section className={`${isDark ? 'bg-gray-800' : 'bg-gray-100'} py-12 px-6 max-w-6xl mx-auto rounded-lg`}>
         <h2 className="text-3xl font-semibold text-yellow-500 mb-6 text-center flex justify-center items-center gap-2">
-          <FilmIcon className="h-6 w-6" /> 📽️ Culture in Motion
+          <FilmIcon className="h-6 w-6" /> {t('culture.multimedia.title')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="rounded overflow-hidden shadow">
@@ -107,44 +118,38 @@ const culture = () => {
               <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <p className="text-center mt-2 text-sm">Placeholder Cultural Video</p>
+            <p className="text-center mt-2 text-sm">{t('culture.multimedia.videoLabel')}</p>
           </div>
           <div className="rounded overflow-hidden shadow">
             <audio controls className="w-full mt-4">
               <source src="/assets/benin-music.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
-            <p className="text-center mt-4 text-sm">Folk Percussion Sample</p>
+            <p className="text-center mt-4 text-sm">{t('culture.multimedia.audioLabel')}</p>
           </div>
         </div>
       </section>
 
       {/* Timeline */}
       <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold text-red-500 mb-10 text-center">📜 Cultural Timeline</h2>
+        <h2 className="text-3xl font-semibold text-red-500 mb-10 text-center">
+          {t('culture.timeline.title')}
+        </h2>
         <div className="space-y-8 border-l-4 border-green-500 pl-6">
-          <div>
-            <h3 className="font-bold text-lg text-green-600">1600s – Dahomey Kingdom</h3>
-            <p>Known for female warriors and strong governance.</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-lg text-yellow-500">1800s – Cultural Resistance</h3>
-            <p>Colonization didn’t erase the Vodun heritage.</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-lg text-red-500">1960 – Independence</h3>
-            <p>New era of cultural expression begins.</p>
-          </div>
-          <div>
-            <h3 className="font-bold text-lg text-green-600">Today – Tech meets Tradition</h3>
-            <p>Innovators merge AI with cultural knowledge.</p>
-          </div>
+          {timelineEvents.map((event, index) => (
+            <div key={index}>
+              <h3 className="font-bold text-lg text-green-600">{event.era}</h3>
+              <p>{event.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Image Gallery */}
       <section className="py-16 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold text-yellow-500 mb-6 text-center">📸 Cultural Moments</h2>
+        <h2 className="text-3xl font-semibold text-yellow-500 mb-6 text-center">
+          {t('culture.gallery.title')}
+        </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {Array(4).fill().map((_, i) => (
             <img
@@ -159,19 +164,21 @@ const culture = () => {
 
       {/* Call to Action */}
       <section className="bg-green-700 text-white py-12 text-center">
-        <h2 className="text-3xl font-bold text-white mb-4">Join Our Culture of Change</h2>
+        <h2 className="text-3xl font-bold text-white mb-4">
+          {t('culture.cta.title')}
+        </h2>
         <p className="text-lg max-w-2xl mx-auto mb-6">
-          Be part of a community that blends innovation with identity.
+          {t('culture.cta.description')}
         </p>
         <a
           href="/register"
           className="bg-white text-green-700 px-6 py-3 font-semibold rounded-full hover:bg-gray-200 transition"
         >
-          Become a Member
+          {t('culture.cta.button')}
         </a>
       </section>
     </div>
   );
 };
 
-export default culture;
+export default Culture;

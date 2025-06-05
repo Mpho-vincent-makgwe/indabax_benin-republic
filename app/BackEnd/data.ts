@@ -45,6 +45,7 @@ interface PastEvent {
 }
 
 interface Testimonial {
+  id: string;
   name: string;
   feedback: string;
   datePosted: string;
@@ -185,38 +186,43 @@ export const pastEvents: PastEvent[] = [
 
 export const testimonials: Testimonial[] = [
   {
+    id: 'claudine',
     name: 'Claudine A.',
     feedback: "The IndabaX event changed my life. I’m now working on my first ML project!",
     datePosted: '2024-12-15',
-    eventAttended: 'indaba2024', // links to pastEvents
+    eventAttended: 'indaba2024',
     location: 'Cotonou, Benin',
-    profession: 'Computer Science Student'
+    profession: 'Computer Science Student',
   },
   {
+    id: 'issifou',
     name: 'Issifou T.',
     feedback: 'It was inspiring to meet others passionate about tech and Beninese culture.',
     datePosted: '2024-12-20',
     eventAttended: 'indaba2024',
     location: 'Porto-Novo, Benin',
-    profession: 'Tech Enthusiast'
+    profession: 'Tech Enthusiast',
   },
   {
+    id: 'awa',
     name: 'Awa D.',
     feedback: 'AI Youth Camp helped me discover my interest in data science!',
     datePosted: '2025-07-10',
     eventAttended: 'aiYouthBenin',
     location: 'Porto-Novo, Benin',
-    profession: 'High School Student'
+    profession: 'High School Student',
   },
   {
+    id: 'koffi',
     name: 'Koffi M.',
     feedback: 'FutureTech Africa gave me great ideas for my startup!',
     datePosted: '2025-09-15',
     eventAttended: 'futureTechAfrica',
     location: 'Abomey, Benin',
-    profession: 'Entrepreneur'
+    profession: 'Entrepreneur',
   },
 ];
+
 
 
 export const speakers: Speaker[] = [
