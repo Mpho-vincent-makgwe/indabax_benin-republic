@@ -126,7 +126,7 @@ const Home = () => {
         {/* Background image with dark overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/hero/hh1.jpg" 
+            src="/assets/hero/hh1.jpeg"
             alt="Conference background"
             className="w-full h-full object-cover"
           />
@@ -143,7 +143,7 @@ const Home = () => {
           </p>
           
           {/* Digital clock style timer */}
-          <div className="mb-12 p-6 rounded-xl inline-block bg-gray-800/90 shadow-xl backdrop-blur-sm">
+          <div className="mb-12 p-6 rounded-xl inline-block  shadow-xl backdrop-blur-sm">
             <div className="flex items-center justify-center space-x-2 md:space-x-4">
               <div className="text-center">
                 <div className="text-3xl md:text-5xl font-mono font-bold text-green-400">
