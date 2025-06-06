@@ -1,6 +1,7 @@
 import React, { useEffect , useState } from "react";
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import Loader from '../components/Loader/Loader';
 
 const About = () => {
   const { theme } = useTheme();
@@ -13,7 +14,9 @@ const About = () => {
     }}, [ready]);
 
  if (loading) {
-    return <div>Loading translations...</div>;
+    return <div>
+      <Loader/>
+    </div>;
   }
   const networkItems = [
     { titleKey: "about.network.annualSummit", descKey: "about.network.annualSummitDesc" },

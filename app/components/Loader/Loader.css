@@ -1,0 +1,101 @@
+.loader {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(0deg);
+}
+
+.loader:before,
+.loader:after,
+.loader span {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+
+.loader:before {
+  animation: beforeAnim 2s infinite;
+}
+
+.loader:after {
+  animation: afterAnim 2s infinite;
+}
+
+.loader span {
+  animation: spanAnim 2s infinite;
+}
+
+@keyframes beforeAnim {
+  0% {
+    width: 0.5em;
+    box-shadow: 1.2em -0.6em rgba(0, 158, 73, 0.75), /* Green */
+                -1.2em -0.6em rgba(252, 209, 22, 0.75); /* Yellow */
+  }
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.6em rgba(0, 158, 73, 0.75), /* Green */
+                0 -0.6em rgba(252, 209, 22, 0.75); /* Yellow */
+  }
+  70% {
+    width: 0.5em;
+    box-shadow: -1.2em -0.6em rgba(0, 158, 73, 0.75), /* Green */
+                1.2em -0.6em rgba(252, 209, 22, 0.75); /* Yellow */
+  }
+  100% {
+    box-shadow: 1.2em -0.6em rgba(0, 158, 73, 0.75), /* Green */
+                -1.2em -0.6em rgba(252, 209, 22, 0.75); /* Yellow */
+  }
+}
+
+@keyframes afterAnim {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.6em 1.2em rgba(252, 209, 22, 0.75), /* Yellow */
+                -0.6em 1.2em rgba(232, 17, 35, 0.75); /* Red */
+  }
+  35% {
+    height: 2.5em;
+    box-shadow: 0.6em 0 rgba(252, 209, 22, 0.75), /* Yellow */
+                -0.6em 0 rgba(232, 17, 35, 0.75); /* Red */
+  }
+  70% {
+    height: 0.5em;
+    box-shadow: 0.6em -1.2em rgba(252, 209, 22, 0.75), /* Yellow */
+                -0.6em 1.2em rgba(232, 17, 35, 0.75); /* Red */
+  }
+  100% {
+    box-shadow: 0.6em 1.2em rgba(252, 209, 22, 0.75), /* Yellow */
+                -0.6em 1.2em rgba(232, 17, 35, 0.75); /* Red */
+  }
+}
+
+@keyframes spanAnim {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-1.2em);
+    background-color: rgba(232, 17, 35, 0.75); /* Red */
+  }
+  35% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+    background-color: rgba(0, 158, 73, 0.75); /* Green */
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(1.2em);
+    background-color: rgba(252, 209, 22, 0.75); /* Yellow */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) translateY(-1.2em);
+    background-color: rgba(232, 17, 35, 0.75); /* Red */
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+}

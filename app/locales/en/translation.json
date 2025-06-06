@@ -14,13 +14,14 @@
     "register": "Register Now",
     "upcomingEvents": "Upcoming Events",
     "viewAllEvents": "View All Events",
+    "learnMore": "Learn More",
     "mission": {
       "title": "Our Mission",
-      "content": "To enhance knowledge and build capacity in machine learning and artificial intelligence in Benin Republic through community-driven initiatives and accessible education."
+      "content": "To enhance knowledge and build capacity in machine learning and artificial intelligence in Benin through community-driven initiatives and accessible education."
     },
     "vision": {
       "title": "Our Vision",
-      "content": "To strengthen Machine Learning and Artificial Intelligence in Africa by building a vibrant, inclusive community in Benin Republic that fosters innovation and collaboration."
+      "content": "To strengthen Machine Learning and Artificial Intelligence in Africa by building a vibrant, inclusive community in Benin that fosters innovation and collaboration."
     },
     "leaders": {
       "title": "Meet Our Leaders",
@@ -34,7 +35,7 @@
       "becomeSponsor": "Want to become a sponsor?",
       "sponsorText": "Join our mission to advance AI in Africa and get visibility with our community of researchers, developers, and innovators.",
       "contact": "Contact Our Partnership Team",
-       "names": {
+      "names": {
         "Google AI": "Google AI",
         "DeepMind": "DeepMind",
         "University of Abomey-Calavi": "University of Abomey-Calavi",
@@ -48,6 +49,25 @@
     "countdownLeft": "Left",
     "happeningNow": "Happening Now!"
   },
+  "organizers": {
+    "title": "Organizing Committee",
+    "viewProfile": "View Profile",
+    "viewTeam": "View Full Team",
+    "roles": {
+      "chair": "Chair",
+      "co-chair": "Co-Chair",
+      "secretary": "Secretary",
+      "treasurer": "Treasurer",
+      "member": "Member"
+    },
+    "expertise": {
+      "machine_learning": "Machine Learning",
+      "deep_learning": "Deep Learning",
+      "nlp": "Natural Language Processing",
+      "computer_vision": "Computer Vision",
+      "data_science": "Data Science"
+    }
+  },
   "communityEvents": {
     "title": "Community & Events",
     "subtitle": "Join our vibrant community of innovators and changemakers",
@@ -58,10 +78,12 @@
     "organisers": "Organisers",
     "speakers": "Speakers"
   },
-   "conference": {
+  "conference": {
     "aboutTitle": "About Indaba X",
     "heading": "Empowering Africa Through AI & Collaboration",
     "description": "Indaba X is a local, grassroots gathering that brings the spirit of the Deep Learning Indaba to communities across Africa. Our goal is to strengthen machine learning and AI in Africa by creating inclusive spaces for learning, sharing, and connecting. From keynotes to hands-on sessions, Indaba X offers a platform for collaboration, inspiration, and growth.",
+    "whyAttendTitle": "Why Attend IndabaX?",
+    
     "features": {
       "technicalWorkshops": "Technical Workshops",
       "inspiringKeynotes": "Inspiring Keynotes",
@@ -69,11 +91,45 @@
       "communityPanels": "Community Panels",
       "researchShowcases": "Research Showcases"
     },
+    
+    "benefitTitles": [
+      "Expand Your Network",
+      "Learn from Experts",
+      "Career Opportunities",
+      "Cutting-edge Innovation"
+    ],
+    
+    "benefits": {
+      "networking": "Connect with 2000+ AI enthusiasts, researchers, and professionals from across Africa.",
+      "learning": "Gain practical skills through hands-on workshops led by industry leaders.",
+      "career": "Meet potential employers and discover job opportunities in AI and tech.",
+      "innovation": "Explore the latest AI research and applications transforming industries."
+    },
+    
+    "details": {
+      "titles": [
+        "Attendees",
+        "Date",
+        "Location",
+        "Sessions"
+      ],
+      "attendees": "2000+ Participants",
+      "date": "October 15-17, 2023",
+      "location": "Cotonou, Benin",
+      "sessions": "50+ Workshops & Talks"
+    },
+    
+    "eventHighlightTitle": "Annual AI Gathering",
+    "eventHighlightText": "Join the largest AI community event, featuring top speakers and innovators.",
+    
     "registerButton": "Register Now",
     "venueButton": "Venue Info",
+    "learnMoreButton": "Learn More",
+    
     "speakerAlt": "Speaker at conference",
     "audienceAlt": "Conference audience",
-    "attendeesAlt": "Conference attendees"
+    "attendeesAlt": "Conference attendees",
+    "mainImageAlt": "Conference attendees"
   },
   "about": {
     "hero": {

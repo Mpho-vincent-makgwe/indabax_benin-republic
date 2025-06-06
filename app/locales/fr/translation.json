@@ -14,6 +14,7 @@
     "register": "S'inscrire maintenant",
     "upcomingEvents": "Événements à venir",
     "viewAllEvents": "Voir tous les événements",
+    "learnMore": "En savoir plus",
     "mission": {
       "title": "Notre Mission",
       "content": "Améliorer les connaissances et renforcer les capacités en matière d'apprentissage automatique et d'intelligence artificielle au Bénin grâce à des initiatives communautaires et à une éducation accessible."
@@ -34,7 +35,7 @@
       "becomeSponsor": "Vous souhaitez devenir sponsor?",
       "sponsorText": "Rejoignez notre mission pour faire progresser l'IA en Afrique et obtenez de la visibilité auprès de notre communauté de chercheurs, développeurs et innovateurs.",
       "contact": "Contactez notre équipe partenariats",
-         "names": {
+      "names": {
         "Google AI": "Google IA",
         "DeepMind": "DeepMind",
         "University of Abomey-Calavi": "Université d'Abomey-Calavi",
@@ -48,6 +49,25 @@
     "countdownLeft": "Restant",
     "happeningNow": "En cours maintenant!"
   },
+  "organizers": {
+    "title": "Comité d'Organisation",
+    "viewProfile": "Voir le profil",
+    "viewTeam": "Voir toute l'équipe",
+    "roles": {
+      "chair": "Président",
+      "co-chair": "Co-président",
+      "secretary": "Secrétaire",
+      "treasurer": "Trésorier",
+      "member": "Membre"
+    },
+    "expertise": {
+      "machine_learning": "Apprentissage automatique",
+      "deep_learning": "Apprentissage profond",
+      "nlp": "Traitement du langage naturel",
+      "computer_vision": "Vision par ordinateur",
+      "data_science": "Science des données"
+    }
+  },
   "communityEvents": {
     "title": "Communauté et Événements",
     "subtitle": "Rejoignez notre communauté dynamique d'innovateurs et d'agents du changement",
@@ -58,10 +78,12 @@
     "organisers": "Organisateurs",
     "speakers": "Intervenants"
   },
-  "conference": {
+ "conference": {
     "aboutTitle": "À propos d'Indaba X",
     "heading": "Renforcer l'Afrique grâce à l'IA et la collaboration",
     "description": "Indaba X est un rassemblement local qui apporte l'esprit du Deep Learning Indaba aux communautés à travers l'Afrique. Notre objectif est de renforcer l'apprentissage automatique et l'IA en Afrique en créant des espaces inclusifs pour l'apprentissage, le partage et la connexion. Des conférences aux sessions pratiques, Indaba X offre une plateforme de collaboration, d'inspiration et de croissance.",
+    "whyAttendTitle": "Pourquoi participer à IndabaX ?",
+    
     "features": {
       "technicalWorkshops": "Ateliers techniques",
       "inspiringKeynotes": "Conférences inspirantes",
@@ -69,11 +91,45 @@
       "communityPanels": "Tables rondes communautaires",
       "researchShowcases": "Présentations de recherche"
     },
+    
+    "benefitTitles": [
+      "Élargissez votre réseau",
+      "Apprenez des experts",
+      "Opportunités de carrière",
+      "Innovation de pointe"
+    ],
+    
+    "benefits": {
+      "networking": "Connectez-vous avec plus de 2000 passionnés d'IA, chercheurs et professionnels venus de toute l'Afrique.",
+      "learning": "Acquérez des compétences pratiques lors d'ateliers dirigés par des leaders de l'industrie.",
+      "career": "Rencontrez des employeurs potentiels et découvrez des opportunités d'emploi dans l'IA et la tech.",
+      "innovation": "Explorez les dernières recherches et applications en IA qui transforment les industries."
+    },
+    
+    "details": {
+      "titles": [
+        "Participants",
+        "Date",
+        "Lieu",
+        "Sessions"
+      ],
+      "attendees": "Plus de 2000 participants",
+      "date": "15-17 octobre 2023",
+      "location": "Cotonou, Bénin",
+      "sessions": "Plus de 50 ateliers et conférences"
+    },
+    
+    "eventHighlightTitle": "Rassemblement annuel sur l'IA",
+    "eventHighlightText": "Participez au plus grand événement communautaire sur l'IA, avec des intervenants et des innovateurs de haut niveau.",
+    
     "registerButton": "S'inscrire maintenant",
     "venueButton": "Infos sur le lieu",
+    "learnMoreButton": "En savoir plus",
+    
     "speakerAlt": "Conférencier à l'événement",
     "audienceAlt": "Public de la conférence",
-    "attendeesAlt": "Participants à la conférence"
+    "attendeesAlt": "Participants à la conférence",
+    "mainImageAlt": "Participants à la conférence"
   },
    "about": {
     "hero": {
