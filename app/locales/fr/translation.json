@@ -2,6 +2,7 @@
   "navbar": {
     "about": "À propos",
     "faq": "FAQ",
+    "language": "French",
     "home": "Accueil",
     "events": "Événements",
     "culture": "Culture",
@@ -34,22 +35,30 @@
       "viewTeam": "Voir toute l'équipe"
     },
     "sponsors": {
-      "title": "Nos partenaires et sponsors",
-      "platinum": "Sponsors Platine",
-      "gold": "Sponsors Or",
-      "community": "Partenaires communautaires",
-      "becomeSponsor": "Vous souhaitez devenir sponsor?",
+      "title": "Nos Partenaires & Sponsors",
+      "subtitle": "Nous remercions nos partenaires qui rendent cet événement possible grâce à leur soutien et leur engagement pour l'avancement de l'IA en Afrique.",
+      "tiers": {
+        "platinum": "Sponsors Platine",
+        "gold": "Sponsors Or",
+        "silver": "Sponsors Argent",
+        "bronze": "Sponsors Bronze",
+        "community": "Partenaires Communautaires",
+        "media": "Partenaires Médias",
+        "institutional": "Partenaires Institutionnels"
+      },
+      "becomeSponsor": "Devenir sponsor?",
       "sponsorText": "Rejoignez notre mission pour faire progresser l'IA en Afrique et obtenez de la visibilité auprès de notre communauté de chercheurs, développeurs et innovateurs.",
-      "contact": "Contactez notre équipe partenariats",
+      "contact": "Contactez Notre Équipe de Partenariat",
+      "learnMore": "En savoir plus sur le parrainage",
       "names": {
-        "Google AI": "Google IA",
+        "Google AI": "Google AI",
         "DeepMind": "DeepMind",
         "University of Abomey-Calavi": "Université d'Abomey-Calavi",
         "African Union": "Union Africaine",
-        "AI for Development": "IA pour le développement",
+        "AI for Development": "IA pour le Développement",
         "Techstars": "Techstars",
         "Zindi Africa": "Zindi Afrique",
-        "Knowledge for All": "Savoir pour tous"
+        "Knowledge for All": "Savoir pour Tous"
       }
     },
     "countdownLeft": "Restant",

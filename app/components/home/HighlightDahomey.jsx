@@ -46,7 +46,7 @@ const HighlightDahomey = () => {
 
   return (
     <motion.section 
-      className={`max-w-7xl mx-auto px-6 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'}`}
+      className={`max-w-7xl mx-auto px-6 ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}

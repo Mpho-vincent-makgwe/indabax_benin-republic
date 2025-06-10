@@ -361,49 +361,49 @@ export const sponsors: Sponsor[] = [
     id: 'deepmind',
     name: 'DeepMind',
     type: 'gold',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/DeepMind_logo.svg',
+    logo: 'https://th.bing.com/th/id/R.25d83a34b16db391afbeeeca044a5fbd?rik=FTfCsIkntnZ5cQ&pid=ImgRaw&r=0',
     url: 'https://deepmind.com/'
   },
   {
     id: 'university',
     name: 'University of Abomey-Calavi',
     type: 'academic',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/University_of_Benin_logo.png',
+    logo: 'https://tse1.mm.bing.net/th/id/OIP.U48Q3bWoA6YwW7PPej3reQHaHy?rs=1&pid=ImgDetMain',
     url: 'https://uac.bj/'
   },
   {
     id: 'african-union',
     name: 'African Union',
     type: 'government',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/African_Union_%28emblem%29.svg',
+    logo: 'https://tse2.mm.bing.net/th/id/OIP.C22kd1TdlodJdca7s7K1YgHaGl?rs=1&pid=ImgDetMain',
     url: 'https://au.int/'
   },
   {
     id: 'ai4d',
     name: 'AI for Development',
     type: 'nonprofit',
-    logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100',
+    logo: 'https://tse1.mm.bing.net/th/id/OIP.FhGUS9c_UpmXXXfsmjfdXQHaEY?rs=1&pid=ImgDetMain',
     url: 'https://ai4d.ai/'
   },
   {
     id: 'techstars',
     name: 'Techstars',
     type: 'corporate',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Techstars_logo.png',
+    logo: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/techstars_logo_icon_169642.png',
     url: 'https://www.techstars.com/'
   },
   {
     id: 'zindi',
     name: 'Zindi Africa',
     type: 'community',
-    logo: 'https://zindi-public-content.s3.eu-west-2.amazonaws.com/logos/Zindi+logo+square.png',
+    logo: 'https://th.bing.com/th/id/OIP.X6GC7_DM5QVpI3CmDOTG7QAAAA?o=7rm=3&rs=1&pid=ImgDetMain',
     url: 'https://zindi.africa/'
   },
   {
     id: 'k4a',
     name: 'Knowledge for All',
     type: 'nonprofit',
-    logo: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100',
+    logo: 'https://th.bing.com/th/id/R.47f348892ed81ae9bb31ea9710990c46?rik=VeOnrnXYrvioGg&riu=http%3a%2f%2fallvectorlogo.com%2fimg%2f2016%2f09%2fkb-knowledge-logo.png&ehk=MdsPVsx61Krwc9hjZwPNyKItp3dOx5LHGi7vRnY0SUA%3d&risl=&pid=ImgRaw&r=0',
     url: 'https://knowledgeforall.org/'
   }
 ];

@@ -18,12 +18,12 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { t, i18n } = useTranslation();
-  const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [activeLanguageButton, setActiveLanguageButton] = useState<'desktop' | 'tablet' | 'mobile' | null>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
-  const desktopLanguageButtonRef = useRef<HTMLButtonElement>(null);
-  const tabletLanguageButtonRef = useRef<HTMLButtonElement>(null);
-  const mobileLanguageButtonRef = useRef<HTMLButtonElement>(null);
+  const languageDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  const showLanguageDropdown = activeLanguageButton !== null;
 
   // Set French as default language if none is set
   useEffect(() => {
@@ -47,9 +47,17 @@ const Navbar: React.FC = () => {
     { path: '/contact', label: 'Contact', translationKey: 'navbar.contact' },
   ];
 
+  const toggleLanguageDropdown = (buttonType: 'desktop' | 'tablet' | 'mobile') => {
+    setActiveLanguageButton(activeLanguageButton === buttonType ? null : buttonType);
+  };
+
+  const closeLanguageDropdown = () => {
+    setActiveLanguageButton(null);
+  };
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng).then(() => {
-      setShowLanguageDropdown(false);
+      closeLanguageDropdown();
     });
   };
 
@@ -66,20 +74,9 @@ const Navbar: React.FC = () => {
         setIsOpen(false);
       }
       
-      const isOutsideDesktopLanguage = desktopLanguageButtonRef.current && 
-        !desktopLanguageButtonRef.current.contains(event.target as Node) && 
-        !(event.target as Element).closest('.desktop-language-button');
-      
-      const isOutsideTabletLanguage = tabletLanguageButtonRef.current && 
-        !tabletLanguageButtonRef.current.contains(event.target as Node) && 
-        !(event.target as Element).closest('.tablet-language-button');
-      
-      const isOutsideMobileLanguage = mobileLanguageButtonRef.current && 
-        !mobileLanguageButtonRef.current.contains(event.target as Node) && 
-        !(event.target as Element).closest('.mobile-language-button');
-      
-      if (isOutsideDesktopLanguage && isOutsideTabletLanguage && isOutsideMobileLanguage) {
-        setShowLanguageDropdown(false);
+      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target as Node) &&
+          !(event.target as Element).closest('.language-button')) {
+        closeLanguageDropdown();
       }
     };
 
@@ -92,11 +89,11 @@ const Navbar: React.FC = () => {
   // Close sidebar when a link is clicked
   const handleLinkClick = () => {
     setIsOpen(false);
-    setShowLanguageDropdown(false);
+    closeLanguageDropdown();
   };
 
   return (
-    <nav className={`fixed w-full z-50 shadow-md transition-colors duration-300 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+    <nav className={`fixed w-full z-50 shadow-md transition-colors duration-300 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo Section */}
@@ -114,25 +111,30 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Navigation - shown only on large screens */}
-          <div className="hidden lg:flex space-x-6 font-semibold items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`transition hover:text-green-600 px-2 py-1 rounded ${
-                  theme === 'dark' 
-                    ? `text-white hover:bg-gray-700 ${location.pathname === link.path ? 'bg-gray-700 text-green-400' : ''}`
-                    : `text-black hover:bg-gray-100 ${location.pathname === link.path ? 'bg-gray-100 text-green-600' : ''}`
-                }`}
-              >
-                {t(link.translationKey)}
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center justify-center flex-1">
+            <div className="flex space-x-4 font-medium items-center">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm transition hover:text-green-600 px-2 py-1 rounded ${
+                    theme === 'dark' 
+                      ? `text-white hover:bg-gray-700 ${location.pathname === link.path ? 'bg-gray-700 text-green-400' : ''}`
+                      : `text-black hover:bg-gray-100 ${location.pathname === link.path ? 'bg-gray-100 text-green-600' : ''}`
+                  }`}
+                >
+                  {t(link.translationKey)}
+                </Link>
+              ))}
+            </div>
+          </div>
 
+          {/* Right side buttons (Register, Language, Theme) */}
+          <div className="hidden lg:flex items-center space-x-4">
             {/* Register Button */}
             <Link
               to={latestEvent ? `/events/${latestEvent.id}` : '/events'}
-              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition font-medium shadow-md hover:shadow-lg"
+              className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition font-medium shadow-md hover:shadow-lg text-sm"
             >
               {t('navbar.register')}
             </Link>
@@ -140,26 +142,27 @@ const Navbar: React.FC = () => {
             {/* Language Selector */}
             <div className="relative">
               <button
-                ref={desktopLanguageButtonRef}
-                onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-                className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition desktop-language-button ${
+                onClick={() => toggleLanguageDropdown('desktop')}
+                className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition language-button ${
                   theme === 'dark' ? 'text-white' : 'text-black'
-                }`}
+                } ${activeLanguageButton === 'desktop' ? (theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100') : ''}`}
                 aria-label={t('navbar.language')}
                 aria-expanded={showLanguageDropdown}
                 aria-haspopup="true"
+                type="button"
               >
                 <Globe className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm uppercase">{i18n.language}</span>
-                {showLanguageDropdown ? (
+                {activeLanguageButton === 'desktop' ? (
                   <ChevronUp className="w-4 h-4" aria-hidden="true" />
                 ) : (
                   <ChevronDown className="w-4 h-4" aria-hidden="true" />
                 )}
               </button>
               
-              {showLanguageDropdown && (
+              {activeLanguageButton === 'desktop' && (
                 <div 
+                  ref={languageDropdownRef}
                   className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 z-50 border ${
                     theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                   }`}
@@ -179,6 +182,7 @@ const Navbar: React.FC = () => {
                             : 'text-black hover:bg-gray-100'
                       }`}
                       role="menuitem"
+                      type="button"
                     >
                       {lang.name}
                     </button>
@@ -190,8 +194,9 @@ const Navbar: React.FC = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="ml-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
               aria-label={t('navbar.toggleTheme')}
+              type="button"
             >
               {theme === 'dark' ? (
                 <Sun className="w-5 h-5 text-yellow-400" aria-hidden="true" />
@@ -207,7 +212,7 @@ const Navbar: React.FC = () => {
             {/* Register Button */}
             <Link
               to={latestEvent ? `/events/${latestEvent.id}` : '/events'}
-              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition font-medium shadow-md hover:shadow-lg"
+              className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition font-medium shadow-md hover:shadow-lg text-sm"
             >
               {t('navbar.register')}
             </Link>
@@ -216,19 +221,20 @@ const Navbar: React.FC = () => {
             <div className="flex items-center gap-2">
               <div className="relative">
                 <button
-                  ref={tabletLanguageButtonRef}
-                  onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-                  className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition tablet-language-button ${
+                  onClick={() => toggleLanguageDropdown('tablet')}
+                  className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition language-button ${
                     theme === 'dark' ? 'text-white' : 'text-black'
-                  }`}
+                  } ${activeLanguageButton === 'tablet' ? (theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100') : ''}`}
+                  type="button"
                 >
                   <Globe className="w-5 h-5" />
                   <span className="text-sm uppercase">{i18n.language}</span>
-                  {showLanguageDropdown ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  {activeLanguageButton === 'tablet' ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                 </button>
                 
-                {showLanguageDropdown && (
+                {activeLanguageButton === 'tablet' && (
                   <div 
+                    ref={languageDropdownRef}
                     className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg py-1 z-50 border ${
                       theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
                     }`}
@@ -246,6 +252,7 @@ const Navbar: React.FC = () => {
                               ? 'text-white hover:bg-gray-700' 
                               : 'text-black hover:bg-gray-100'
                         }`}
+                        type="button"
                       >
                         {lang.name}
                       </button>
@@ -257,6 +264,7 @@ const Navbar: React.FC = () => {
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                type="button"
               >
                 {theme === 'dark' ? (
                   <Sun className="w-5 h-5 text-yellow-400" />
@@ -266,14 +274,15 @@ const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Menu Button for Tablet */}
+            {/* Menu Button for Tablet - Show X when open */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition ${
                 theme === 'dark' ? 'text-white' : 'text-black'
               }`}
+              type="button"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
 
@@ -284,6 +293,7 @@ const Navbar: React.FC = () => {
               onClick={toggleTheme}
               className={`p-2 rounded-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}
               aria-label={t('navbar.toggleTheme')}
+              type="button"
             >
               {theme === 'dark' ? (
                 <Sun className="w-5 h-5 text-yellow-400" aria-hidden="true" />
@@ -299,6 +309,7 @@ const Navbar: React.FC = () => {
               className={`focus:outline-none mobile-menu-button ${theme === 'dark' ? 'text-white' : 'text-black'}`}
               aria-label={isOpen ? t('navbar.closeMenu') : t('navbar.openMenu')}
               aria-expanded={isOpen}
+              type="button"
             >
               {isOpen ? (
                 <>
@@ -333,12 +344,13 @@ const Navbar: React.FC = () => {
             } ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
           >
             <div className="flex flex-col h-full p-4">
-              {/* Close Button - hidden on tablet, shown on mobile */}
-              <div className="flex justify-end md:hidden">
+              {/* Close Button - shown on both tablet and mobile */}
+              <div className="flex justify-end">
                 <button
                   onClick={() => setIsOpen(false)}
                   className={`p-2 rounded-full ${theme === 'dark' ? 'text-white' : 'text-black'}`}
                   aria-label={t('navbar.closeMenu')}
+                  type="button"
                 >
                   <X size={24} aria-hidden="true" />
                 </button>
@@ -351,7 +363,7 @@ const Navbar: React.FC = () => {
                     key={link.path}
                     to={link.path}
                     onClick={handleLinkClick}
-                    className={`block px-4 py-3 rounded-lg transition ${
+                    className={`block px-4 py-3 rounded-lg transition text-sm ${
                       theme === 'dark' 
                         ? `text-white hover:bg-gray-700 ${location.pathname === link.path ? 'bg-gray-700 text-green-400' : ''}`
                         : `text-black hover:bg-gray-100 ${location.pathname === link.path ? 'bg-gray-100 text-green-600' : ''}`
@@ -371,27 +383,28 @@ const Navbar: React.FC = () => {
                 {/* Language Selector - hidden on tablet, shown on mobile */}
                 <div className="relative mt-4 md:hidden">
                   <button
-                    ref={mobileLanguageButtonRef}
-                    onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
-                    className={`flex items-center justify-between w-full px-4 py-3 rounded-lg mobile-language-button ${
+                    onClick={() => toggleLanguageDropdown('mobile')}
+                    className={`flex items-center justify-between w-full px-4 py-3 rounded-lg language-button text-sm ${
                       theme === 'dark' 
                         ? 'text-white hover:bg-gray-700' 
                         : 'text-black hover:bg-gray-100'
-                    }`}
+                    } ${activeLanguageButton === 'mobile' ? (theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100') : ''}`}
+                    type="button"
                   >
                     <span className="flex items-center">
                       <Globe className="w-5 h-5 mr-2" />
                       {t('navbar.language')}
                     </span>
-                    {showLanguageDropdown ? (
+                    {activeLanguageButton === 'mobile' ? (
                       <ChevronUp className="w-4 h-4" />
                     ) : (
                       <ChevronDown className="w-4 h-4" />
                     )}
                   </button>
                   
-                  {showLanguageDropdown && (
+                  {activeLanguageButton === 'mobile' && (
                     <div 
+                      ref={languageDropdownRef}
                       className={`mt-1 ml-4 rounded-md ${
                         theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100'
                       }`}
@@ -400,7 +413,7 @@ const Navbar: React.FC = () => {
                         <button
                           key={lang.code}
                           onClick={() => changeLanguage(lang.code)}
-                          className={`block w-full text-left px-4 py-2 text-sm rounded ${
+                          className={`block w-full text-left px-4 py-2 text-xs rounded ${
                             i18n.language === lang.code 
                               ? theme === 'dark' 
                                 ? 'bg-gray-600 text-green-400' 
@@ -409,6 +422,7 @@ const Navbar: React.FC = () => {
                                 ? 'text-white hover:bg-gray-600' 
                                 : 'text-black hover:bg-gray-200'
                           }`}
+                          type="button"
                         >
                           {lang.name}
                         </button>
@@ -417,11 +431,11 @@ const Navbar: React.FC = () => {
                   )}
                 </div>
 
-                {/* Register Button */}
+                {/* Register Button - shown on both mobile and tablet */}
                 <Link
                   to={latestEvent ? `/events/${latestEvent.id}` : '/events'}
                   onClick={handleLinkClick}
-                  className={`block mt-4 px-4 py-3 rounded-lg text-center font-medium ${
+                  className={`block mt-4 px-4 py-3 rounded-full text-center font-medium text-sm ${
                     theme === 'dark' 
                       ? 'bg-green-700 text-white hover:bg-green-600' 
                       : 'bg-green-600 text-white hover:bg-green-700'

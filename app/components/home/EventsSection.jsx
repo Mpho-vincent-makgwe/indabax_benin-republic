@@ -1,6 +1,7 @@
 import SectionHeader from "./SectionHeader";
 import EventCard from "./EventCard";
 import SectionLink from "./SectionLink";
+
 const EventsSection = ({ events, timers, theme, t }) => {
   const upcomingEvents = events
     .filter(event => new Date(event.date) > new Date())
@@ -8,7 +9,7 @@ const EventsSection = ({ events, timers, theme, t }) => {
     .slice(0, 3);
 
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'}`}>
+    <section className={`py-20 ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}>
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeader 
           title={t('home.upcomingEvents')} 
@@ -20,9 +21,7 @@ const EventsSection = ({ events, timers, theme, t }) => {
           {upcomingEvents.map((event) => (
             <div 
               key={event.id} 
-              className={`block overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-105 ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-white'
-              }`}
+              className="h-full" // Ensure the container takes full height
             >
               <EventCard event={event} timers={timers} />
             </div>
@@ -34,4 +33,5 @@ const EventsSection = ({ events, timers, theme, t }) => {
     </section>
   );
 };
+
 export default EventsSection;

@@ -2,6 +2,7 @@
   "navbar": {
     "about": "About",
     "faq": "FAQ",
+    "language": "English",
     "home": "Home",
     "events": "Events",
     "culture": "Culture",
@@ -35,12 +36,20 @@
     },
     "sponsors": {
       "title": "Our Partners & Sponsors",
-      "platinum": "Platinum Sponsors",
-      "gold": "Gold Sponsors",
-      "community": "Community Partners",
+      "subtitle": "We're grateful to our partners who make this event possible through their support and commitment to AI advancement in Africa.",
+      "tiers": {
+        "platinum": "Platinum Sponsors",
+        "gold": "Gold Sponsors",
+        "silver": "Silver Sponsors",
+        "bronze": "Bronze Sponsors",
+        "community": "Community Partners",
+        "media": "Media Partners",
+        "institutional": "Institutional Partners"
+      },
       "becomeSponsor": "Want to become a sponsor?",
       "sponsorText": "Join our mission to advance AI in Africa and get visibility with our community of researchers, developers, and innovators.",
       "contact": "Contact Our Partnership Team",
+      "learnMore": "Learn About Sponsorship",
       "names": {
         "Google AI": "Google AI",
         "DeepMind": "DeepMind",
