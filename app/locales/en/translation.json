@@ -2,6 +2,7 @@
   "navbar": {
     "about": "About",
     "faq": "FAQ",
+    "home": "Home",
     "events": "Events",
     "culture": "Culture",
     "contact": "Contact",
@@ -10,6 +11,11 @@
   },
   "home": {
     "title": "IndabaX Benin 2024",
+    "minutes": "MINUTES",
+    "hours": "HOURS",
+    "seconds": "SECONDS",
+    "days": "DAYS",
+    "aboutUs": "About Us",
     "subtitle": "Join Africa's premier AI conference and be part of the technological revolution",
     "register": "Register Now",
     "upcomingEvents": "Upcoming Events",
@@ -678,5 +684,12 @@
     "role": "Role",
     "organization": "Organization",
     "country": "Country"
+  },
+  "dahomey": {
+    "title": "The Warrior Women of Dahomey",
+    "description": "Discover the legacy of the fearless Dahomey Amazons, an all-female military regiment from the Benin Republic who defended their kingdom with extraordinary bravery.",
+    "quote": "They fought like warriors, stood like kings, and protected like mothers.",
+    "cta": "Learn Their Story",
+    "imageAlt": "Dahomey women warriors historical illustration"
   }
 }

@@ -2,6 +2,7 @@
   "navbar": {
     "about": "À propos",
     "faq": "FAQ",
+    "home": "Accueil",
     "events": "Événements",
     "culture": "Culture",
     "contact": "Contact",
@@ -10,6 +11,11 @@
   },
   "home": {
     "title": "IndabaX Bénin 2024",
+    "minutes": "MINUTES",
+    "hours": "HEURES",
+    "seconds": "SECONDES",
+    "days": "JOURS",
+    "aboutUs": "A propos de nous",
     "subtitle": "Rejoignez la principale conférence sur l'IA en Afrique et faites partie de la révolution technologique",
     "register": "S'inscrire maintenant",
     "upcomingEvents": "Événements à venir",
@@ -678,5 +684,12 @@
     "role": "Rôle",
     "organization": "Organisation",
     "country": "Pays"
+  },
+  "dahomey": {
+    "title": "Les Femmes Guerrières du Dahomey",
+    "description": "Découvrez l'héritage des courageuses Amazones du Dahomey, un régiment militaire entièrement féminin de la République du Bénin qui a défendu leur royaume avec une bravoure extraordinaire.",
+    "quote": "Elles combattaient comme des guerrières, se tenaient comme des rois et protégeaient comme des mères.",
+    "cta": "Découvrir leur histoire",
+    "imageAlt": "Illustration historique des femmes guerrières du Dahomey"
   }
 }

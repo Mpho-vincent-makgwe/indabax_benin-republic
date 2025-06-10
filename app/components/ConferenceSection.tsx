@@ -58,7 +58,7 @@ const ConferenceSection: React.FC = () => {
   ];
 
   return (
-    <section className={`w-full py-16 px-4 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+    <section className={`max-w-7xl mx-auto px-6 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto">
         {/* Hero Section with Image and Main Info */}
         <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
@@ -66,7 +66,7 @@ const ConferenceSection: React.FC = () => {
           <div className="lg:w-1/2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/assets/conference-main.jpg"
+                src="/assets/aiconference.jpg"
                 alt={t('conference.mainImageAlt')}
                 className="w-full h-auto object-cover aspect-video"
               />
