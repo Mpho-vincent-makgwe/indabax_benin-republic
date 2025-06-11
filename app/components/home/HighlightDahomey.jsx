@@ -8,6 +8,33 @@ const HighlightDahomey = () => {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
+  // Pattern SVG for the text background
+  const PatternSVG = () => (
+    <svg 
+      className="absolute inset-0 w-full h-full opacity-20" 
+      preserveAspectRatio="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <pattern 
+        id="pattern-123" 
+        width="20" 
+        height="20" 
+        patternUnits="userSpaceOnUse"
+        patternTransform="rotate(45)"
+      >
+        <line 
+          x1="0" 
+          y1="0" 
+          x2="0" 
+          y2="20" 
+          stroke={theme === 'dark' ? '#ffffff' : '#000000'} 
+          strokeWidth="0.5"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#pattern-123)" />
+    </svg>
+  );
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -32,61 +59,59 @@ const HighlightDahomey = () => {
     }
   };
 
-  const imageVariants = {
-    hidden: { scale: 0.95, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <motion.section 
-      className={`max-w-7xl mx-auto px-6 ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}
+      className="relative w-full min-h-screen flex items-center justify-start overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image with enhanced animation */}
-          <motion.div 
-            className="relative h-96 rounded-2xl overflow-hidden shadow-2xl"
-            variants={imageVariants}
-          >
-            <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-gray-900/30' : 'bg-yellow-100/20'}`}></div>
-            <img
-              src="/assets/dahomey-woman.jpg"
-              alt={t('dahomey.imageAlt')}
-              className="absolute h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div className={`absolute inset-0 bg-gradient-to-t ${theme === 'dark' ? 'from-gray-900/80 via-gray-900/20' : 'from-white/80 via-white/20'} to-transparent`}></div>
-          </motion.div>
+      {/* Background image with gradient overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="/assets/dahomey-woman.jpg"
+          alt={t('dahomey.imageAlt')}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+      </div>
 
+      {/* Content container with pattern */}
+      <motion.div 
+        className="relative z-10 max-w-2xl px-8 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32 xl:px-24"
+        variants={containerVariants}
+      >
+        <div className="relative">
+          {/* Pattern overlay - only visible on text area */}
+          <div className="absolute -left-8 -right-8 top-0 bottom-0 overflow-hidden">
+            <PatternSVG />
+          </div>
+          
           {/* Content */}
-          <motion.div variants={itemVariants} className="space-y-6">
-            
-              
-           <SectionHeader title={t('dahomey.title')} theme={theme} underlineColor={`green-600`}/>
+          <div className="relative space-y-8">
+            <motion.div variants={itemVariants}>
+              <SectionHeader 
+                title={t('dahomey.title')} 
+                theme={theme} 
+                underlineColor="green-600"
+                textColor={theme === 'dark' ? 'text-white' : 'text-white'}
+              />
+            </motion.div>
             
             <motion.p 
-              className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}
+              className={`text-lg leading-relaxed ${theme === 'dark' ? 'text-gray-200' : 'text-gray-100'}`}
               variants={itemVariants}
             >
               {t('dahomey.description')}
             </motion.p>
             
             <motion.div 
-              className={`p-6 rounded-xl border-l-4 ${theme === 'dark' ? 'bg-gray-700 border-green-500' : 'bg-green-50 border-green-600'}`}
+              className={`p-6 rounded-xl border-l-4 ${theme === 'dark' ? 'bg-black/40 border-green-500' : 'bg-white/20 border-green-600'}`}
               variants={itemVariants}
             >
-              <p className={`italic ${theme === 'dark' ? 'text-green-300' : 'text-green-800'}`}>
+              <p className={`italic ${theme === 'dark' ? 'text-green-300' : 'text-green-200'}`}>
                 "{t('dahomey.quote')}"
               </p>
             </motion.div>
@@ -102,9 +127,9 @@ const HighlightDahomey = () => {
                 </svg>
               </a>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };
