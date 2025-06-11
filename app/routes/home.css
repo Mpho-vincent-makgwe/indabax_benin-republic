@@ -1,16 +1,22 @@
-@tailwind utilities;
+/* Marquee Styles */
+marquee {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
 
-@layer utilities {
-  @keyframes pulseBg {
-    0%, 100% {
-      background-color: rgba(255, 255, 255, 0.7);
-    }
-    50% {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-  }
+.sponsor-tier-container {
+  width: 100%;
+  overflow: hidden;
+}
 
-  .animate-bg-pulse {
-    animation: pulseBg 4s ease-in-out infinite;
-  }
+/* Sponsor logo hover effects */
+.sponsor-tier-container a {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sponsor-tier-container a:hover {
+  transform: scale(1.05);
+  opacity: 1 !important;
 }

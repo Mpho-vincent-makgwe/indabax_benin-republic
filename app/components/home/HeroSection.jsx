@@ -32,10 +32,11 @@ const HeroSection = ({ heroEvent, heroCountdown, t, latestEvent }) => {
             <CountdownItem value={heroCountdown.minutes} label={t('home.minutes')} />
             <Divider />
             <CountdownItem value={heroCountdown.seconds} label={t('home.seconds')} />
-          </div>
-          <div className="mt-4 text-lg text-gray-300">
+            <div className="mt-4 text-lg text-gray-300">
             {heroCountdown.days > 0 || heroCountdown.hours > 0 ? t('home.countdownLeft') : t('home.happeningNow')}
           </div>
+          </div>
+          
         </div>
         
         <div className="flex justify-center">

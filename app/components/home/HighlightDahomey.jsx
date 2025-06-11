@@ -61,26 +61,26 @@ const HighlightDahomey = () => {
 
   return (
     <motion.section 
-      className="relative w-full min-h-screen flex items-center justify-start overflow-hidden"
+      className="relative w-full h-[80vh] flex items-center justify-start overflow-hidden"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      {/* Background image with gradient overlay */}
+      {/* Background image with gradient overlay - static positioning */}
       <div className="absolute inset-0 w-full h-full">
         <img
           src="/assets/dahomey-woman.jpg"
           alt={t('dahomey.imageAlt')}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover static"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
       </div>
 
       {/* Content container with pattern */}
       <motion.div 
-        className="relative z-10 max-w-2xl px-8 py-16 md:px-12 md:py-24 lg:px-16 lg:py-32 xl:px-24"
+        className="relative z-10 max-w-2xl px-8 py-16 md:px-12 lg:px-16 xl:px-24"
         variants={containerVariants}
       >
         <div className="relative">
@@ -90,13 +90,13 @@ const HighlightDahomey = () => {
           </div>
           
           {/* Content */}
-          <div className="relative space-y-8">
-            <motion.div variants={itemVariants}>
+          <div className="relative space-y-6">
+            <motion.div variants={itemVariants} className="text-left">
               <SectionHeader 
                 title={t('dahomey.title')} 
                 theme={theme} 
                 underlineColor="green-600"
-                textColor={theme === 'dark' ? 'text-white' : 'text-white'}
+                textColor={theme === 'dark' ? 'text-white' : 'text-gray-50'}
               />
             </motion.div>
             

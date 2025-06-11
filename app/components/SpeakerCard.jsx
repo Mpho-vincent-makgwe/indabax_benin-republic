@@ -11,7 +11,11 @@ const SpeakerCard = ({ spk }) => {
 
   return (
     <Link to={`/speakers/${spk.id}`} passHref>
-      <div className={`relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+      <div className={`relative overflow-hidden rounded-lg transition-shadow duration-300 cursor-pointer hover:shadow-lg ${
+        theme === 'dark' 
+          ? 'bg-black shadow-lg shadow-white/10 border border-white/20' 
+          : 'bg-white shadow-md'
+      }`}>
         <div className="relative pb-[80%] bg-gray-100">
           <img 
             src={spk.image} 
@@ -23,7 +27,11 @@ const SpeakerCard = ({ spk }) => {
           <h3 className="text-lg font-bold text-white">{t(`speakers.${spk.id}.name`)}</h3>
           <p className="text-sm text-gray-200">{t(`speakers.${spk.id}.role`)}</p>
         </div>
-        <div className={`absolute top-2 right-2 rounded-full px-2 py-1 text-xs font-semibold ${theme === 'dark' ? 'bg-gray-700/90 text-white' : 'bg-white/90 text-gray-900'}`}>
+        <div className={`absolute top-2 right-2 rounded-full px-2 py-1 text-xs font-semibold ${
+          theme === 'dark' 
+            ? 'bg-gray-900/90 text-white' 
+            : 'bg-white/90 text-gray-900'
+        }`}>
           {t('common.speaker')}
         </div>
       </div>

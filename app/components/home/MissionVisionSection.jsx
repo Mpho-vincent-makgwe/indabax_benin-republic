@@ -12,13 +12,13 @@ const MissionVisionSection = ({ theme, t }) => {
         <MissionVisionCard 
           title={t('home.mission.title')}
           theme={theme}
-          bgImage="/assets/mission-bg.jpg"
+          bgImage="/assets/hero.jpg"
           onClick={() => setActiveModal('mission')}
         />
         <MissionVisionCard 
           title={t('home.vision.title')}
           theme={theme}
-          bgImage="/assets/vision-bg.jpg"
+          bgImage="/assets/hero.jpg"
           onClick={() => setActiveModal('vision')}
         />
       </div>
