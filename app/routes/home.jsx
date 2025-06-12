@@ -12,6 +12,8 @@ import Loader from '../components/Loader/Loader';
 import HeroSection from '../components/home/HeroSection';
 import EventsSection from '../components/home/EventsSection';
 import HighlightDahomey from '../components/home/HighlightDahomey';
+import SectionHeader from '../components/home/SectionHeader';
+import SectionLink from '../components/home/SectionLink';
 import "./home.css";
 // Utility function moved outside
 const getCountdown = (date) => {
@@ -277,29 +279,7 @@ const SponsorsSection = ({ theme, t, translatedSponsors }) => {
   );
 };
 
-// Reusable Section Header Component
-const SectionHeader = ({ title, theme, underlineColor }) => (
-  <div className="text-center mb-16">
-    <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-      {title}
-    </h2>
-    <div className={`w-24 h-1 mx-auto ${underlineColor}`}></div>
-  </div>
-);
 
-// Reusable Section Link Component
-const SectionLink = ({ to, theme, text }) => (
-  <div className="text-center">
-    <Link 
-      to={to} 
-      className={`inline-block px-6 py-3 rounded-full font-medium ${
-        theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'
-      } transition-colors`}
-    >
-      {text}
-    </Link>
-  </div>
-);
 
 // Main Home Component
 const Home = () => {

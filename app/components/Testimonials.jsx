@@ -161,7 +161,7 @@ const Testimonials = () => {
                   className={`absolute w-full max-w-md ${
                     theme === 'dark' 
                       ? 'bg-black border-1 border-white shadow-lg shadow-white/20' 
-                      : 'bg-white border border-gray-200 shadow-lg'
+                      : 'bg-white border border-gray-300 shadow-lg'
                   } rounded-xl`}
                   style={{
                     left: '50%',

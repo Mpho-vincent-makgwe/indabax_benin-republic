@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import CountdownItem from "./CountdownItem";
-import  Divider  from "./Diveder";
+import Divider from "./Diveder";
 
 const HeroSection = ({ heroEvent, heroCountdown, t, latestEvent }) => {
   return (
@@ -24,19 +24,28 @@ const HeroSection = ({ heroEvent, heroCountdown, t, latestEvent }) => {
         </p>
         
         <div className="mb-12 p-6 rounded-xl inline-block shadow-xl backdrop-blur-sm">
-          <div className="flex items-center justify-center space-x-2 md:space-x-4">
-            <CountdownItem value={heroCountdown.days} label={t('home.days')} />
-            <Divider />
-            <CountdownItem value={heroCountdown.hours} label={t('home.hours')} />
-            <Divider />
-            <CountdownItem value={heroCountdown.minutes} label={t('home.minutes')} />
-            <Divider />
-            <CountdownItem value={heroCountdown.seconds} label={t('home.seconds')} />
-            <div className="mt-4 text-lg text-gray-300">
-            {heroCountdown.days > 0 || heroCountdown.hours > 0 ? t('home.countdownLeft') : t('home.happeningNow')}
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center space-x-2 md:space-x-4">
+              <CountdownItem value={heroCountdown.days} label={t('home.days')} />
+              <Divider />
+              <CountdownItem value={heroCountdown.hours} label={t('home.hours')} />
+              <Divider />
+              <CountdownItem value={heroCountdown.minutes} label={t('home.minutes')} />
+              <Divider />
+              <CountdownItem value={heroCountdown.seconds} label={t('home.seconds')} />
+            </div>
+            
+            {/* Updated status text - positioned below countdown with orange/yellow styling */}
+            <div className={`mt-3 text-lg font-semibold ${
+              heroCountdown.days > 0 || heroCountdown.hours > 0 
+                ? 'text-amber-600' 
+                : 'text-red-400'
+            }`}>
+              {heroCountdown.days > 0 || heroCountdown.hours > 0 
+                ? t('home.countdownLeft') 
+                : t('home.happeningNow')}
+            </div>
           </div>
-          </div>
-          
         </div>
         
         <div className="flex justify-center">
