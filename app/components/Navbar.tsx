@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
             <div className="relative">
               <button
                 onClick={() => toggleLanguageDropdown('desktop')}
-                className={`flex items-center gap-1 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition language-button ${
+                className={`flex items-center gap-1 p-2 rounded-full hover:bg-black hover:text-white   transition language-button ${
                   theme === 'dark' ? 'text-white' : 'text-black'
                 } ${activeLanguageButton === 'desktop' ? (theme === 'dark' ? 'bg-gray-700' : 'bg-gray-100') : ''}`}
                 aria-label={t('navbar.language')}

@@ -86,13 +86,20 @@
   "communityEvents": {
     "title": "Community & Events",
     "subtitle": "Join our vibrant community of innovators and changemakers",
-    "upcomingEvents": "📅 Upcoming Events",
-    "pastEvents": "📚 Past Events",
+    "events": "Events",
+    "past": "Past Event",
+    "upcoming": "Upcoming Event",
     "locationDate": "{{location}} - {{date}}",
     "highlight": "Highlight",
     "organisers": "Organisers",
-    "speakers": "Speakers"
-  },
+    "speakers": "Speakers",
+    "viewDetails": "View Details",
+    "noEvents": "No events scheduled at this time",
+    "cta": "Create Event",
+    "learnMore": "Learn More",
+    "upcomingEvents": "{{count}} Upcoming Events",
+    "pastEvents": "{{count}} Past Events"
+},
   "conference": {
     "aboutTitle": "About Indaba X",
     "heading": "Empowering Africa Through AI & Collaboration",
@@ -162,10 +169,6 @@
       "team": "Our Team",
       "impact": "Impact"
     },
-    "purpose": {
-      "title": "Website Purpose",
-      "description": "This digital hub connects Benin's AI community with resources, events, and opportunities. We bridge knowledge gaps through accessible content, event coordination, and fostering collaborations that advance AI innovation across Africa."
-    },
     "whoWeAre": {
       "title": "Who We Are",
       "description": "IndabaX Benin Republic is the local chapter of Deep Learning Indaba, part of a pan-African movement strengthening Machine Learning and AI across the continent. We unite researchers, developers, students, and organizations passionate about AI's transformative potential.",
@@ -194,6 +197,18 @@
       "growth": "Growth",
       "growthDesc": "Nurturing the next generation"
     },
+    "vision": {
+      "title": "Our Vision",
+      "subtitle": "Shaping the future of AI in Africa through innovation and leadership",
+      "innovation": "Innovation",
+      "innovationDesc": "African-led AI breakthroughs solving local challenges",
+      "leadership": "Leadership",
+      "leadershipDesc": "Positioning Africa at the forefront of AI development",
+      "ethics": "Ethics",
+      "ethicsDesc": "Promoting responsible and inclusive AI practices",
+      "talent": "Talent",
+      "talentDesc": "Developing world-class African AI experts"
+    },
     "activities": {
       "title": "Our Activities",
       "description": "We host annual events that bring together Benin's AI community:",
@@ -206,17 +221,7 @@
     },
     "team": {
       "title": "Meet Our Team",
-      "subtitle": "Passionate individuals driving AI innovation in Benin Republic",
-      "aurelle": {
-        "name": "Aurelle Ahouansou",
-        "role": "Co-organizer & AI Advocate",
-        "bio": "Coordinates IndabaX events across Benin, fostering inclusive access to machine learning education."
-      },
-      "fabrice": {
-        "name": "Fabrice Gbaguidi",
-        "role": "Researcher & Developer",
-        "bio": "Connects academic research with real-world applications in agriculture and education using AI."
-      }
+      "subtitle": "Passionate individuals driving AI innovation in Benin Republic"
     },
     "impact": {
       "title": "Why It Matters",
@@ -516,7 +521,7 @@
       "description2": "We embrace our identity while building Africa's tech future."
     },
     "traditions": {
-      "title": "🎨 Traditions & Lifestyle",
+      "title": " Traditions & Lifestyle",
       "items": [
         { "label": "Customs", "value": "Voodoo rituals, royal festivals" },
         { "label": "Music", "value": "Percussion-driven rhythms" },
@@ -525,7 +530,7 @@
       ]
     },
     "multimedia": {
-      "title": "📽️ Culture in Motion",
+      "title": " Culture in Motion",
       "videoLabel": "Placeholder Cultural Video",
       "audioLabel": "Folk Percussion Sample"
     },
@@ -539,7 +544,7 @@
       ]
     },
     "gallery": {
-      "title": "📸 Cultural Moments"
+      "title": " Cultural Moments"
     },
     "cta": {
       "title": "Join Our Culture of Change",

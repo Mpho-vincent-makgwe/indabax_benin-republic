@@ -16,12 +16,18 @@ const LeaderCard = ({ leader, theme }) => {
         ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-800'}
       `}
     >
-      <div className="relative pb-[120%]">
-        <img 
-          src={leader.image} 
-          className="absolute h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" 
-          alt={t(`leaders.${leader.id}.name`)}
-        />
+      <div className="relative pb-[120%] p-4">
+        <div className={`
+          absolute inset-4 overflow-hidden rounded-md
+          ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}
+          border
+        `}>
+          <img 
+            src={leader.image} 
+            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300" 
+            alt={t(`leaders.${leader.id}.name`)}
+          />
+        </div>
       </div>
       <div className={`p-4 text-center border-t-4 ${theme === 'dark' ? 'border-primary-400' : 'border-primary-600'}`}>
         <h3 className="text-lg font-bold mb-1">{t(`leaders.${leader.id}.name`)}</h3>

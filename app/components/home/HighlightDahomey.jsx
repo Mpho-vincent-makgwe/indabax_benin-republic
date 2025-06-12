@@ -96,7 +96,8 @@ const HighlightDahomey = () => {
                 title={t('dahomey.title')} 
                 theme={theme} 
                 underlineColor="green-600"
-                textColor={theme === 'dark' ? 'text-white' : 'text-gray-50'}
+                textColor={theme === 'dark' ? 'text-white' : 'text-white'}
+                breakAfterWords={2}
               />
             </motion.div>
             
@@ -116,17 +117,6 @@ const HighlightDahomey = () => {
               </p>
             </motion.div>
             
-            <motion.div variants={itemVariants}>
-              <a
-                href="/events/dahomey"
-                className={`inline-flex items-center px-8 py-4 rounded-full font-bold text-lg ${theme === 'dark' ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-green-600 hover:bg-green-700 text-white'} transition-all duration-300 shadow-lg hover:shadow-xl`}
-              >
-                {t('dahomey.cta')}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </motion.div>
           </div>
         </div>
       </motion.div>

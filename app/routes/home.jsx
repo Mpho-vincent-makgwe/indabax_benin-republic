@@ -15,6 +15,10 @@ import HighlightDahomey from '../components/home/HighlightDahomey';
 import SectionHeader from '../components/home/SectionHeader';
 import SectionLink from '../components/home/SectionLink';
 import "./home.css";
+
+import ParagraphText from "../components/home/ParagraphText";
+
+
 // Utility function moved outside
 const getCountdown = (date) => {
   const now = new Date().getTime();
@@ -30,6 +34,7 @@ const getCountdown = (date) => {
     seconds: Math.floor((diff / 1000) % 60),
   };
 };
+
 
 // Marquee Component for Sponsors using HTML marquee tag
 const SponsorMarquee = ({ tier, sponsors, theme }) => {
@@ -130,18 +135,23 @@ const OrganizersSection = ({ theme, t, translatedOrganizers }) => {
 const OrganizerCard = ({ organizer, theme, t }) => (
   <div className={`overflow-hidden rounded-xl transition-transform hover:scale-105 ${
     theme === 'dark' ? 
-      'bg-black border-1 border-white shadow-lg shadow-white/20' : 
+      'bg-black border border-white shadow-lg shadow-white/20' : 
       'bg-white border border-gray-200 shadow-lg'
   }`}>
-    <div className="relative h-64 w-full overflow-hidden">
-      <img 
-        src={organizer.image} 
-        alt={organizer.name}
-        className="absolute h-full w-full object-cover"
-        onError={(e) => {
-          e.currentTarget.src = 'https://via.placeholder.com/400x400?text=' + organizer.name.split(' ')[0];
-        }}
-      />
+    <div className="relative h-64 w-full p-4">
+      <div className={`
+        absolute inset-4 overflow-hidden rounded-lg
+        ${theme === 'dark' ? 'border border-white/30' : 'border border-gray-200'}
+      `}>
+        <img 
+          src={organizer.image} 
+          alt={organizer.name}
+          className="h-full w-full object-cover"
+          onError={(e) => {
+            e.currentTarget.src = 'https://via.placeholder.com/400x400?text=' + organizer.name.split(' ')[0];
+          }}
+        />
+      </div>
     </div>
     <div className={`p-6 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <h3 className={`text-xl font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
@@ -247,12 +257,14 @@ const SponsorsSection = ({ theme, t, translatedSponsors }) => {
               {t('home.sponsors.becomeSponsor')}
             </h3>
             
-            <p className={`mb-8 text-lg ${
-              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('home.sponsors.sponsorText')}
-            </p>
-            
+              <ParagraphText 
+                text={t('home.sponsors.sponsorText')}
+                theme={theme}
+                textColor={`mb-8 text-lg ${
+                            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                          }`}
+                breakAfterWords={13}
+              />
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="mailto:sponsors@indabaxbenin.org"

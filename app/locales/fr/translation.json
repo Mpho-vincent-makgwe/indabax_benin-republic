@@ -84,14 +84,21 @@
     }
   },
   "communityEvents": {
-    "title": "Communauté et Événements",
-    "subtitle": "Rejoignez notre communauté dynamique d'innovateurs et d'agents du changement",
-    "upcomingEvents": "📅 Événements à venir",
-    "pastEvents": "📚 Événements passés",
+    "title": "Comunidad y Eventos",
+    "subtitle": "Únete a nuestra vibrante comunidad de innovadores y agentes de cambio",
+    "events": "Eventos",
+    "past": "Evento Pasado",
+    "upcoming": "Próximo Evento",
     "locationDate": "{{location}} - {{date}}",
-    "highlight": "Point fort",
-    "organisers": "Organisateurs",
-    "speakers": "Intervenants"
+    "highlight": "Destacado",
+    "organisers": "Organizadores",
+    "speakers": "Oradores",
+    "viewDetails": "Ver Detalles",
+    "noEvents": "No hay eventos programados en este momento",
+    "cta": "Crear Evento",
+    "learnMore": "Saber Más",
+    "upcomingEvents": "{{count}} Próximos Eventos",
+    "pastEvents": "{{count}} Eventos Pasados"
   },
  "conference": {
     "aboutTitle": "À propos d'Indaba X",
@@ -193,6 +200,18 @@
       "communityDesc": "Connecter les talents en IA du Bénin",
       "growth": "Croissance",
       "growthDesc": "Encourager la prochaine génération"
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "subtitle": "Façonner l'avenir de l'IA en Afrique par l'innovation et le leadership",
+      "innovation": "Innovation",
+      "innovationDesc": "Des avancées en IA dirigées par l’Afrique pour résoudre les défis locaux",
+      "leadership": "Leadership",
+      "leadershipDesc": "Positionner l’Afrique à la pointe du développement de l’IA",
+      "ethics": "Éthique",
+      "ethicsDesc": "Promouvoir des pratiques d’IA responsables et inclusives",
+      "talent": "Talent",
+      "talentDesc": "Former des experts africains en IA de classe mondiale"
     },
     "activities": {
       "title": "Nos activités",
@@ -516,7 +535,7 @@
       "description2": "Nous embrassons notre identité tout en construisant l'avenir technologique de l'Afrique."
     },
     "traditions": {
-      "title": "🎨 Traditions & Mode de Vie",
+      "title": "Traditions & Mode de Vie",
       "items": [
         { "label": "Coutumes", "value": "Rituels vaudou, festivals royaux" },
         { "label": "Musique", "value": "Rythmes percussifs" },
@@ -530,7 +549,7 @@
       "audioLabel": "Extrait de Percussion Traditionnelle"
     },
     "timeline": {
-      "title": "📜 Chronologie Culturelle",
+      "title": "Chronologie Culturelle",
       "events": [
         { "era": "1600s – Royaume du Dahomey", "description": "Connu pour ses guerrières et son gouvernement fort." },
         { "era": "1800s – Résistance Culturelle", "description": "La colonisation n'a pas effacé l'héritage Vodun." },
@@ -539,7 +558,7 @@
       ]
     },
     "gallery": {
-      "title": "📸 Moments Culturels"
+      "title": " Moments Culturels"
     },
     "cta": {
       "title": "Rejoignez Notre Culture du Changement",
