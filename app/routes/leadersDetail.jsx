@@ -41,9 +41,9 @@ const translatedLeader = {
 
 console.log("Translated leaders:",translatedLeader);
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
       {/* Hero Section */}
-      <div className={`relative py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+      <div className={`relative py-20 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/3 flex justify-center">
@@ -127,7 +127,7 @@ console.log("Translated leaders:",translatedLeader);
 
           {/* Sidebar */}
           <div>
-            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
+            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white'} shadow-md`}>
               <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {t('leaderDetail.info')}
               </h3>

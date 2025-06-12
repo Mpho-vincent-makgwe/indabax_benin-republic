@@ -41,7 +41,7 @@ const TestimonialsPage = () => {
   };
 
   return (
-    <div className="relative">
+   <div className={`relative ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-white text-gray-900'}`}>
       <Testimonials />
       
       {/* Add Testimonial Button */}
@@ -60,8 +60,8 @@ const TestimonialsPage = () => {
       {/* Popup Form */}
       {isFormOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20 p-4">
-          <div className={`relative max-w-2xl w-full rounded-xl p-8 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
-            <button
+          <div className={`relative max-w-2xl w-full rounded-xl p-8 ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white'}`}>
+          <button
               onClick={() => setIsFormOpen(false)}
               className={`absolute top-4 right-4 p-2 rounded-full ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-100'}`}
               aria-label={t('common.close')}

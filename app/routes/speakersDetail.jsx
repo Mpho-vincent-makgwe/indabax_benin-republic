@@ -32,9 +32,9 @@ const SpeakersDetail = () => {
   }
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
+  <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
       <div className="max-w-4xl mx-auto py-16 px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className={`flex flex-col md:flex-row items-center gap-8 p-8 rounded-xl ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white'}`}>
           <img src={speaker.image} alt={speaker.name} className="w-48 h-48 rounded-full shadow-lg border-4 border-blue-500" />
           <div>
             <h1 className="text-3xl font-bold">{speaker.name}</h1>

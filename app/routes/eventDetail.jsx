@@ -79,7 +79,7 @@ const EventDetail = () => {
   const eventOrganisers = event.organisers ? event.organisers.map(id => organisers.find(o => o.id === id)).filter(Boolean) : [];
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
       {/* Registration Modal */}
       {showRegistrationModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -192,7 +192,7 @@ const EventDetail = () => {
       )}
 
       {/* Hero Section */}
-      <div className={`relative py-20 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+      <div className={`relative py-20 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
@@ -265,11 +265,11 @@ const EventDetail = () => {
                   {t('eventDetail.featuredSpeakers')}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
-                  {eventSpeakers.map(speaker => (
-                    <div 
-                      key={speaker.id} 
-                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
-                    >
+                    {eventSpeakers.map(speaker => (
+                      <div 
+                        key={speaker.id} 
+                        className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
+                      >
                       <img 
                         src={speaker.image} 
                         alt={speaker.name} 
@@ -302,7 +302,7 @@ const EventDetail = () => {
                   {eventOrganisers.map(organiser => (
                     <div 
                       key={organiser.id} 
-                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
+                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
                     >
                       <img 
                         src={organiser.image} 
@@ -329,7 +329,7 @@ const EventDetail = () => {
 
           {/* Sidebar */}
           <div>
-            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} shadow-md`}>
+            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white'} shadow-md`}>
               <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {t('eventDetail.eventDetails')}
               </h3>

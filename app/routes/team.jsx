@@ -10,7 +10,7 @@ const Team = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className={`container mx-auto px-4 py-8 ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-white text-gray-900'}`}>
       <h1 className="text-3xl font-bold text-center mb-8">{t('team.title')}</h1>
       
       {/* Leaders Section */}
