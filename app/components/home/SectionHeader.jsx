@@ -1,7 +1,7 @@
 const SectionHeader = ({
   title,
   theme,
-  underlineColor = "bg-green-600",
+  underlineColor = "bg-green-900",
   textColor,
   breakAfterWords
 }) => {

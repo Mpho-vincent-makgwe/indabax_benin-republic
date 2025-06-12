@@ -1,10 +1,12 @@
+// ConferenceSection.jsx
 import React from 'react';
 import 'remixicon/fonts/remixicon.css';
 import { useTheme } from '../../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import MissionVisionSection from './MissionVisionSection';
+import "./ConferenceSection.css";
 
-const ConferenceSection: React.FC = () => {
+const ConferenceSection = () => {
   const { theme } = useTheme();
   const { t } = useTranslation();
 
@@ -20,26 +22,18 @@ const ConferenceSection: React.FC = () => {
   return (
     <section className={`py-12 ${theme === 'dark' ? 'bg-black' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6">
-        {/* Mobile: Reordered content - Text first */}
-        <div className="lg:hidden flex flex-col">
+        {/* Mobile Layout */}
+        <div className="lg:hidden h-full flex flex-col">
           {/* Text Content */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <span className={`w-12 h-0.5 ${theme === 'dark' ? 'bg-green-500' : 'bg-green-600'}`} />
-              <p
-                className={`text-sm uppercase font-semibold tracking-wider ${
-                  theme === 'dark' ? 'text-green-400' : 'text-green-600'
-                }`}
-              >
+              <p className={`text-sm uppercase font-semibold tracking-wider ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
                 {t('conference.aboutTitle')}
               </p>
             </div>
 
-            <h2
-              className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
-                theme === 'dark' ? 'text-white' : 'text-gray-900'
-              }`}
-            >
+            <h2 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               {t('conference.heading')}
             </h2>
 
@@ -55,22 +49,10 @@ const ConferenceSection: React.FC = () => {
               alt={t('conference.mainImageAlt')}
               className="w-full h-full object-cover"
             />
-            <div
-              className={`absolute inset-0 bg-gradient-to-t ${
-                theme === 'dark' ? 'from-gray-900/60 via-gray-900/30' : 'from-black/60 via-black/30'
-              }`}
-            />
+            <div className={`absolute inset-0 bg-gradient-to-t ${theme === 'dark' ? 'from-gray-900/60 via-gray-900/30' : 'from-black/60 via-black/30'}`} />
             {/* Floating Badge */}
-            <div
-              className={`absolute bottom-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md ${
-                theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/70'
-              } shadow-lg`}
-            >
-              <div
-                className={`p-2 rounded-full ${
-                  theme === 'dark' ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-600'
-                }`}
-              >
+            <div className={`absolute bottom-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md ${theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/70'} shadow-lg`}>
+              <div className={`p-2 rounded-full ${theme === 'dark' ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-600'}`}>
                 <i className="ri-rocket-2-fill" />
               </div>
               <span className="font-bold text-orange-500">2K+</span>
@@ -80,8 +62,8 @@ const ConferenceSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mission/Vision Section - Full width on mobile */}
-          <div className="w-full mb-8">
+          {/* Mission/Vision Section */}
+          <div className="w-full mb-8 h-[290px]"> {/* Fixed height */}
             <MissionVisionSection theme={theme} t={t} />
           </div>
 
@@ -90,17 +72,9 @@ const ConferenceSection: React.FC = () => {
             {eventDetails.map((detail, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-4 p-4 rounded-xl ${
-                  theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
-                } border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}
+                className={`flex items-center gap-4 p-4 rounded-xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'} border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}
               >
-                <div
-                  className={`p-3 rounded-xl ${
-                    theme === 'dark'
-                      ? 'bg-gray-700 text-orange-400'
-                      : 'bg-white text-orange-500 shadow-sm'
-                  }`}
-                >
+                <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-gray-700 text-orange-400' : 'bg-white text-orange-500 shadow-sm'}`}>
                   {detail.icon}
                 </div>
                 <div>
@@ -114,9 +88,25 @@ const ConferenceSection: React.FC = () => {
               </div>
             ))}
           </div>
+
+          {/* Mobile Buttons */}
+          <div className="flex justify-center items-center pt-2 mt-2 lg:hidden">
+            <div className="flex flex-wrap gap-4 justify-center">
+              <button
+                className={`px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 ${theme === 'dark' ? 'bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg shadow-green-900/30' : 'bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg shadow-green-500/30'}`}
+              >
+                {t('conference.registerButton')}
+              </button>
+              <button
+                className={`px-8 py-3 rounded-full font-semibold transition-all ${theme === 'dark' ? 'bg-transparent border border-gray-600 hover:bg-gray-800 text-white' : 'bg-transparent border border-gray-300 hover:bg-gray-100 text-gray-900'}`}
+              >
+                {t('conference.venueButton')}
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Desktop: Original layout */}
+        {/* Desktop Layout */}
         <div className="hidden lg:flex flex-col lg:flex-row gap-8 items-stretch lg:min-h-[620px]">
           {/* Left Side: Image + Mission/Vision */}
           <div className="lg:w-1/2 flex flex-col">
@@ -127,22 +117,10 @@ const ConferenceSection: React.FC = () => {
                 alt={t('conference.mainImageAlt')}
                 className="w-full h-full object-cover"
               />
-              <div
-                className={`absolute inset-0 bg-gradient-to-t ${
-                  theme === 'dark' ? 'from-gray-900/60 via-gray-900/30' : 'from-black/60 via-black/30'
-                }`}
-              />
+              <div className={`absolute inset-0 bg-gradient-to-t ${theme === 'dark' ? 'from-gray-900/60 via-gray-900/30' : 'from-black/60 via-black/30'}`} />
               {/* Floating Badge */}
-              <div
-                className={`absolute bottom-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md ${
-                  theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/70'
-                } shadow-lg`}
-              >
-                <div
-                  className={`p-2 rounded-full ${
-                    theme === 'dark' ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-600'
-                  }`}
-                >
+              <div className={`absolute bottom-6 left-6 z-20 flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md ${theme === 'dark' ? 'bg-gray-800/70' : 'bg-white/70'} shadow-lg`}>
+                <div className={`p-2 rounded-full ${theme === 'dark' ? 'bg-green-900/50 text-green-400' : 'bg-green-100 text-green-600'}`}>
                   <i className="ri-rocket-2-fill" />
                 </div>
                 <span className="font-bold text-orange-500">2K+</span>
@@ -152,31 +130,23 @@ const ConferenceSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Mission/Vision Blurred Background */}
-            <div className="w-full h-[120px] backdrop-blur-md rounded-b-2xl overflow-hidden">
+            {/* Mission/Vision Cards */}
+            <div className="w-full h-[180px] mt-4"> {/* Same fixed height */}
               <MissionVisionSection theme={theme} t={t} />
             </div>
           </div>
 
-          {/* Right Side: Text Content */}
-          <div className="lg:w-1/2 flex flex-col justify-between min-h-[620px]">
+          {/* Right Side: Text Content + Buttons */}
+          <div className="lg:w-1/2 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className={`w-12 h-0.5 ${theme === 'dark' ? 'bg-green-500' : 'bg-green-600'}`} />
-                <p
-                  className={`text-sm uppercase font-semibold tracking-wider ${
-                    theme === 'dark' ? 'text-green-400' : 'text-green-600'
-                  }`}
-                >
+                <p className={`text-sm uppercase font-semibold tracking-wider ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>
                   {t('conference.aboutTitle')}
                 </p>
               </div>
 
-              <h2
-                className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
-                  theme === 'dark' ? 'text-white' : 'text-gray-900'
-                }`}
-              >
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {t('conference.heading')}
               </h2>
 
@@ -186,21 +156,13 @@ const ConferenceSection: React.FC = () => {
             </div>
 
             {/* Event Detail Cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
               {eventDetails.map((detail, index) => (
                 <div
                   key={index}
-                  className={`flex items-center gap-4 p-4 rounded-xl ${
-                    theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'
-                  } border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}
+                  className={`flex items-center gap-4 p-4 rounded-xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-50'} border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}`}
                 >
-                  <div
-                    className={`p-3 rounded-xl ${
-                      theme === 'dark'
-                        ? 'bg-gray-700 text-orange-400'
-                        : 'bg-white text-orange-500 shadow-sm'
-                    }`}
-                  >
+                  <div className={`p-3 rounded-xl ${theme === 'dark' ? 'bg-gray-700 text-orange-400' : 'bg-white text-orange-500 shadow-sm'}`}>
                     {detail.icon}
                   </div>
                   <div>
@@ -214,30 +176,22 @@ const ConferenceSection: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
 
-        {/* Centered Buttons - For both mobile and desktop */}
-        <div className="flex justify-center items-center pt-2 mt-2">
-          <div className="flex flex-wrap gap-4 justify-center">
-            <button
-              className={`px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 ${
-                theme === 'dark'
-                  ? 'bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg shadow-green-900/30'
-                  : 'bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg shadow-green-500/30'
-              }`}
-            >
-              {t('conference.registerButton')}
-            </button>
-            <button
-              className={`px-8 py-3 rounded-full font-semibold transition-all ${
-                theme === 'dark'
-                  ? 'bg-transparent border border-gray-600 hover:bg-gray-800 text-white'
-                  : 'bg-transparent border border-gray-300 hover:bg-gray-100 text-gray-900'
-              }`}
-            >
-              {t('conference.venueButton')}
-            </button>
+            {/* Desktop Buttons */}
+            <div className="flex justify-center items-center pt-2 mt-2">
+              <div className="flex gap-4">
+                <button
+                  className={`px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 ${theme === 'dark' ? 'bg-gradient-to-r from-green-600 to-green-800 text-white shadow-lg shadow-green-900/30' : 'bg-gradient-to-r from-green-500 to-green-700 text-white shadow-lg shadow-green-500/30'}`}
+                >
+                  {t('conference.registerButton')}
+                </button>
+                <button
+                  className={`px-8 py-3 rounded-full font-semibold transition-all ${theme === 'dark' ? 'bg-transparent border border-gray-600 hover:bg-gray-800 text-white' : 'bg-transparent border border-gray-300 hover:bg-gray-100 text-gray-900'}`}
+                >
+                  {t('conference.venueButton')}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

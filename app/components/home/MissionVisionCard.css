@@ -1,0 +1,132 @@
+.flip-card-container {
+  width: 100%;
+
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.4s ease;
+}
+
+.flip-card {
+  width: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  position: relative;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.flip-card-front {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-front .overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.flip-card-back.light {
+  background-color: white;
+  color: #333;
+}
+
+.flip-card-back.dark {
+  background-color: #111;
+  color: #eee;
+}
+
+.card-title {
+color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+ /* overflow: auto; */
+  /* max-height: calc(100% - 2.5rem); */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Light Theme Outline Animation */
+.light-outline {
+  animation: gradient-border 3s infinite;
+  border: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(45deg, green, orange);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* Dark Theme Glowing Outline */
+.dark-outline {
+  border: 2px solid white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes gradient-border {
+  0% {
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(45deg, green, orange);
+  }
+  50% {
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(45deg, orange, green);
+  }
+  100% {
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(45deg, green, orange);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px white;
+  }
+  50% {
+    box-shadow: 0 0 20px white;
+  }
+  100% {
+    box-shadow: 0 0 5px white;
+  }
+}
