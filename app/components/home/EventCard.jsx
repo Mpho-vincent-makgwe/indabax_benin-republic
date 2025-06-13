@@ -16,11 +16,12 @@ const EventCard = ({ event, timers }) => {
   }
 
   return (
-    <div className={`h-full flex flex-col rounded-xl overflow-hidden 
+    <div className={`relative h-full flex flex-col rounded-xl overflow-hidden 
       ${theme === 'dark' ? 
         'bg-black border-1 border-white shadow-lg shadow-white/20' : 
         'bg-white shadow-lg'
       }`}
+      style={{ paddingBottom: '72px' }} // Space reserved for the button
     >
       {/* Futuristic corner accent */}
       <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
@@ -48,7 +49,7 @@ const EventCard = ({ event, timers }) => {
       </div>
 
       {/* Content section */}
-      <div className="p-5 flex-grow">
+      <div className="p-5">
         <div className="flex justify-between items-start mb-3">
           <h3 className={`text-lg font-bold line-clamp-2 leading-tight ${theme === 'dark' ? 'text-green-100' : 'text-gray-800'}`}>
             {t(`events.${event.id}.title`)}
@@ -67,33 +68,33 @@ const EventCard = ({ event, timers }) => {
             <span className={`${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>{t('common.left')}</span>
           </p>
         </div>
+      </div>
 
-        {/* Register button - now properly contained within card */}
-        <div className="px-2 pb-2">
-          <Link 
-            to={`/events/${event.id}`} 
-            className={`w-full py-3 flex items-center justify-center rounded-lg
-              ${theme === 'dark' ? 
-                'bg-white/90 hover:bg-white text-gray-900 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]' : 
-                'bg-black hover:bg-gray-900 text-white'
-              } 
-              text-sm font-semibold transition-all duration-300 relative overflow-hidden group`}
-          >
-            <span className="relative z-10 flex items-center">
-              {t('common.registerNow')}
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
-                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </span>
-            <span className={`absolute inset-0 bg-gradient-to-r ${
-              theme === 'dark' ? 
-                'from-yellow-400/10 to-transparent' : 
-                'from-yellow-400/20 to-transparent'
-            } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>
-          </Link>
-        </div>
+      {/* Register button - fixed at the bottom */}
+      <div className="absolute bottom-0 left-0 right-0 px-5 pb-5">
+        <Link 
+          to={`/events/${event.id}`} 
+          className={`w-full py-3 flex items-center justify-center rounded-lg
+            ${theme === 'dark' ? 
+              'bg-white/90 hover:bg-white text-gray-900 shadow-[0_0_0_1px_rgba(255,255,255,0.2)]' : 
+              'bg-black hover:bg-gray-900 text-white'
+            } 
+            text-sm font-semibold transition-all duration-300 relative overflow-hidden group`}
+        >
+          <span className="relative z-10 flex items-center">
+            {t('common.registerNow')}
+            <svg xmlns="http://www.w3.org/2000/svg" 
+              className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" 
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </span>
+          <span className={`absolute inset-0 bg-gradient-to-r ${
+            theme === 'dark' ? 
+              'from-yellow-400/10 to-transparent' : 
+              'from-yellow-400/20 to-transparent'
+          } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>
+        </Link>
       </div>
     </div>
   )
