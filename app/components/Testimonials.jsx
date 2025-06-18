@@ -136,14 +136,14 @@ const Testimonials = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-8"
+          className="text-center mb-2"
           variants={item}
         >
           <h2 className={`text-3xl md:text-4xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
             {t('testimonials.title')}
           </h2>
           <div className="w-24 h-1 mx-auto mb-4 bg-green-500 rounded-full"></div>
-          <p className={`text-lg md:text-xl max-w-3xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+          <p className={`text-lg mt-4 pt-4 md:text-xl max-w-3xl mx-auto ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
             {t('testimonials.subtitle')}
           </p>
         </motion.div>

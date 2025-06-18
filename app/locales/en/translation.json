@@ -23,13 +23,13 @@
     "viewAllEvents": "View All Events",
     "learnMore": "Learn More",
     "mission": {
-      "title": "Our Mission",
-      "content": "To enhance knowledge and build capacity in machine learning and artificial intelligence in Benin through community-driven initiatives and accessible education."
-    },
-    "vision": {
-      "title": "Our Vision",
-      "content": "To strengthen Machine Learning and Artificial Intelligence in Africa by building a vibrant, inclusive community in Benin that fosters innovation and collaboration."
-    },
+    "title": "Our Mission",
+    "content": "To enhance knowledge and build capacity in machine learning and artificial intelligence in Benin through community-driven initiatives and accessible education."
+  },
+  "vision": {
+    "title": "Our Vision",
+    "content": "To strengthen Machine Learning and Artificial Intelligence in Africa by building a vibrant, inclusive community in Benin that fosters innovation and collaboration."
+  },
     "leaders": {
       "title": "Meet Our Leaders",
       "viewTeam": "View Full Team"
@@ -98,7 +98,7 @@
     "cta": "Create Event",
     "learnMore": "Learn More",
     "upcomingEvents": "{{count}} Upcoming Events",
-    "pastEvents": "{{count}} Past Events"
+    "pastEvents": "{{count2}} Past Events"
 },
   "conference": {
     "aboutTitle": "About Indaba X",
@@ -186,29 +186,29 @@
       "collaborationsDesc": "Joint projects with other African chapters"
     },
     "mission": {
-      "title": "Our Mission",
-      "subtitle": "Building Benin's AI ecosystem through education, research, and ethical innovation",
-      "education": "Education",
-      "educationDesc": "Democratizing AI knowledge",
-      "research": "Research",
-      "researchDesc": "Advancing local AI solutions",
-      "community": "Community",
-      "communityDesc": "Connecting Benin's AI talent",
-      "growth": "Growth",
-      "growthDesc": "Nurturing the next generation"
-    },
-    "vision": {
-      "title": "Our Vision",
-      "subtitle": "Shaping the future of AI in Africa through innovation and leadership",
-      "innovation": "Innovation",
-      "innovationDesc": "African-led AI breakthroughs solving local challenges",
-      "leadership": "Leadership",
-      "leadershipDesc": "Positioning Africa at the forefront of AI development",
-      "ethics": "Ethics",
-      "ethicsDesc": "Promoting responsible and inclusive AI practices",
-      "talent": "Talent",
-      "talentDesc": "Developing world-class African AI experts"
-    },
+    "title": "Our Mission",
+    "subtitle": "To enhance knowledge and build capacity in machine learning and artificial intelligence in Benin through community-driven initiatives and accessible education.",
+    "education": "Education",
+    "educationDesc": "Democratizing AI knowledge through workshops and training",
+    "research": "Research",
+    "researchDesc": "Supporting local AI research with practical applications",
+    "community": "Community",
+    "communityDesc": "Connecting Benin's AI practitioners and enthusiasts",
+    "growth": "Capacity Building",
+    "growthDesc": "Developing local AI talent and expertise"
+  },
+  "vision": {
+    "title": "Our Vision",
+    "subtitle": "To strengthen Machine Learning and Artificial Intelligence in Africa by building a vibrant, inclusive community in Benin that fosters innovation and collaboration.",
+    "innovation": "Local Innovation",
+    "innovationDesc": "African-led AI solutions for African challenges",
+    "leadership": "Technical Leadership",
+    "leadershipDesc": "Positioning Benin as an AI hub in West Africa",
+    "ethics": "Ethical AI",
+    "ethicsDesc": "Promoting responsible and inclusive AI development",
+    "talent": "Talent Development",
+    "talentDesc": "Creating world-class African AI experts"
+  },
     "activities": {
       "title": "Our Activities",
       "description": "We host annual events that bring together Benin's AI community:",
@@ -295,19 +295,37 @@
     }
   },
   "pastEvents": {
-    "indaba2024": {
-      "title": "IndabaX Benin 2024",
-      "location": "Cotonou, Benin",
-      "description": "A historic event focusing on practical AI and ML education in Benin.",
-      "highlight": "Over 300 attendees, 12 speakers, and a full day of hands-on ML sessions."
-    },
-    "makerfair2024": {
-      "title": "Local Maker Fair",
-      "location": "Parakou, Benin",
-      "description": "An expo for community-based innovation and open-source tech.",
-      "highlight": "Celebrated local inventors, from smart textiles to drone prototypes."
-    }
+  "indaba2023": {
+    "title": "IndabaX Benin 2023",
+    "location": "University of Abomey-Calavi, Cotonou",
+    "description": "Official DeepLearning IndabaX event featuring workshops on computer vision and NLP for African languages.",
+    "highlight": "First IndabaX in Benin with 200+ participants from 5 West African countries."
   },
+  "aisummit2022": {
+    "title": "West Africa AI Summit 2022",
+    "location": "Ecole Polytechnique d'Abomey-Calavi",
+    "description": "Regional conference on AI policy and sustainable development goals.",
+    "highlight": "Keynote by Prof. Moustapha Cisse from Google AI Accra."
+  },
+  "datascience2021": {
+    "title": "Benin Data Science Bootcamp",
+    "location": "ICT University, Cotonou",
+    "description": "3-day intensive training on Python for data analysis and visualization.",
+    "highlight": "50 graduates created projects analyzing Benin's agricultural data."
+  },
+  "womenintech2020": {
+    "title": "Women in Tech Benin Symposium",
+    "location": "Impact Hub, Cotonou",
+    "description": "Annual event empowering women in STEM through AI and entrepreneurship.",
+    "highlight": "Launched 10 female-led tech startups with seed funding."
+  },
+  "hackathon2019": {
+    "title": "Code4Benin Hackathon",
+    "location": "Sèmè City Innovation Center",
+    "description": "48-hour competition solving civic challenges using open data.",
+    "highlight": "Winning team developed flood prediction system for Cotonou."
+  }
+},
   "organizers": {
     "emmanuel": {
       "name": "Emmanuel D. Houngbo",
@@ -608,6 +626,9 @@
     "website": {
       "title": "Website"
     },
+    "social": {
+      "title": "Social Media"
+    },
     "form": {
       "title": "Send Us a Message",
       "name": "Full Name",
@@ -650,7 +671,11 @@
       "specialNeeds": "Special Needs",
       "specialNeedsPlaceholder": "Any accessibility requirements?",
       "submit": "Submit Application"
-    }
+    },
+    "relatedHackathons": "Related Hackathons",
+    "pastHackathon": "Past Hackathon",
+    "upcomingHackathon": "Upcoming Hackathon",
+    "viewDetails": "View Details"
   },
    "testimonialsPage": {
     "addTestimonial": "Add testimonial",
@@ -705,5 +730,46 @@
     "quote": "They fought like warriors, stood like kings, and protected like mothers.",
     "cta": "Learn Their Story",
     "imageAlt": "Dahomey women warriors historical illustration"
+  },
+  "aihack2023": {
+    "date": "July 15-17, 2023",
+    "title": "IndabaX AI Hackathon 2023",
+    "description": "Annual AI innovation challenge where developers create solutions for local problems",
+    "highlight": "48-hour hackathon producing 12 AI solutions for West African challenges",
+    "themes": {
+      "agriculture": "Agriculture",
+      "healthcare": "Healthcare",
+      "education": "Education"
+    },
+    "prizes": {
+      "seed_funding": "$5,000 seed funding",
+      "mentorship": "Mentorship program",
+      "cloud_credits": "Cloud credits"
+    },
+    "winners": {
+      "team_agrovision": "Team AgroVision",
+      "crop_detection": "AI-powered crop disease detection using smartphone cameras",
+      "team_medbot": "Team MedBot",
+      "healthcare_chatbot": "Chatbot for rural healthcare diagnostics"
+    }
+  },
+  "ideation2022": {
+    "date": "November 5, 2022",
+    "title": "AI Ideation Challenge 2022",
+    "description": "One-day intensive workshop to brainstorm and prototype AI solutions",
+    "highlight": "Generated 30+ innovative AI concepts addressing SDGs in Benin",
+    "themes": {
+      "sustainable_cities": "Sustainable Cities",
+      "gender_equality": "Gender Equality",
+      "clean_energy": "Clean Energy"
+    },
+    "outcomes": {
+      "concepts_selected": "5 concepts selected for further development",
+      "projects_funded": "2 projects received government funding"
+    }
+  },
+  "locations": {
+    "seme_city": "Sèmè City Innovation Center, Cotonou",
+    "impact_hub": "Impact Hub, Cotonou"
   }
 }

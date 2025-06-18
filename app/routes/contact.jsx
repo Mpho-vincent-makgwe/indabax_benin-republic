@@ -7,7 +7,13 @@ import {
   RiMailLine,
   RiPhoneLine,
   RiGlobalLine,
-  RiSendPlaneLine
+  RiSendPlaneLine,
+  RiTwitterXLine,
+  RiLinkedinFill,
+  RiFacebookFill,
+  RiInstagramLine,
+  RiYoutubeFill,
+  RiGithubFill
 } from "react-icons/ri";
 
 const Contact = () => {
@@ -163,18 +169,77 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Social Media Links (optional) */}
+        {/* Social Media Links */}
         <div className="text-center mt-12">
-          <h4 className={`text-xl mb-4 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
+          <h4 className={`text-xl mb-6 ${isDark ? "text-gray-300" : "text-gray-600"}`}>
             {t('contact.social.title')}
           </h4>
-          <div className="flex justify-center gap-4">
-            {/* Add your social media icons and links here */}
-            {/* Example:
-            <a href="#" className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"}`}>
-              <RiTwitterXLine className="text-xl" />
+          <div className="flex justify-center gap-6">
+            {/* Twitter/X */}
+            <a 
+              href="https://twitter.com/IndabaXBenin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="Twitter"
+            >
+              <RiTwitterXLine className="text-2xl" />
             </a>
-            */}
+            
+            {/* LinkedIn */}
+            <a 
+              href="https://www.linkedin.com/company/indabax-benin/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="LinkedIn"
+            >
+              <RiLinkedinFill className="text-2xl text-blue-600" />
+            </a>
+            
+            {/* Facebook */}
+            <a 
+              href="https://www.facebook.com/IndabaXBenin/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="Facebook"
+            >
+              <RiFacebookFill className="text-2xl text-blue-700" />
+            </a>
+            
+            {/* Instagram */}
+            <a 
+              href="https://www.instagram.com/indabaxbenin/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="Instagram"
+            >
+              <RiInstagramLine className="text-2xl text-pink-600" />
+            </a>
+            
+            {/* YouTube */}
+            <a 
+              href="https://www.youtube.com/@IndabaXBenin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="YouTube"
+            >
+              <RiYoutubeFill className="text-2xl text-red-600" />
+            </a>
+            
+            {/* GitHub */}
+            <a 
+              href="https://github.com/IndabaXBenin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`p-3 rounded-full ${isDark ? "bg-gray-800 hover:bg-gray-700" : "bg-gray-100 hover:bg-gray-200"} transition-colors`}
+              aria-label="GitHub"
+            >
+              <RiGithubFill className="text-2xl" />
+            </a>
           </div>
         </div>
       </div>

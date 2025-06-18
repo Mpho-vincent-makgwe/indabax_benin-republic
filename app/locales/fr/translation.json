@@ -23,13 +23,13 @@
     "viewAllEvents": "Voir tous les événements",
     "learnMore": "En savoir plus",
     "mission": {
-      "title": "Notre Mission",
-      "content": "Améliorer les connaissances et renforcer les capacités en matière d'apprentissage automatique et d'intelligence artificielle au Bénin grâce à des initiatives communautaires et à une éducation accessible."
-    },
-    "vision": {
-      "title": "Notre Vision",
-      "content": "Renforcer l'apprentissage automatique et l'intelligence artificielle en Afrique en construisant une communauté dynamique et inclusive au Bénin qui favorise l'innovation et la collaboration."
-    },
+    "title": "Notre Mission",
+    "content": "Renforcer les connaissances et les capacités en apprentissage automatique et intelligence artificielle au Bénin grâce à des initiatives communautaires et une éducation accessible."
+  },
+  "vision": {
+    "title": "Notre Vision",
+    "content": "Renforcer l'apprentissage automatique et l'intelligence artificielle en Afrique en construisant une communauté dynamique et inclusive au Bénin qui favorise l'innovation et la collaboration."
+  },
     "leaders": {
       "title": "Rencontrez nos leaders",
       "viewTeam": "Voir toute l'équipe"
@@ -98,7 +98,7 @@
     "cta": "Crear Evento",
     "learnMore": "Saber Más",
     "upcomingEvents": "{{count}} Próximos Eventos",
-    "pastEvents": "{{count}} Eventos Pasados"
+    "pastEvents": "{{count2}} Eventos Pasados"
   },
  "conference": {
     "aboutTitle": "À propos d'Indaba X",
@@ -190,29 +190,29 @@
       "collaborationsDesc": "Projets conjoints avec d'autres chapitres africains"
     },
     "mission": {
-      "title": "Notre mission",
-      "subtitle": "Construire l'écosystème IA du Bénin grâce à l'éducation, la recherche et l'innovation éthique",
-      "education": "Éducation",
-      "educationDesc": "Démocratiser les connaissances en IA",
-      "research": "Recherche",
-      "researchDesc": "Développer des solutions IA locales",
-      "community": "Communauté",
-      "communityDesc": "Connecter les talents en IA du Bénin",
-      "growth": "Croissance",
-      "growthDesc": "Encourager la prochaine génération"
-    },
-    "vision": {
-      "title": "Notre Vision",
-      "subtitle": "Façonner l'avenir de l'IA en Afrique par l'innovation et le leadership",
-      "innovation": "Innovation",
-      "innovationDesc": "Des avancées en IA dirigées par l’Afrique pour résoudre les défis locaux",
-      "leadership": "Leadership",
-      "leadershipDesc": "Positionner l’Afrique à la pointe du développement de l’IA",
-      "ethics": "Éthique",
-      "ethicsDesc": "Promouvoir des pratiques d’IA responsables et inclusives",
-      "talent": "Talent",
-      "talentDesc": "Former des experts africains en IA de classe mondiale"
-    },
+    "title": "Notre Mission",
+    "subtitle": "Renforcer les connaissances et les capacités en apprentissage automatique et intelligence artificielle au Bénin grâce à des initiatives communautaires et une éducation accessible.",
+    "education": "Éducation",
+    "educationDesc": "Démocratiser les connaissances en IA via des ateliers et formations",
+    "research": "Recherche",
+    "researchDesc": "Soutenir la recherche locale en IA avec des applications pratiques",
+    "community": "Communauté",
+    "communityDesc": "Connecter les praticiens et passionnés d'IA du Bénin",
+    "growth": "Renforcement des capacités",
+    "growthDesc": "Développer les talents et expertises locales en IA"
+  },
+  "vision": {
+    "title": "Notre Vision",
+    "subtitle": "Renforcer l'apprentissage automatique et l'intelligence artificielle en Afrique en construisant une communauté dynamique et inclusive au Bénin qui favorise l'innovation et la collaboration.",
+    "innovation": "Innovation Locale",
+    "innovationDesc": "Solutions d'IA africaines pour les défis africains",
+    "leadership": "Leadership Technique",
+    "leadershipDesc": "Positionner le Bénin comme un centre d'IA en Afrique de l'Ouest",
+    "ethics": "IA Éthique",
+    "ethicsDesc": "Promouvoir un développement responsable et inclusif de l'IA",
+    "talent": "Développement des Talents",
+    "talentDesc": "Former des experts africains en IA de classe mondiale"
+  },
     "activities": {
       "title": "Nos activités",
       "description": "Nous organisons des événements annuels qui rassemblent la communauté IA du Bénin :",
@@ -309,19 +309,37 @@
     }
   },
   "pastEvents": {
-    "indaba2024": {
-      "title": "IndabaX Bénin 2024",
-      "location": "Cotonou, Bénin",
-      "description": "Un événement historique axé sur l'éducation pratique en IA et ML au Bénin.",
-      "highlight": "Plus de 300 participants, 12 conférenciers et une journée complète de sessions pratiques de ML."
-    },
-    "makerfair2024": {
-      "title": "Foire des Inventeurs Locaux",
-      "location": "Parakou, Bénin",
-      "description": "Une exposition pour l'innovation communautaire et les technologies open-source.",
-      "highlight": "Célébration des inventeurs locaux, des textiles intelligents aux prototypes de drones."
-    }
+  "indaba2023": {
+    "title": "IndabaX Bénin 2023",
+    "location": "Université d'Abomey-Calavi, Cotonou",
+    "description": "Événement officiel DeepLearning IndabaX avec ateliers sur la vision par ordinateur et le TAL pour les langues africaines.",
+    "highlight": "Premier IndabaX au Bénin avec 200+ participants de 5 pays ouest-africains."
   },
+  "aisummit2022": {
+    "title": "Sommet Ouest-Africain sur l'IA 2022",
+    "location": "Ecole Polytechnique d'Abomey-Calavi",
+    "description": "Conférence régionale sur les politiques d'IA et les objectifs de développement durable.",
+    "highlight": "Keynote par le Prof. Moustapha Cisse de Google AI Accra."
+  },
+  "datascience2021": {
+    "title": "Bootcamp Science des Données Bénin",
+    "location": "ICT University, Cotonou",
+    "description": "Formation intensive de 3 jours sur Python pour l'analyse et visualisation de données.",
+    "highlight": "50 diplômés ont créé des projets analysant les données agricoles du Bénin."
+  },
+  "womenintech2020": {
+    "title": "Symposium Femmes en Tech Bénin",
+    "location": "Impact Hub, Cotonou",
+    "description": "Événement annuel pour autonomiser les femmes dans les STEM via l'IA et l'entrepreneuriat.",
+    "highlight": "Lancement de 10 startups tech dirigées par des femmes avec financement initial."
+  },
+  "hackathon2019": {
+    "title": "Hackathon Code4Benin",
+    "location": "Centre d'Innovation Sèmè City",
+    "description": "Compétition de 48 heures pour résoudre des défis civiques avec des données ouvertes.",
+    "highlight": "L'équipe gagnante a développé un système de prédiction des inondations pour Cotonou."
+  }
+},
   "organizers": {
     "emmanuel": {
       "name": "Emmanuel D. Houngbo",
@@ -622,6 +640,9 @@
     "website": {
       "title": "Site Web"
     },
+     "social": {
+      "title": "Médias Sociaux"
+    },
     "form": {
       "title": "Envoyez-nous un message",
       "name": "Nom complet",
@@ -664,7 +685,11 @@
       "specialNeeds": "Besoins spéciaux",
       "specialNeedsPlaceholder": "Des besoins d'accessibilité?",
       "submit": "Soumettre la demande"
-    }
+    },
+    "relatedHackathons": "Hackathons Associés",
+    "pastHackathon": "Hackathon Passé",
+    "upcomingHackathon": "Hackathon à Venir",
+    "viewDetails": "Voir les Détails"
   },
    "testimonialsPage": {
     "addTestimonial": "Ajouter un témoignage",
@@ -719,5 +744,46 @@
     "quote": "Elles combattaient comme des guerrières, se tenaient comme des rois et protégeaient comme des mères.",
     "cta": "Découvrir leur histoire",
     "imageAlt": "Illustration historique des femmes guerrières du Dahomey"
+  },
+   "aihack2023": {
+    "date": "15-17 juillet 2023",
+    "title": "Hackathon IA IndabaX 2023",
+    "description": "Défi annuel d'innovation en IA où les développeurs créent des solutions pour des problèmes locaux",
+    "highlight": "Hackathon de 48 heures produisant 12 solutions d'IA pour les défis ouest-africains",
+    "themes": {
+      "agriculture": "Agriculture",
+      "healthcare": "Santé",
+      "education": "Éducation"
+    },
+    "prizes": {
+      "seed_funding": "Financement initial de $5,000",
+      "mentorship": "Programme de mentorat",
+      "cloud_credits": "Crédits cloud"
+    },
+    "winners": {
+      "team_agrovision": "Équipe AgroVision",
+      "crop_detection": "Détection des maladies des cultures par IA utilisant des smartphones",
+      "team_medbot": "Équipe MedBot",
+      "healthcare_chatbot": "Chatbot pour le diagnostic de santé en milieu rural"
+    }
+  },
+  "ideation2022": {
+    "date": "5 novembre 2022",
+    "title": "Défi d'Idéation IA 2022",
+    "description": "Atelier intensif d'une journée pour brainstormer et prototyper des solutions IA",
+    "highlight": "Génération de 30+ concepts innovants d'IA abordant les ODD au Bénin",
+    "themes": {
+      "sustainable_cities": "Villes Durables",
+      "gender_equality": "Égalité des Genres",
+      "clean_energy": "Énergie Propre"
+    },
+    "outcomes": {
+      "concepts_selected": "5 concepts sélectionnés pour développement ultérieur",
+      "projects_funded": "2 projets financés par le gouvernement"
+    }
+  },
+  "locations": {
+    "seme_city": "Centre d'Innovation Sèmè City, Cotonou",
+    "impact_hub": "Impact Hub, Cotonou"
   }
 }

@@ -261,7 +261,7 @@ const SponsorsSection = ({ theme, t, translatedSponsors }) => {
                 text={t('home.sponsors.sponsorText')}
                 theme={theme}
                 textColor={`mb-8 text-lg ${
-                            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+                            theme === 'dark' ? 'text-gray-300' : 'text-gray-400'
                           }`}
                 breakAfterWords={13}
               />

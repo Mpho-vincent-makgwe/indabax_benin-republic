@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { pastEvents, events } from '../BackEnd/data';
 import { useTheme } from '../context/ThemeContext';
 import { useTranslation } from 'react-i18next';
+import ParagraphText from '../components/home/ParagraphText';
 
 const CommunityEvents = () => {
   const { theme } = useTheme();
@@ -62,7 +63,7 @@ const CommunityEvents = () => {
         {/* Content section */}
         <div className="p-5 flex-grow">
           <div className="flex justify-between items-start mb-3">
-            <h3 className={`text-lg font-bold line-clamp-2 leading-tight ${theme === 'dark' ? 'text-green-100' : 'text-gray-800'}`}>
+            <h3 className={`text-2xl md:text-lg sm:text-sm font-bold line-clamp-2 leading-tight ${theme === 'dark' ? 'text-green-100' : 'text-gray-800'}`}>
               {t(`${eventType}.${event.id}.title`)}
             </h3>
             <span className={`${theme === 'dark' ? 'bg-green-900/40 text-green-300' : 'bg-green-100 text-green-800'} text-xs px-2.5 py-1 rounded-full whitespace-nowrap ml-2 border ${theme === 'dark' ? 'border-green-400/20' : 'border-green-600/20'}`}>
@@ -109,51 +110,41 @@ const CommunityEvents = () => {
   };
 
   return (
-    <div className={`min-h-screen py-10 px-4 sm:px-6 mx-auto ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}>
-      {/* Hero Section with full-width background */}
-      <div className={`relative w-screen left-1/2 -translate-x-1/2 mb-16 ${theme === 'dark' ? 'bg-gray-900' : 'bg-green-50'}`}>
-        {/* Background Image with Gradient Overlay */}
-        <div className="absolute inset-0 h-full">
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-gray-100' : 'bg-gray-50 text-gray-800'}`}>
+      {/* Hero Section - Updated to match About page but with stats */}
+      <section className="relative w-full min-h-[500px] flex items-center justify-start overflow-hidden">
+        <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?q=80&w=2671&auto=format&fit=crop" 
             alt="Community events background"
-            className="w-full h-full object-cover min-h-[400px]"
+            className="w-full h-full object-cover"
           />
-          <div className={`absolute inset-0 bg-gradient-to-r ${theme === 'dark' ? 'from-gray-900/90 via-gray-900/70 to-gray-900/20' : 'from-green-50/90 via-green-50/70 to-green-50/20'}`} />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50"></div>
         </div>
         
-        {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24 lg:py-32">
-          <div className="max-w-xl">
-            {/* Title with accent */}
-            <div className="mb-6">
-              <h1 className={`text-4xl md:text-5xl font-bold leading-tight ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
-                {t('communityEvents.title')}
-                <span className="block w-16 h-1.5 mt-4 rounded-full bg-gradient-to-r from-yellow-400 to-green-500"></span>
-              </h1>
-            </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+          <div className="text-left max-w-2xl">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              {t('communityEvents.title')}
+            </h1>
             
-            {/* Subtitle */}
-            <p className={`text-xl mb-8 leading-relaxed ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('communityEvents.subtitle')}
-            </p>
+            <ParagraphText 
+              text={t('communityEvents.subtitle')} 
+              theme={theme} 
+              textColor="text-gray-200"
+            />
             
-            {/* CTA Button with hover effect */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mt-8">
               <Link 
                 to="/about" 
-                className={`px-8 py-3.5 rounded-lg font-semibold transition-all duration-300 border-2
-                  ${theme === 'dark' ? 
-                    'border-green-400 text-green-400 hover:bg-green-400/10' : 
-                    'border-green-600 text-green-600 hover:bg-green-600/10'
-                  }`}
+                className="px-6 py-3 rounded-full font-medium border-2 border-white text-white hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {t('communityEvents.learnMore')}
               </Link>
             </div>
-            
-            {/* Stats or additional info */}
-            <div className={`mt-12 flex flex-wrap gap-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+
+            {/* Stats section - kept from original */}
+            <div className={`mt-12 flex flex-wrap gap-6 text-gray-200`}>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
@@ -164,15 +155,15 @@ const CommunityEvents = () => {
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm font-medium">{t('communityEvents.pastEvents', { count: pastEvents.length })}</span>
+                <span className="text-sm font-medium">{t('communityEvents.pastEvents', { count2: pastEvents.length })}</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
-      <div className="space-y-16 max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24 lg:py-32">
         {/* Events Section */}
         <section>
           <h2 className={`text-3xl font-bold mb-8 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
@@ -196,7 +187,7 @@ const CommunityEvents = () => {
           {pastEvents.length > 0 && (
             <>
               <h2 className={`text-3xl font-bold mt-16 mb-8 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
-                {t('communityEvents.pastEvents')}
+                {t('communityEvents.pastEvents', { count2: pastEvents.length })}
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {pastEvents.map(event => (

@@ -51,7 +51,7 @@ const EventCard = ({ event, timers }) => {
       {/* Content section */}
       <div className="p-5">
         <div className="flex justify-between items-start mb-3">
-          <h3 className={`text-lg font-bold line-clamp-2 leading-tight ${theme === 'dark' ? 'text-green-100' : 'text-gray-800'}`}>
+          <h3 className={`text-2xl md:text-xl sm:text-sm font-bold line-clamp-2 leading-tight ${theme === 'dark' ? 'text-green-100' : 'text-gray-800'}`}>
             {t(`events.${event.id}.title`)}
           </h3>
           <span className={`${theme === 'dark' ? 'bg-green-900/40 text-green-300' : 'bg-green-100 text-green-800'} text-xs px-2.5 py-1 rounded-full whitespace-nowrap ml-2 border ${theme === 'dark' ? 'border-green-400/20' : 'border-green-600/20'}`}>
@@ -62,9 +62,15 @@ const EventCard = ({ event, timers }) => {
         {/* Countdown display */}
         <div className={`mt-3 mb-5 px-3 py-2 rounded-lg ${theme === 'dark' ? 'bg-gray-800/60' : 'bg-green-50'} border ${theme === 'dark' ? 'border-green-400/20' : 'border-green-600/20'}`}>
           <p className={`text-xs font-mono ${theme === 'dark' ? 'text-green-300' : 'text-green-700'} flex justify-between`}>
+            <div className='sm:grid-cols2'>
             <span>{timers[event.id]?.days} <span className="text-yellow-400">{t('common.days')}</span></span>
+            </div>
+            <div className='sm:grid-cols2'>
             <span>{timers[event.id]?.hours} <span className="text-yellow-400">{t('common.hours')}</span></span>
+            </div>
+            <div className='sm:grid-cols2'>
             <span>{timers[event.id]?.minutes} <span className="text-yellow-400">{t('common.minutes')}</span></span>
+            </div>
             <span className={`${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>{t('common.left')}</span>
           </p>
         </div>

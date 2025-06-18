@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import { events, pastEvents, speakers, organisers } from '../BackEnd/data';
+import { events, pastEvents, speakers, organisers, hackathons } from '../BackEnd/data';
 import { useTranslation } from 'react-i18next';
 
 const EventDetail = () => {
@@ -18,7 +18,7 @@ const EventDetail = () => {
     specialNeeds: ''
   });
 
-  // Combine all events and find the matching one
+  // Find the current event
   const allEvents = [...events, ...pastEvents];
   const event = allEvents.find(e => e.id === eventId);
 
@@ -94,7 +94,7 @@ const EventDetail = () => {
             </button>
             
             <h2 className={`text-2xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-              {t('eventDetail.modal.title', { eventTitle: event.title })}
+              {t('eventDetail.modal.title', { eventTitle: t(`${event.id}.title`) })}
             </h2>
             
             <form onSubmit={handleSubmit}>
@@ -198,7 +198,7 @@ const EventDetail = () => {
             <div className="md:w-1/2">
               <img 
                 src={event.image} 
-                alt={event.title} 
+                alt={t(`${event.id}.title`)} 
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
             </div>
@@ -210,14 +210,14 @@ const EventDetail = () => {
                 {isPastEvent || eventDate < currentDate ? t('eventDetail.pastEvent') : t('eventDetail.upcomingEvent')}
               </div>
               <h1 className={`text-4xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                {event.title}
+                {t(`${event.id}.title`)}
               </h1>
               <div className="flex items-center mb-4">
                 <svg className={`w-5 h-5 mr-2 ${theme === 'dark' ? 'text-yellow-400' : 'text-yellow-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{event.location}</span>
+                <span className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{t(`locations.${event.location.split('.').pop()}`)}</span>
               </div>
               <div className="flex items-center mb-6">
                 <svg className={`w-5 h-5 mr-2 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,14 +247,14 @@ const EventDetail = () => {
               {t('eventDetail.aboutEvent')}
             </h2>
             <p className={`text-lg mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-              {event.description}
+              {t(`${event.id}.description`)}
             </p>
             <div className={`p-6 rounded-xl mb-8 ${theme === 'dark' ? 'bg-gray-800' : 'bg-green-50'}`}>
               <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-green-400' : 'text-green-700'}`}>
                 {t('eventDetail.eventHighlight')}
               </h3>
               <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>
-                {event.highlight}
+                {t(`${event.id}.highlight`)}
               </p>
             </div>
 
@@ -265,11 +265,11 @@ const EventDetail = () => {
                   {t('eventDetail.featuredSpeakers')}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
-                    {eventSpeakers.map(speaker => (
-                      <div 
-                        key={speaker.id} 
-                        className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
-                      >
+                  {eventSpeakers.map(speaker => (
+                    <div 
+                      key={speaker.id} 
+                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
+                    >
                       <img 
                         src={speaker.image} 
                         alt={speaker.name} 
@@ -302,7 +302,7 @@ const EventDetail = () => {
                   {eventOrganisers.map(organiser => (
                     <div 
                       key={organiser.id} 
-                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
+                      className={`flex items-start p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-white hover:bg-gray-50'} shadow-md transition-colors`}
                     >
                       <img 
                         src={organiser.image} 
@@ -329,7 +329,7 @@ const EventDetail = () => {
 
           {/* Sidebar */}
           <div>
-            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-black border border-white shadow-lg shadow-white/10' : 'bg-white'} shadow-md`}>
+            <div className={`sticky top-6 p-6 rounded-xl ${theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-white'} shadow-md`}>
               <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {t('eventDetail.eventDetails')}
               </h3>
@@ -344,7 +344,7 @@ const EventDetail = () => {
                   <h4 className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                     {t('eventDetail.location')}
                   </h4>
-                  <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{event.location}</p>
+                  <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>{t(`locations.${event.location.split('.').pop()}`)}</p>
                 </div>
                 {!isPastEvent && eventDate >= currentDate && (
                   <div>
@@ -377,6 +377,86 @@ const EventDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Hackathons Section */}
+        {hackathons.length > 0 && (
+          <div className="mt-16">
+            <h2 className={`text-3xl font-bold mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              {t('eventDetail.relatedHackathons')}
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {hackathons.map(hackathon => {
+                const hackathonDate = hackathon.date instanceof Date ? hackathon.date : new Date(hackathon.date);
+                const isPastHackathon = hackathonDate < currentDate;
+                
+                return (
+                  <div 
+                    key={hackathon.id}
+                    className={`rounded-xl overflow-hidden shadow-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
+                  >
+                    <img 
+                      src={hackathon.image} 
+                      alt={t(`${hackathon.id}.title`)} 
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <div className={`inline-block px-3 py-1 rounded-full text-sm mb-3 ${
+                        isPastHackathon ? 
+                          (theme === 'dark' ? 'bg-purple-900 text-purple-300' : 'bg-purple-100 text-purple-800') : 
+                          (theme === 'dark' ? 'bg-green-900 text-green-300' : 'bg-green-100 text-green-800')
+                      }`}>
+                        {isPastHackathon ? t('eventDetail.pastHackathon') : t('eventDetail.upcomingHackathon')}
+                      </div>
+                      
+                      <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                        {t(`${hackathon.id}.title`)}
+                      </h3>
+                      
+                      <p className={`mb-4 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+                        {t(`${hackathon.id}.description`)}
+                      </p>
+                      
+                      <div className="flex items-center mb-3">
+                        <svg className={`w-5 h-5 mr-2 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>
+                          {hackathonDate.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
+                        </span>
+                      </div>
+                      
+                      <div className="flex items-center mb-4">
+                        <svg className={`w-5 h-5 mr-2 ${theme === 'dark' ? 'text-yellow-400' : 'text-yellow-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span className={theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}>
+                          {t(`locations.${hackathon.location.split('.').pop()}`)}
+                        </span>
+                      </div>
+                      
+                      <Link
+                        to={`/events/${hackathon.id}`}
+                        className={`inline-block px-4 py-2 rounded-full font-medium ${
+                          theme === 'dark' ? 
+                            'bg-gray-700 hover:bg-gray-600 text-white' : 
+                            'bg-gray-200 hover:bg-gray-300 text-gray-800'
+                        } transition-colors`}
+                      >
+                        {t('eventDetail.viewDetails')}
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

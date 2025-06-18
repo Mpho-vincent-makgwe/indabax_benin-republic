@@ -75,6 +75,23 @@ interface Sponsor {
   url: string;
 }
 
+interface HackathonEvent {
+  id: string;
+  title: string;
+  date: string;
+  image: string;
+  highlight: string;
+  description: string;
+  themes?: string[];
+  prizes?: string[];
+  winners?: {
+    name: string;
+    project: string;
+  }[];
+  outcomes?: string[];
+  location: string;
+  organisers: string[];
+}
 export const events: Event[] = [
   {
     id: 'indaba2025',
@@ -160,26 +177,59 @@ export const organisers: Organizer[] = [
 // Updated Past Events
 export const pastEvents: PastEvent[] = [
   {
-    id: 'indaba2024',
-    title: 'IndabaX Benin 2024',
-    date: 'December 10, 2024',
-    image: '/images/indaba2024.jpg',
-    highlight: 'Over 300 attendees, 12 speakers, and a full day of hands-on ML sessions.',
-    description: 'A historic event focusing on practical AI and ML education in Benin.',
-    speakers: ['moustapha', 'fatima'],
-    organisers: ['emmanuel', 'sandrine'],
-    location: 'Cotonou, Benin'
+    id: 'indaba2023',
+    title: 'IndabaX Benin 2023',
+    date: 'May 12-13, 2023',
+    image: '/images/indaba2023.jpg',
+    highlight: 'First IndabaX in Benin with 200+ participants from 5 West African countries',
+    description: 'Official DeepLearning IndabaX event featuring workshops on computer vision and NLP for African languages',
+    speakers: ['dr-kossi', 'dr-adjovi'],
+    organisers: ['prof-akplogan', 'm-kouaro'],
+    location: 'University of Abomey-Calavi, Cotonou'
   },
   {
-    id: 'makerfair2024',
-    title: 'Local Maker Fair',
-    date: 'September 1, 2024',
-    image: '/images/makerfair2024.jpg',
-    highlight: 'Celebrated local inventors, from smart textiles to drone prototypes.',
-    description: 'An expo for community-based innovation and open-source tech.',
-    speakers: ['jean'],
-    organisers: ['jules', 'aminatou'],
-    location: 'Parakou, Benin'
+    id: 'aisummit2022',
+    title: 'West Africa AI Summit 2022',
+    date: 'November 3-5, 2022',
+    image: '/images/aisummit2022.jpg',
+    highlight: 'Keynote by Prof. Moustapha Cisse from Google AI Accra',
+    description: 'Regional conference on AI policy and sustainable development goals',
+    speakers: ['prof-cisse', 'dr-fagbemi'],
+    organisers: ['minister-tech', 'epac'],
+    location: 'Ecole Polytechnique d&pos;Abomey-Calavi'
+  },
+  {
+    id: 'datascience2021',
+    title: 'Benin Data Science Bootcamp',
+    date: 'August 16-18, 2021',
+    image: '/images/datascience2021.jpg',
+    highlight: '50 graduates created projects analyzing Benin\'s agricultural data',
+    description: '3-day intensive training on Python for data analysis and visualization',
+    speakers: ['ing-dovonou'],
+    organisers: ['ict-university', 'banqueatlantique'],
+    location: 'ICT University, Cotonou'
+  },
+  {
+    id: 'womenintech2020',
+    title: 'Women in Tech Benin Symposium',
+    date: 'March 8, 2020',
+    image: '/images/womenintech2020.jpg',
+    highlight: 'Launched 10 female-led tech startups with seed funding',
+    description: 'Annual event empowering women in STEM through AI and entrepreneurship',
+    speakers: ['mme-salami', 'mme-dosso'],
+    organisers: ['impacthub', 'undp-benin'],
+    location: 'Impact Hub, Cotonou'
+  },
+  {
+    id: 'hackathon2019',
+    title: 'Code4Benin Hackathon',
+    date: 'December 6-8, 2019',
+    image: '/images/hackathon2019.jpg',
+    highlight: 'Winning team developed flood prediction system for Cotonou',
+    description: '48-hour competition solving civic challenges using open data',
+    speakers: ['mr-gbedjissi'],
+    organisers: ['seme-city', 'giz-benin'],
+    location: 'Sèmè City Innovation Center'
   }
 ];
 
@@ -405,5 +455,37 @@ export const sponsors: Sponsor[] = [
     type: 'nonprofit',
     logo: 'https://th.bing.com/th/id/R.47f348892ed81ae9bb31ea9710990c46?rik=VeOnrnXYrvioGg&riu=http%3a%2f%2fallvectorlogo.com%2fimg%2f2016%2f09%2fkb-knowledge-logo.png&ehk=MdsPVsx61Krwc9hjZwPNyKItp3dOx5LHGi7vRnY0SUA%3d&risl=&pid=ImgRaw&r=0',
     url: 'https://knowledgeforall.org/'
+  }
+];
+
+// data.ts
+export const hackathons: HackathonEvent[] = [
+  {
+    id: 'aihack2023',
+    title: 'aihack2023.title', // Just use the key, text comes from locales
+    date: 'aihack2023.date',
+    image: '/images/aihack2023.jpg',
+    highlight: 'aihack2023.highlight', // Key for translation
+    description: 'aihack2023.description', // Key for translation
+    themes: ['aihack2023.themes.agriculture', 'aihack2023.themes.healthcare', 'aihack2023.themes.education'], // Keys for translation
+    prizes: ['aihack2023.prizes.seed_funding', 'aihack2023.prizes.mentorship', 'aihack2023.prizes.cloud_credits'], // Keys for translation
+    winners: [
+      { name: 'aihack2023.winners.team_agrovision', project: 'aihack2023.winners.crop_detection' },
+      { name: 'aihack2023.winners.team_medbot', project: 'aihack2023.winners.healthcare_chatbot' }
+    ],
+    location: 'locations.seme_city',
+    organisers: ['seme-city', 'indabax-team']
+  },
+  {
+    id: 'ideation2022',
+    title: 'ideation2022.title',
+    date: 'ideation2022.date',
+    image: '/images/ideation2022.jpg',
+    highlight: 'ideation2022.highlight',
+    description: 'ideation2022.description',
+    themes: ['ideation2022.themes.sustainable_cities', 'ideation2022.themes.gender_equality', 'ideation2022.themes.clean_energy'],
+    outcomes: ['ideation2022.outcomes.concepts_selected', 'ideation2022.outcomes.projects_funded'],
+    location: 'locations.impact_hub',
+    organisers: ['impacthub', 'undp-benin']
   }
 ];
