@@ -287,8 +287,8 @@ const Card = ({ children, className = "", excludeDarkMode = false }) => (
         className={`
           mt-auto w-full py-2 px-4 rounded-md text-center font-medium transition-colors
           ${theme === 'dark' 
-            ? 'bg-green-900 text-white hover:bg-green-800' 
-            : 'bg-green-800 text-white hover:bg-green-700'}
+            ? 'bg-white text-black hover:bg-gray-100/50' 
+            : 'bg-gray-900 text-white hover:bg-gray-600'}
         `}
       >
         View Profile
@@ -415,43 +415,6 @@ const Card = ({ children, className = "", excludeDarkMode = false }) => (
             </div>
           </div>
         </section>
-
-        {/* Connection Section */}
-        <section id="connection" className="mb-20 scroll-mt-32">
-          <div className="text-center mb-12">
-          <SectionHeader 
-            title={t('about.network.title')} 
-            theme={theme} 
-            underlineColor="bg-green-900"
-          />
-          <ParagraphText 
-            text={t('about.network.description')} 
-            theme={theme} 
-            className="mb-12 max-w-3xl"
-          />
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {networkItems.map((item, index) => (
-              <Card key={index}>
-                <div className="flex items-center mb-4">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-orange-100 text-orange-500`}>
-                    {item.icon}
-                  </div>
-                  <h3 className={`text-xl font-semibold ml-3 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {t(item.titleKey)}
-                  </h3>
-                </div>
-                <ParagraphText 
-                  text={t(item.descKey)} 
-                  theme={theme} 
-                  textColor={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}
-                />
-              </Card>
-            ))}
-          </div>
-        </section>
-
         {/* Mission & Vision Section */}
         <section id="mission" className="mb-20 scroll-mt-32">
           <div className="grid md:grid-cols-2 gap-8">
@@ -471,26 +434,7 @@ const Card = ({ children, className = "", excludeDarkMode = false }) => (
                 />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
-                {missionItems.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1 text-orange-500">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                        {t(item.titleKey)}
-                      </h4>
-                      <ParagraphText 
-                        text={t(item.descKey)} 
-                        theme={theme} 
-                        textColor={theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}
-                        className="text-sm"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              
             </Card>
 
             {/* Vision Card */}
@@ -509,29 +453,60 @@ const Card = ({ children, className = "", excludeDarkMode = false }) => (
                 />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-4">
-                {visionItems.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 mt-1 text-orange-500">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
-                        {t(item.titleKey)}
-                      </h4>
-                      <ParagraphText 
-                        text={t(item.descKey)} 
-                        theme={theme} 
-                        textColor={theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}
-                        className="text-sm"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              
             </Card>
           </div>
         </section>
+
+        {/* Connection Section */}
+        <section id="connection" className="mb-20">
+          <div className="text-center mb-12">
+          <SectionHeader 
+            title={t('about.network.title')} 
+            theme={theme} 
+            underlineColor="bg-green-900"
+          />
+          <ParagraphText 
+            text={t('about.network.description')} 
+            theme={theme} 
+            className="mb-12 max-w-3xl"
+          />
+          </div>
+          
+          <div className="flex flex-col grid md:grid-cols-2 md:flex-row gap-12"> {/* Changed to flex layout */}
+            {/* Image container - add your image source */}
+            <div className="w-full flex justify-center">
+              <img 
+                src="/assets/aiconf02.jpg" // Replace with your image path
+                alt="Network illustration"
+                className="rounded-lg object-cover h-full w-full"
+              />
+            </div>
+            
+            {/* Network items container */}
+            <div className=" w-full grid md:grid-rows-3 gap-6"> {/* Changed to 2 columns */}
+              {networkItems.map((item, index) => (
+                <Card key={index}>
+                  <div className="flex items-center mb-4">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-orange-100 text-orange-500`}>
+                      {item.icon}
+                    </div>
+                    <h3 className={`text-xl font-semibold ml-3 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                      {t(item.titleKey)}
+                    </h3>
+                  </div>
+                  <ParagraphText 
+                    text={t(item.descKey)} 
+                    theme={theme} 
+                    textColor={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}
+                  />
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        
 
         {/* Activities Section */}
         <section id="activities" className="mb-20 scroll-mt-32">
@@ -633,54 +608,14 @@ const Card = ({ children, className = "", excludeDarkMode = false }) => (
           </div>
         </section>
 
-        {/* Impact Section */}
-        <section id="impact" className="mb-20 scroll-mt-32">
-          <div className="text-center mb-12"> {/* Wrapper div for centered content */}
-            <SectionHeader 
-              title={t('about.impact.title')} 
-              theme={theme} 
-              underlineColor="bg-green-900"
-              className="mx-auto" /* Center the header */
-            />
-            <div className="mt-8"> {/* Added space between header and description */}
-              <ParagraphText 
-                text={t('about.impact.description')} 
-                theme={theme} 
-                className="max-w-3xl mx-auto" /* Center the paragraph */
-              />
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8"> {/* Increased gap from 6 to 8 */}
-            {impactItems.map((item, index) => (
-              <Card key={index} className="text-center">
-                <div className="flex flex-col items-center"> {/* Center content vertically */}
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-6 bg-orange-100 text-orange-500`}>
-                    {item.icon}
-                  </div>
-                  <div className="space-y-4"> {/* Added space between elements */}
-                    <h3 className={`text-xl font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-                      {t(item.titleKey)}
-                    </h3>
-                    <ParagraphText 
-                      text={t(item.descKey)} 
-                      theme={theme} 
-                      textColor={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}
-                      className="px-4" /* Add horizontal padding for better readability */
-                    />
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </section>
       </div>
 
       {/* Enhanced CTA Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+     <section className="py-16 w-full">
+        <div className=" mx-auto px-6 text-center"> {/* Changed to max-w-6xl for wider container */}
           <div className={`
-            inline-block px-8 py-12 rounded-2xl 
+            inline-block px-12 py-12 rounded-2xl  
+            w-full max-w-6xl
             ${theme === 'dark' ? 'bg-gray-900' : 'bg-black'}
             border-2 
             ${theme === 'dark' ? 'border-green-600' : 'border-green-900'}

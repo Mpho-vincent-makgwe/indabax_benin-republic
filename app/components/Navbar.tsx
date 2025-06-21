@@ -43,7 +43,6 @@ const Navbar: React.FC = () => {
     { path: '/about', label: 'About', translationKey: 'navbar.about' },
     { path: '/faq', label: 'FAQ', translationKey: 'navbar.faq' },
     { path: '/events', label: 'Events', translationKey: 'navbar.events' },
-    { path: '/culture', label: 'Culture', translationKey: 'navbar.culture' },
     { path: '/contact', label: 'Contact', translationKey: 'navbar.contact' },
   ];
 

@@ -170,7 +170,7 @@ const Testimonials = () => {
                 >
                   <div className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className={`h-14 w-14 rounded-full mr-4 flex items-center justify-center text-2xl font-bold ${theme === 'dark' ? 'bg-green-600' : 'bg-green-500'} text-white`}>
+                      <div className={`h-14 w-14 rounded-full mr-4 flex items-center justify-center text-2xl font-bold ${theme === 'dark' ? 'bg-gray-500' : 'bg-black'} text-white`}>
                         {testimonial.name.charAt(0)}
                       </div>
                       <div>

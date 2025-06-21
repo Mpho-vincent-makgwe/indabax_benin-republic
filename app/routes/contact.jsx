@@ -29,7 +29,7 @@ const Contact = () => {
           title={t('contact.title')}
           theme={theme}
           underlineColor="bg-green-900"
-          textColor={isDark ? "text-white" : "text-green-900"}
+          textColor={isDark ? "text-white" : "text-gray-900"}
         />
 
         {/* Contact Cards + Form */}
@@ -55,13 +55,13 @@ const Contact = () => {
                 <div className="space-y-1">
                   <a 
                     href="mailto:indabax-benin@googlegroups.com" 
-                    className={`block hover:underline ${isDark ? "text-orange-400" : "text-orange-600"}`}
+                    className={`block hover:underline ${isDark ? "text-gray-300" : "text-gray-600"}`}
                   >
                     indabax-benin@googlegroups.com
                   </a>
                   <a 
                     href="mailto:deeplearningbenin@gmail.com" 
-                    className={`block hover:underline ${isDark ? "text-orange-400" : "text-orange-600"}`}
+                    className={`block hover:underline ${isDark ? "text-gray-300" : "text-gray-600"}`}
                   >
                     deeplearningbenin@gmail.com
                   </a>
@@ -77,7 +77,7 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-2">{t('contact.phone.title')}</h3>
                 <a 
                   href="tel:+22994266131" 
-                  className={`hover:underline ${isDark ? "text-green-400" : "text-green-700"}`}
+                  className={`hover:underline ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
                   +229 94 26 61 31
                 </a>
@@ -94,7 +94,7 @@ const Contact = () => {
                   href="https://indabaxbenin.github.io/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`hover:underline ${isDark ? "text-orange-400" : "text-orange-600"}`}
+                  className={`hover:underline ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
                   https://indabaxbenin.github.io/
                 </a>
@@ -154,7 +154,7 @@ const Contact = () => {
 
         {/* Map Section */}
         <div className="mb-10">
-          <h3 className={`text-2xl font-semibold mb-6 text-center ${isDark ? "text-white" : "text-green-900"}`}>
+          <h3 className={`text-2xl font-semibold mb-6 text-center ${isDark ? "text-white" : "text-gray-900"}`}>
             {t('contact.map.title')}
           </h3>
           <div className={`rounded-xl overflow-hidden shadow-xl ${isDark ? "border border-gray-700" : "border border-gray-200"}`}>

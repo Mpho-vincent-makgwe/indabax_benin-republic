@@ -43,7 +43,7 @@ const ConferenceSection = () => {
           </div>
 
           {/* Image */}
-          <div className="relative rounded-lg overflow-hidden shadow-2xl h-[350px] w-full mb-6">
+          <div className="relative rounded-lg overflow-hidden shadow-2xl h-full w-full mb-6">
             <img
               src="/assets/aiconference.jpg"
               alt={t('conference.mainImageAlt')}
@@ -62,10 +62,6 @@ const ConferenceSection = () => {
             </div>
           </div>
 
-          {/* Mission/Vision Section */}
-          <div className="w-full mb-8 h-[290px]"> {/* Fixed height */}
-            <MissionVisionSection theme={theme} t={t} />
-          </div>
 
           {/* Event Detail Cards */}
           <div className="grid sm:grid-cols-2 gap-4 mb-10">
@@ -107,11 +103,11 @@ const ConferenceSection = () => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:flex flex-col lg:flex-row gap-8 items-stretch lg:min-h-[620px]">
+        <div className="hidden lg:flex flex-col lg:flex-row gap-8 items-stretch lg:min-h-full">
           {/* Left Side: Image + Mission/Vision */}
-          <div className="lg:w-1/2 flex flex-col">
+          <div className="lg:w-1/2">
             {/* Image */}
-            <div className="relative rounded-lg overflow-hidden shadow-2xl h-[450px] md:h-[500px] w-full">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl h-full w-full">
               <img
                 src="/assets/aiconference.jpg"
                 alt={t('conference.mainImageAlt')}
@@ -130,10 +126,6 @@ const ConferenceSection = () => {
               </div>
             </div>
 
-            {/* Mission/Vision Cards */}
-            <div className="w-full h-[180px] mt-4"> {/* Same fixed height */}
-              <MissionVisionSection theme={theme} t={t} />
-            </div>
           </div>
 
           {/* Right Side: Text Content + Buttons */}

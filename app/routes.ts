@@ -3,7 +3,6 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 export default [
     index("routes/home.jsx"),
     route('about', 'routes/about.jsx'),
-    route('culture', 'routes/culture.jsx'),
     route('events', 'routes/communityevents.jsx'),
     route('team', 'routes/team.jsx'),
     route('speakers/:speakerId', 'routes/speakersDetail.jsx'),

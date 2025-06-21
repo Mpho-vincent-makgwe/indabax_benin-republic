@@ -63,13 +63,13 @@ const EventCard = ({ event, timers }) => {
         <div className={`mt-3 mb-5 px-3 py-2 rounded-lg ${theme === 'dark' ? 'bg-gray-800/60' : 'bg-green-50'} border ${theme === 'dark' ? 'border-green-400/20' : 'border-green-600/20'}`}>
           <p className={`text-xs font-mono ${theme === 'dark' ? 'text-green-300' : 'text-green-700'} flex justify-between`}>
             <div className='sm:grid-cols2'>
-            <span>{timers[event.id]?.days} <span className="text-yellow-400">{t('common.days')}</span></span>
+            <span>{timers[event.id]?.days} <span className="text-black">{t('common.days')}</span></span>
             </div>
             <div className='sm:grid-cols2'>
-            <span>{timers[event.id]?.hours} <span className="text-yellow-400">{t('common.hours')}</span></span>
+            <span>{timers[event.id]?.hours} <span className="text-black">{t('common.hours')}</span></span>
             </div>
             <div className='sm:grid-cols2'>
-            <span>{timers[event.id]?.minutes} <span className="text-yellow-400">{t('common.minutes')}</span></span>
+            <span>{timers[event.id]?.minutes} <span className="text-black">{t('common.minutes')}</span></span>
             </div>
             <span className={`${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}>{t('common.left')}</span>
           </p>
