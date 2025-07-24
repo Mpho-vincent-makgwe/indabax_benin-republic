@@ -1,0 +1,96 @@
+# Node.js with React
+# Build a Node.js project that uses React.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+# indabax-benin-pipeline.yml
+name: $(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+      - main
+      - int
+  paths:
+    exclude:
+      - README.md
+      - .gitignore
+
+pr: none
+
+variables:
+  - group: 'IndabaxB-Secrets'  # Contains vercel_token and other secrets
+  - name: node_version
+    value: '18.x'
+  - name: buildConfiguration
+    value: 'Release'
+
+stages:
+- stage: Build
+  displayName: Build and Test
+  jobs:
+  - job: Build
+    displayName: Build Project
+    pool:
+      vmImage: 'ubuntu-latest'
+    
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '$(node_version)'
+      displayName: 'Install Node.js'
+    
+    - script: npm ci
+      displayName: 'Install dependencies (clean install)'
+    
+    - script: npm run build
+      displayName: 'Build project'
+    
+    - script: npm run test --if-present
+      displayName: 'Run tests'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: '$(System.DefaultWorkingDirectory)/dist'
+        artifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  displayName: Deploy Stage
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - deployment: DeployToAzure
+    displayName: 'Production Deploy (main branch)'
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+    environment: 'Production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: drop
+          - task: AzureWebApp@1
+            inputs:
+              azureSubscription: 'AzureConnectionServer'
+              appType: 'webAppLinux'
+              appName: 'indabax-benin-r'
+              package: '$(Pipeline.Workspace)/drop'
+              runtimeStack: 'NODE|18-lts'
+              startupCommand: 'npm start'
+  
+  - deployment: DeployToVercel
+    displayName: 'Staging Deploy (int branch)'
+    condition: eq(variables['Build.SourceBranch'], 'refs/heads/int')
+    environment: 'Staging'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: drop
+          - script: |
+              npm install -g vercel
+              vercel --prod --token $(VERCEL_TOKEN) --confirm
+            env:
+              VERCEL_TOKEN: $(vercel_token)
+            displayName: 'Deploy to Vercel'
